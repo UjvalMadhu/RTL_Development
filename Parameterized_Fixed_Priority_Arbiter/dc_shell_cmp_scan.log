@@ -1,0 +1,869 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+               Version O-2018.06-SP1 for linux64 - Jul 19, 2018 
+
+                    Copyright (c) 1988 - 2018 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+Error: Current design is not defined. (UID-4)
+dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> results_conv
+dc_shell> dc_shell> _scan
+dc_shell> _rtl
+dc_shell> dc_shell> 36000
+dc_shell> dc_shell> dc_shell> dc_shell> high
+dc_shell> dc_shell> Information: Variable 'hdlin_enable_presto' is obsolete and is being ignored. (INFO-100)
+Information: Variable 'hdlin_enable_presto' is obsolete and is being ignored. (INFO-100)
+TRUE
+dc_shell> all
+dc_shell> dc_shell> %s[%d]
+dc_shell> %s[%d]
+dc_shell> dc_shell> dc_shell> dc_shell> Error: Current design is not defined. (UID-4)
+0
+dc_shell> dc_shell> dc_shell> true
+dc_shell> dc_shell> false
+dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> 1
+dc_shell> 1
+dc_shell> 1
+dc_shell> Verilog
+dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> true
+dc_shell> dc_shell> 1
+dc_shell> dc_shell> ./report/dc/
+dc_shell> ./saif/
+dc_shell> dc_shell> Information: Variable 'hdlin_use_cin' is obsolete and is being ignored. (INFO-100)
+true
+dc_shell> high
+dc_shell> true
+dc_shell> dc_shell> dc_shell> true
+dc_shell> dc_shell> DesignWare
+dc_shell> dc_shell> dc_shell> * typical.db
+dc_shell> dc_shell> * typical.db dw_foundation.sldb standard.sldb
+dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> Loading db file '/classes/ee620/maieee/lib/tsmc-0.18/synopsys/typical.db'
+Loading db file '/tools/rhel6/synopsys/syn/current/libraries/syn/dw_foundation.sldb'
+Loading db file '/tools/rhel6/synopsys/syn/current/libraries/syn/standard.sldb'
+Loading db file '/tools/rhel6/synopsys/syn/current/libraries/syn/gtech.db'
+  Loading link library 'typical'
+  Loading link library 'gtech'
+Loading verilog file '/home/um2072/eeee722/um2072_f2023/uvm/results_conv/netlist/results_conv_tsmc18_rtl.vs'
+Running PRESTO HDLC
+Compiling source file /home/um2072/eeee722/um2072_f2023/uvm/results_conv/netlist/results_conv_tsmc18_rtl.vs
+Presto compilation completed successfully.
+Current design is now '/home/um2072/eeee722/um2072_f2023/uvm/results_conv/netlist/results_conv_DW01_sub_0.db:results_conv_DW01_sub_0'
+Loaded 7 designs.
+Current design is 'results_conv_DW01_sub_0'.
+results_conv_DW01_sub_0 results_conv_DW01_sub_1 results_conv_DW01_sub_2 results_conv_DW01_sub_3 results_conv_DW01_sub_4 results_conv_DW01_sub_5 results_conv
+dc_shell> dc_shell> Current design is 'results_conv'.
+{results_conv}
+dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> 10
+dc_shell> Current design is 'results_conv'.
+Current design is 'results_conv'.
+dc_shell> dc_shell> dc_shell> dc_shell> 
+  Linking design 'results_conv'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (7 designs)               /home/um2072/eeee722/um2072_f2023/uvm/results_conv/netlist/results_conv.db, etc
+  typical (library)           /classes/ee620/maieee/lib/tsmc-0.18/synopsys/typical.db
+  dw_foundation.sldb (library) /tools/rhel6/synopsys/syn/current/libraries/syn/dw_foundation.sldb
+
+1
+dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> Current design is 'results_conv'.
+{results_conv}
+dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> scan_in%s%s
+dc_shell> scan_out%s%s
+dc_shell> dc_shell> {reset}
+dc_shell> dc_shell> Accepted dft signal specification for modes: all_dft
+1
+dc_shell> dc_shell> {test_mode}
+dc_shell> dc_shell> Accepted dft signal specification for modes: all_dft
+1
+dc_shell> dc_shell> {scan_en}
+dc_shell> dc_shell> Accepted dft signal specification for modes: all_dft
+1
+dc_shell> dc_shell> {scan_in0 scan_in1}
+dc_shell> dc_shell> dc_shell> dc_shell> {scan_out0 scan_out1}
+dc_shell> dc_shell> dc_shell> dc_shell> 0
+dc_shell> dc_shell> FOUND scan_in0 IN CURRENT DESIGN
+Accepted dft signal specification for modes: all_dft
+FOUND scan_in1 IN CURRENT DESIGN
+Accepted dft signal specification for modes: all_dft
+dc_shell> dc_shell> 0
+dc_shell> dc_shell> FOUND scan_out0 IN CURRENT DESIGN
+Accepted dft signal specification for modes: all_dft
+FOUND scan_out1 IN CURRENT DESIGN
+Accepted dft signal specification for modes: all_dft
+dc_shell> dc_shell> 0
+dc_shell> dc_shell> 2
+dc_shell> dc_shell> Accepted scan configuration for modes: all_dft
+1
+dc_shell> INFO: NUMBER OF CHAINS IS 2
+dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> ############################################
+dc_shell> INFO: CHECKING DFT RULES
+dc_shell> ############################################
+dc_shell> In mode: all_dft...
+
+Information: Starting test protocol creation. (TEST-219)
+  ...inferring clock signals...
+Information: Inferred system/test clock port clk (45.0,55.0). (TEST-260)
+Information: Inferred system/test clock port rcc_clk (55.0,45.0). (TEST-260)
+  ...inferring asynchronous signals...
+Information: Inferred active high asynchronous control port reset. (TEST-261)
+1
+dc_shell> Information: Changed wire load model for 'results_conv_DW01_sub_5' from '(none)' to 'TSMC18_Conservative'. (OPT-170)
+Information: Changed wire load model for 'results_conv_DW01_sub_4' from '(none)' to 'TSMC18_Conservative'. (OPT-170)
+Information: Changed wire load model for 'results_conv_DW01_sub_3' from '(none)' to 'TSMC18_Conservative'. (OPT-170)
+Information: Changed wire load model for 'results_conv_DW01_sub_2' from '(none)' to 'TSMC18_Conservative'. (OPT-170)
+Information: Changed wire load model for 'results_conv_DW01_sub_1' from '(none)' to 'TSMC18_Conservative'. (OPT-170)
+
+Information: Starting test design rule checking. (TEST-222)
+Test Design rule checking did not find violations
+Information: Test design rule checking completed. (TEST-123)
+  Architecting Scan Chains
+
+****************************************
+Preview_dft report
+For    : 'Insert_dft' command
+Design : results_conv
+Version: O-2018.06-SP1
+Date   : Thu Dec 21 16:59:36 2023
+****************************************
+
+Number of chains: 2
+Scan methodology: full_scan
+Scan style: multiplexed_flip_flop
+Clock domain: no_mix
+Scan enable: scan_en (no hookup pin)
+
+
+Scan chain '1' (scan_in0 --> scan_out0) contains 129 cells
+
+
+Scan chain '2' (scan_in1 --> scan_out1) contains 157 cells
+
+
+
+************ Test Point Plan Report ************
+Total number of test points  : 0
+Number of Autofix test points: 0
+Number of Wrapper test points: 0
+Number of test modes         : 0
+Number of test point enables : 0
+Number of data sources       : 0
+Number of data sinks         : 0
+**************************************************
+
+1
+dc_shell> Writing test protocol file '/home/um2072/eeee722/um2072_f2023/uvm/results_conv/spf/results_conv_tsmc18_scan.spf' for mode 'all_dft'...
+1
+dc_shell> dc_shell> ############################################
+dc_shell> INFO: INSERTING TEST LOGIC
+dc_shell> ############################################
+dc_shell> 
+Information: Starting test design rule checking. (TEST-222)
+Test Design rule checking did not find violations
+Information: Test design rule checking completed. (TEST-123)
+  Architecting Scan Chains
+  Inserting Scan Cells
+  Routing Scan Chains
+  Routing Global Signals
+  Mapping New Logic
+Resetting current test mode
+  Beginning Mapping Optimizations
+  -------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+
+1
+dc_shell> dc_shell> ############################################
+dc_shell> INFO: CHECKING TEST LOGIC
+dc_shell> ############################################
+dc_shell> In mode: Internal_scan...
+  Design has scan chains in this mode
+  Design is scan routed
+  Post-DFT DRC enabled
+
+Information: Starting test design rule checking. (TEST-222)
+  Loading test protocol
+  ...basic checks...
+  ...basic sequential cell checks...
+  ...checking vector rules...
+  ...checking clock rules...
+  ...checking scan chain rules...
+  ...checking scan compression rules...
+  ...checking X-state rules...
+  ...checking tristate rules...
+  ...extracting scan details...
+
+-----------------------------------------------------------------
+  DRC Report
+
+  Total violations: 0
+
+-----------------------------------------------------------------
+
+
+Test Design rule checking did not find violations
+
+-----------------------------------------------------------------
+  Sequential Cell Report
+
+  0 out of 286 sequential cells have violations
+
+-----------------------------------------------------------------
+
+SEQUENTIAL CELLS WITHOUT VIOLATIONS
+      * 286 cells are valid scan cells
+         go_reg
+         r1209_reg_14_
+         r1209_reg_13_
+         r1209_reg_12_
+         r1209_reg_11_
+         r1209_reg_10_
+         r1209_reg_9_
+         r1209_reg_8_
+         r1209_reg_7_
+         r1209_reg_6_
+         r1209_reg_5_
+         r1209_reg_4_
+         r1209_reg_3_
+         r1209_reg_2_
+         r1209_reg_1_
+         r1209_reg_0_
+         r697_reg_15_
+         r697_reg_14_
+         r697_reg_13_
+         r697_reg_12_
+         r697_reg_11_
+         r697_reg_10_
+         r697_reg_9_
+         r697_reg_8_
+         r697_reg_7_
+         r697_reg_6_
+         r697_reg_5_
+         r697_reg_4_
+         r697_reg_3_
+         r697_reg_2_
+         r697_reg_1_
+         r697_reg_0_
+         r1209_reg_15_
+         r1633_reg_14_
+         r1633_reg_13_
+         r1633_reg_12_
+         r1633_reg_11_
+         r1633_reg_10_
+         r1633_reg_9_
+         r1633_reg_8_
+         r1633_reg_7_
+         r1633_reg_6_
+         r1633_reg_5_
+         r1633_reg_4_
+         r1633_reg_3_
+         r1633_reg_2_
+         r1633_reg_1_
+         r1633_reg_0_
+         r1633_reg_15_
+         r941_reg_15_
+         r941_reg_14_
+         r941_reg_13_
+         r941_reg_12_
+         r941_reg_11_
+         r941_reg_10_
+         r941_reg_9_
+         r941_reg_8_
+         r941_reg_7_
+         r941_reg_6_
+         r941_reg_5_
+         r941_reg_4_
+         r941_reg_3_
+         r941_reg_2_
+         r941_reg_1_
+         r941_reg_0_
+         r1477_reg_14_
+         r1477_reg_13_
+         r1477_reg_12_
+         r1477_reg_11_
+         r1477_reg_10_
+         r1477_reg_9_
+         r1477_reg_8_
+         r1477_reg_7_
+         r1477_reg_6_
+         r1477_reg_5_
+         r1477_reg_4_
+         r1477_reg_3_
+         r1477_reg_2_
+         r1477_reg_1_
+         r1477_reg_0_
+         r1477_reg_15_
+         r1336_reg_15_
+         r1336_reg_14_
+         r1336_reg_13_
+         r1336_reg_12_
+         r1336_reg_11_
+         r1336_reg_10_
+         r1336_reg_9_
+         r1336_reg_8_
+         r1336_reg_7_
+         r1336_reg_6_
+         r1336_reg_5_
+         r1336_reg_4_
+         r1336_reg_3_
+         r1336_reg_2_
+         r1336_reg_1_
+         r1336_reg_0_
+         r770_reg_15_
+         r770_reg_14_
+         r770_reg_13_
+         r770_reg_12_
+         r770_reg_11_
+         r770_reg_10_
+         r770_reg_9_
+         r770_reg_8_
+         r770_reg_7_
+         r770_reg_6_
+         r770_reg_5_
+         r770_reg_4_
+         r770_reg_3_
+         r770_reg_2_
+         r770_reg_1_
+         r770_reg_0_
+         r852_reg_15_
+         r852_reg_14_
+         r852_reg_13_
+         r852_reg_12_
+         r852_reg_11_
+         r852_reg_10_
+         r852_reg_9_
+         r852_reg_8_
+         r852_reg_7_
+         r852_reg_6_
+         r852_reg_5_
+         r852_reg_4_
+         r852_reg_3_
+         r852_reg_2_
+         r852_reg_1_
+         r852_reg_0_
+         ok_reg
+         high_mag_reg_15_
+         high_mag_reg_14_
+         high_mag_reg_13_
+         high_mag_reg_12_
+         high_mag_reg_11_
+         high_mag_reg_10_
+         high_mag_reg_9_
+         high_mag_reg_8_
+         high_mag_reg_7_
+         high_mag_reg_6_
+         high_mag_reg_5_
+         high_mag_reg_4_
+         high_mag_reg_3_
+         high_mag_reg_2_
+         high_mag_reg_1_
+         high_mag_reg_0_
+         clear_flag_reg
+         start_gt_reg
+         cmpr_reg_16_
+         clear_gt_reg
+         low_mag_reg_15_
+         low_mag_reg_14_
+         low_mag_reg_13_
+         low_mag_reg_12_
+         low_mag_reg_11_
+         low_mag_reg_10_
+         low_mag_reg_9_
+         low_mag_reg_8_
+         low_mag_reg_7_
+         low_mag_reg_6_
+         low_mag_reg_5_
+         low_mag_reg_4_
+         low_mag_reg_3_
+         low_mag_reg_2_
+         low_mag_reg_1_
+         low_mag_reg_0_
+         gt_done_reg
+         save_state_reg_3_
+         start_ct_reg
+         ct_done_reg
+         cmpc_reg_16_
+         save_state_reg_0_
+         cmpd_reg_16_
+         clear_ct_reg
+         cmpb_reg_16_
+         save_state_reg_2_
+         save_state_reg_1_
+         seen_quiet_reg
+         out_p2_reg_1_
+         out_p2_reg_0_
+         dout_reg_1_
+         dout_reg_0_
+         out_p1_reg_1_
+         out_p1_reg_0_
+         dout_flag_reg
+         dout_reg_6_
+         dout_reg_5_
+         dout_reg_4_
+         dout_reg_3_
+         dout_reg_2_
+         low_reg_2_
+         high_reg_2_
+         opd_reg_15_
+         opc_reg_15_
+         out_p2_reg_6_
+         opd_reg_14_
+         out_p2_reg_5_
+         out_p2_reg_4_
+         opc_reg_14_
+         gt_reg
+         opd_reg_12_
+         opc_reg_12_
+         out_p2_reg_2_
+         ct_state_reg_2_
+         out_p2_reg_3_
+         digit_clk_reg
+         gt_state_reg_0_
+         opd_reg_13_
+         opc_reg_13_
+         ct_state_reg_0_
+         cmpf_reg_16_
+         gt_state_reg_1_
+         out_p1_reg_5_
+         opb_reg_15_
+         out_p1_reg_6_
+         out_p1_reg_4_
+         out_p1_reg_3_
+         out_p1_reg_2_
+         opb_reg_14_
+         ct_state_reg_1_
+         low_reg_1_
+         opb_reg_13_
+         opa_reg_15_
+         low_reg_0_
+         opa_reg_14_
+         high_reg_1_
+         gt_state_reg_2_
+         opa_reg_13_
+         high_reg_0_
+         opd_reg_10_
+         opc_reg_10_
+         opd_reg_11_
+         opd_reg_9_
+         opc_reg_11_
+         opc_reg_9_
+         opb_reg_12_
+         opb_reg_10_
+         opb_reg_11_
+         opa_reg_12_
+         opa_reg_10_
+         opa_reg_11_
+         state_reg_0_
+         opd_reg_8_
+         opd_reg_6_
+         opc_reg_8_
+         opc_reg_6_
+         opd_reg_7_
+         opc_reg_7_
+         state_reg_4_
+         state_reg_3_
+         state_reg_1_
+         opb_reg_8_
+         opb_reg_6_
+         state_reg_2_
+         opb_reg_9_
+         opb_reg_7_
+         opa_reg_8_
+         opa_reg_9_
+         opa_reg_7_
+         opd_reg_4_
+         opc_reg_4_
+         opd_reg_5_
+         opd_reg_3_
+         opc_reg_5_
+         opc_reg_3_
+         opb_reg_4_
+         opb_reg_5_
+         opb_reg_3_
+         opa_reg_6_
+         opa_reg_4_
+         opa_reg_5_
+         opd_reg_0_
+         opc_reg_0_
+         opd_reg_2_
+         opc_reg_2_
+         opb_reg_0_
+         opd_reg_1_
+         opc_reg_1_
+         opb_reg_1_
+         opb_reg_2_
+         opa_reg_0_
+         opa_reg_1_
+         opa_reg_2_
+         opa_reg_3_
+         dout_reg_7_
+         out_p2_reg_7_
+
+....Inferring feed-through connections....
+Information: Test design rule checking completed. (TEST-123)
+1
+dc_shell> In mode: Internal_scan...
+  Design has scan chains in this mode
+  Design is scan routed
+  Post-DFT DRC enabled
+
+Information: Starting test design rule checking. (TEST-222)
+  Loading test protocol
+  ...basic checks...
+  ...basic sequential cell checks...
+  ...checking vector rules...
+  ...checking clock rules...
+  ...checking scan chain rules...
+  ...checking scan compression rules...
+  ...checking X-state rules...
+  ...checking tristate rules...
+  ...extracting scan details...
+
+-----------------------------------------------------------------
+  DRC Report
+
+  Total violations: 0
+
+-----------------------------------------------------------------
+
+
+Test Design rule checking did not find violations
+
+-----------------------------------------------------------------
+  Sequential Cell Report
+
+  0 out of 286 sequential cells have violations
+
+-----------------------------------------------------------------
+
+SEQUENTIAL CELLS WITHOUT VIOLATIONS
+      * 286 cells are valid scan cells
+
+Information: Test design rule checking completed. (TEST-123)
+  Running test coverage estimation...
+ 12126 faults were added to fault list.
+ ATPG performed for stuck fault model using internal pattern source.
+ ----------------------------------------------------------
+ #patterns     #faults     #ATPG faults  test      process
+ stored     detect/active  red/au/abort  coverage  CPU time
+ ---------  -------------  ------------  --------  --------
+ Begin deterministic ATPG: #uncollapsed_faults=9913, abort_limit=10...
+ 0            6792   3121         0/0/0    74.18%      0.00
+ 0             889   2232         0/0/0    81.51%      0.00
+ 0             651   1581         0/0/0    86.88%      0.00
+ 0             310   1271         0/0/0    89.44%      0.00
+ 0             245   1026         0/0/0    91.46%      0.00
+ 0             186    839         1/0/0    93.00%      0.00
+ 0             148    691         1/0/0    94.22%      0.01
+ 0             110    580         2/0/0    95.13%      0.01
+ 0              99    481         2/0/0    95.95%      0.01
+ 0             108    373         2/0/0    96.84%      0.01
+ 0              64    309         2/0/0    97.37%      0.01
+ 0              69    240         2/0/0    97.94%      0.01
+ 0              97    143         2/0/0    98.74%      0.01
+ 0              59     84         2/0/0    99.22%      0.01
+ 0              79      5         2/0/0    99.88%      0.02
+ 0               5      0         2/0/0    99.92%      0.02
+ 
+            Pattern Summary Report
+ -----------------------------------------------
+ #internal patterns                           0
+ -----------------------------------------------
+ 
+
+     Uncollapsed Stuck Fault Summary Report
+ -----------------------------------------------
+ fault class                     code   #faults
+ ------------------------------  ----  ---------
+ Detected                         DT      12114
+ Possibly detected                PT          0
+ Undetectable                     UD          2
+ ATPG untestable                  AU         10
+ Not detected                     ND          0
+ -----------------------------------------------
+ total faults                             12126
+ test coverage                            99.92%
+ -----------------------------------------------
+  Information: The test coverage above may be inferior
+               than the real test coverage with customized
+               protocol and test simulation library.
+1
+dc_shell> dc_shell> Current design is 'results_conv'.
+{results_conv}
+dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> Current design is 'results_conv'.
+Current design is 'results_conv_DW01_sub_5'.
+Warning: Can't find net 'clk' in design 'results_conv_DW01_sub_5'. (UID-95)
+Warning: Can't find port 'clk' in design 'results_conv_DW01_sub_5'. (UID-95)
+Warning: Can't find net 'reset' in design 'results_conv_DW01_sub_5'. (UID-95)
+Warning: Can't find port 'reset' in design 'results_conv_DW01_sub_5'. (UID-95)
+Warning: Can't find net 'scan_en' in design 'results_conv_DW01_sub_5'. (UID-95)
+Warning: Can't find port 'scan_en' in design 'results_conv_DW01_sub_5'. (UID-95)
+Current design is 'results_conv_DW01_sub_4'.
+Warning: Can't find net 'clk' in design 'results_conv_DW01_sub_4'. (UID-95)
+Warning: Can't find port 'clk' in design 'results_conv_DW01_sub_4'. (UID-95)
+Warning: Can't find net 'reset' in design 'results_conv_DW01_sub_4'. (UID-95)
+Warning: Can't find port 'reset' in design 'results_conv_DW01_sub_4'. (UID-95)
+Warning: Can't find net 'scan_en' in design 'results_conv_DW01_sub_4'. (UID-95)
+Warning: Can't find port 'scan_en' in design 'results_conv_DW01_sub_4'. (UID-95)
+Current design is 'results_conv_DW01_sub_3'.
+Warning: Can't find net 'clk' in design 'results_conv_DW01_sub_3'. (UID-95)
+Warning: Can't find port 'clk' in design 'results_conv_DW01_sub_3'. (UID-95)
+Warning: Can't find net 'reset' in design 'results_conv_DW01_sub_3'. (UID-95)
+Warning: Can't find port 'reset' in design 'results_conv_DW01_sub_3'. (UID-95)
+Warning: Can't find net 'scan_en' in design 'results_conv_DW01_sub_3'. (UID-95)
+Warning: Can't find port 'scan_en' in design 'results_conv_DW01_sub_3'. (UID-95)
+Current design is 'results_conv_DW01_sub_2'.
+Warning: Can't find net 'clk' in design 'results_conv_DW01_sub_2'. (UID-95)
+Warning: Can't find port 'clk' in design 'results_conv_DW01_sub_2'. (UID-95)
+Warning: Can't find net 'reset' in design 'results_conv_DW01_sub_2'. (UID-95)
+Warning: Can't find port 'reset' in design 'results_conv_DW01_sub_2'. (UID-95)
+Warning: Can't find net 'scan_en' in design 'results_conv_DW01_sub_2'. (UID-95)
+Warning: Can't find port 'scan_en' in design 'results_conv_DW01_sub_2'. (UID-95)
+Current design is 'results_conv_DW01_sub_1'.
+Warning: Can't find net 'clk' in design 'results_conv_DW01_sub_1'. (UID-95)
+Warning: Can't find port 'clk' in design 'results_conv_DW01_sub_1'. (UID-95)
+Warning: Can't find net 'reset' in design 'results_conv_DW01_sub_1'. (UID-95)
+Warning: Can't find port 'reset' in design 'results_conv_DW01_sub_1'. (UID-95)
+Warning: Can't find net 'scan_en' in design 'results_conv_DW01_sub_1'. (UID-95)
+Warning: Can't find port 'scan_en' in design 'results_conv_DW01_sub_1'. (UID-95)
+Current design is 'results_conv_DW01_sub_0'.
+Warning: Can't find net 'clk' in design 'results_conv_DW01_sub_0'. (UID-95)
+Warning: Can't find port 'clk' in design 'results_conv_DW01_sub_0'. (UID-95)
+Warning: Can't find net 'reset' in design 'results_conv_DW01_sub_0'. (UID-95)
+Warning: Can't find port 'reset' in design 'results_conv_DW01_sub_0'. (UID-95)
+Warning: Can't find net 'scan_en' in design 'results_conv_DW01_sub_0'. (UID-95)
+Warning: Can't find port 'scan_en' in design 'results_conv_DW01_sub_0'. (UID-95)
+Current design is 'results_conv'.
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Warning: Design rule attributes from the driving cell will be
+	set on the port. (UID-401)
+Current design is 'results_conv'.
+{results_conv}
+dc_shell> dc_shell> 1
+dc_shell> Current design is 'results_conv'.
+1
+dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> Information: Choosing a test methodology will restrict the optimization of sequential cells. (UIO-12)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | O-2018.06-DWBB_201806.1 |     *     |
+| Licensed DW Building Blocks        | O-2018.06-DWBB_201806.1 |           |
+============================================================================
+
+
+Information: There are 249 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping  (Incremental)
+  ------------------------
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Mapping Optimizations  (High effort)  (Incremental)
+  -------------------------------
+
+  Beginning Incremental Implementation Selection
+  ----------------------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:01   38503.1      0.00       0.0       0.0                          
+    0:00:02   38503.1      0.00       0.0       0.0                          
+    0:00:02   38503.1      0.00       0.0       0.0                          
+    0:00:02   38503.1      0.00       0.0       0.0                          
+    0:00:02   38503.1      0.00       0.0       0.0                          
+    0:00:02   38503.1      0.00       0.0       0.0                          
+    0:00:02   38503.1      0.00       0.0       0.0                          
+    0:00:02   38503.1      0.00       0.0       0.0                          
+    0:00:02   38503.1      0.00       0.0       0.0                          
+    0:00:02   38503.1      0.00       0.0       0.0                          
+    0:00:02   38503.1      0.00       0.0       0.0                          
+    0:00:02   38503.1      0.00       0.0       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:02   38503.1      0.00       0.0       0.0                          
+    0:00:02   38503.1      0.00       0.0       0.0                          
+    0:00:02   38503.1      0.00       0.0       0.0                          
+
+
+  Beginning Critical Range Optimization
+  -------------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:02   38503.1      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (max_area 36000)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:02   38503.1      0.00       0.0       0.0                          
+    0:00:02   38503.1      0.00       0.0       0.0                          
+    0:00:02   38496.4      0.00       0.0       0.0                          
+    0:00:02   38496.4      0.00       0.0       0.0                          
+    0:00:02   38496.4      0.00       0.0       0.0                          
+    0:00:02   38496.4      0.00       0.0       0.0                          
+    0:00:02   38496.4      0.00       0.0       0.0                          
+    0:00:03   38496.4      0.00       0.0       0.0                          
+    0:00:03   38496.4      0.00       0.0       0.0                          
+    0:00:03   38496.4      0.00       0.0       0.0                          
+    0:00:03   38496.4      0.00       0.0       0.0                          
+    0:00:03   38496.4      0.00       0.0       0.0                          
+    0:00:03   38496.4      0.00       0.0       0.0                          
+    0:00:03   38496.4      0.00       0.0       0.0                          
+    0:00:03   38496.4      0.00       0.0       0.0                          
+    0:00:03   38496.4      0.00       0.0       0.0                          
+
+
+  Beginning Critical Range Optimization
+  -------------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:03   38496.4      0.00       0.0       0.0                          
+    0:00:03   38496.4      0.00       0.0       0.0                          
+Loading db file '/classes/ee620/maieee/lib/tsmc-0.18/synopsys/typical.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+1
+dc_shell> dc_shell> dc_shell> dc_shell> 1
+dc_shell> dc_shell> dc_shell> true
+dc_shell> dc_shell> false
+dc_shell> dc_shell> Warning: In the design results_conv, net 'dout[7]' is connecting multiple ports. (UCN-1)
+Warning: The specified replacement character (_) is conflicting with the specified allowed or restricted character.   (UCN-4)
+1
+dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> Current design is 'results_conv'.
+{results_conv}
+dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> Power Analysis
+dc_shell> Current design is 'results_conv'.
+{results_conv}
+dc_shell> dc_shell> Reading Backwards SAIF File
+Loading db file '/classes/ee620/maieee/lib/tsmc-0.18/synopsys/typical.db'
+Error: Line 11, The simulation duration time is less or equal to 0. (SAIF-9)
+0
+dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> dc_shell> Current design is 'results_conv'.
+{results_conv}
+dc_shell> Writing verilog file '/home/um2072/eeee722/um2072_f2023/uvm/results_conv/netlist/results_conv_tsmc18_scan.vs'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+dc_shell> Information: Annotated 'cell' delays are assumed to include load delay. (UID-282)
+Information: Writing timing information to file '/home/um2072/eeee722/um2072_f2023/uvm/results_conv/sdf/results_conv_tsmc18_scan.sdf'. (WT-3)
+1
+dc_shell> dc_shell> Current design is 'results_conv'.
+{results_conv}
+dc_shell> ./netlist/results_conv_tsmc18_scan/
+dc_shell> dc_shell> dc_shell> Current design is 'results_conv'.
+{results_conv}
+dc_shell> Writing verilog file '/home/um2072/eeee722/um2072_f2023/uvm/results_conv/netlist/results_conv_tsmc18_scan/results_conv.vs'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+1
+dc_shell> dc_shell> Current design is 'results_conv_DW01_sub_5'.
+Writing verilog file '/home/um2072/eeee722/um2072_f2023/uvm/results_conv/netlist/results_conv_tsmc18_scan/results_conv_DW01_sub_5.vs'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+Current design is 'results_conv_DW01_sub_4'.
+Writing verilog file '/home/um2072/eeee722/um2072_f2023/uvm/results_conv/netlist/results_conv_tsmc18_scan/results_conv_DW01_sub_4.vs'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+Current design is 'results_conv_DW01_sub_3'.
+Writing verilog file '/home/um2072/eeee722/um2072_f2023/uvm/results_conv/netlist/results_conv_tsmc18_scan/results_conv_DW01_sub_3.vs'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+Current design is 'results_conv_DW01_sub_2'.
+Writing verilog file '/home/um2072/eeee722/um2072_f2023/uvm/results_conv/netlist/results_conv_tsmc18_scan/results_conv_DW01_sub_2.vs'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+Current design is 'results_conv_DW01_sub_1'.
+Writing verilog file '/home/um2072/eeee722/um2072_f2023/uvm/results_conv/netlist/results_conv_tsmc18_scan/results_conv_DW01_sub_1.vs'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+Current design is 'results_conv_DW01_sub_0'.
+Writing verilog file '/home/um2072/eeee722/um2072_f2023/uvm/results_conv/netlist/results_conv_tsmc18_scan/results_conv_DW01_sub_0.vs'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+dc_shell> dc_shell> dc_shell> Current design is 'results_conv'.
+{results_conv}
+dc_shell> 
+Thank you...
