@@ -1,0 +1,258 @@
+STIL 1.0 {
+    Design 2005;
+}
+Header {
+    Title "Minimal STIL for design `results_conv'";
+    Date "Thu Dec 21 16:59:34 2023";
+    Source "DFT Compiler O-2018.06-SP1";
+}
+Signals {
+    "address[0]" In;
+    "address[1]" In;
+    "address[2]" In;
+    "address[3]" In;
+    "clk" In;
+    "din[0]" In;
+    "din[10]" In;
+    "din[11]" In;
+    "din[12]" In;
+    "din[13]" In;
+    "din[14]" In;
+    "din[15]" In;
+    "din[1]" In;
+    "din[2]" In;
+    "din[3]" In;
+    "din[4]" In;
+    "din[5]" In;
+    "din[6]" In;
+    "din[7]" In;
+    "din[8]" In;
+    "din[9]" In;
+    "rcc_clk" In;
+    "reset" In;
+    "scan_en" In;
+    "scan_in0" In;
+    "scan_in1" In;
+    "test_mode" In;
+    "digit_clk" Out;
+    "dout[0]" Out;
+    "dout[1]" Out;
+    "dout[2]" Out;
+    "dout[3]" Out;
+    "dout[4]" Out;
+    "dout[5]" Out;
+    "dout[6]" Out;
+    "dout[7]" Out;
+    "dout_flag" Out;
+    "scan_out0" Out;
+    "scan_out1" Out;
+}
+SignalGroups {
+    "_clk" = '"clk" + "rcc_clk" + "reset"';
+    "_si" = '"scan_in0" + "scan_in1"' {
+        ScanIn;
+    }
+    "_so" = '"scan_out0" + "scan_out1"' {
+        ScanOut;
+    }
+    "all_inputs" = '"address[0]" + "address[1]" + "address[2]" + "address[3]" + 
+    "clk" + "din[0]" + "din[10]" + "din[11]" + "din[12]" + "din[13]" + "din[14]" 
+    + "din[15]" + "din[1]" + "din[2]" + "din[3]" + "din[4]" + "din[5]" + 
+    "din[6]" + "din[7]" + "din[8]" + "din[9]" + "rcc_clk" + "reset" + "scan_en" 
+    + "scan_in0" + "scan_in1" + "test_mode"';
+    "all_outputs" = '"digit_clk" + "dout[0]" + "dout[1]" + "dout[2]" + "dout[3]" 
+    + "dout[4]" + "dout[5]" + "dout[6]" + "dout[7]" + "dout_flag" + "scan_out0" 
+    + "scan_out1"';
+    "all_ports" = '"all_inputs" + "all_outputs"';
+    "_pi" = '"all_inputs"';
+    "_po" = '"all_outputs"';
+}
+ScanStructures {
+}
+Timing {
+    WaveformTable "_default_WFT_" {
+        Period '100ns';
+        Waveforms {
+            "all_inputs" {
+                0 {
+                    '0ns' D;
+                }
+            }
+            "all_inputs" {
+                1 {
+                    '0ns' U;
+                }
+            }
+            "all_inputs" {
+                Z {
+                    '0ns' Z;
+                }
+            }
+            "all_inputs" {
+                N {
+                    '0ns' N;
+                }
+            }
+            "all_outputs" {
+                X {
+                    '0ns' X;
+                    '40ns' X;
+                }
+            }
+            "all_outputs" {
+                H {
+                    '0ns' X;
+                    '40ns' H;
+                }
+            }
+            "all_outputs" {
+                T {
+                    '0ns' X;
+                    '40ns' T;
+                }
+            }
+            "all_outputs" {
+                L {
+                    '0ns' X;
+                    '40ns' L;
+                }
+            }
+            "reset" {
+                P {
+                    '0ns' D;
+                    '45ns' U;
+                    '55ns' D;
+                }
+            }
+            "clk" {
+                P {
+                    '0ns' D;
+                    '45ns' U;
+                    '55ns' D;
+                }
+            }
+            "rcc_clk" {
+                P {
+                    '0ns' U;
+                    '45ns' D;
+                    '55ns' U;
+                }
+            }
+        }
+    }
+}
+Procedures {
+    "capture" {
+        W "_default_WFT_";
+        F {
+            "test_mode" = 1;
+        }
+        V {
+            "_pi" = \r27 #;
+        }
+        V {
+            "_po" = \r12 #;
+        }
+    }
+    "capture_clk" {
+        W "_default_WFT_";
+        F {
+            "test_mode" = 1;
+        }
+        "forcePI" : V {
+            "_pi" = \r27 #;
+        }
+        "measurePO" : V {
+            "_po" = \r12 #;
+        }
+        C {
+            "digit_clk" = X;
+            "dout[0]" = X;
+            "dout[1]" = X;
+            "dout[2]" = X;
+            "dout[3]" = X;
+            "dout[4]" = X;
+            "dout[5]" = X;
+            "dout[6]" = X;
+            "dout[7]" = X;
+            "dout_flag" = X;
+            "scan_out0" = X;
+            "scan_out1" = X;
+        }
+        "pulse" : V {
+            "clk" = P;
+        }
+    }
+    "capture_rcc_clk" {
+        W "_default_WFT_";
+        F {
+            "test_mode" = 1;
+        }
+        "forcePI" : V {
+            "_pi" = \r27 #;
+        }
+        "measurePO" : V {
+            "_po" = \r12 #;
+        }
+        C {
+            "digit_clk" = X;
+            "dout[0]" = X;
+            "dout[1]" = X;
+            "dout[2]" = X;
+            "dout[3]" = X;
+            "dout[4]" = X;
+            "dout[5]" = X;
+            "dout[6]" = X;
+            "dout[7]" = X;
+            "dout_flag" = X;
+            "scan_out0" = X;
+            "scan_out1" = X;
+        }
+        "pulse" : V {
+            "rcc_clk" = P;
+        }
+    }
+    "capture_reset" {
+        W "_default_WFT_";
+        F {
+            "test_mode" = 1;
+        }
+        "forcePI" : V {
+            "_pi" = \r27 #;
+        }
+        "measurePO" : V {
+            "_po" = \r12 #;
+        }
+        C {
+            "digit_clk" = X;
+            "dout[0]" = X;
+            "dout[1]" = X;
+            "dout[2]" = X;
+            "dout[3]" = X;
+            "dout[4]" = X;
+            "dout[5]" = X;
+            "dout[6]" = X;
+            "dout[7]" = X;
+            "dout_flag" = X;
+            "scan_out0" = X;
+            "scan_out1" = X;
+        }
+        "pulse" : V {
+            "reset" = P;
+        }
+    }
+}
+MacroDefs {
+    "test_setup" {
+        W "_default_WFT_";
+        V {
+            "clk" = 0;
+            "rcc_clk" = 1;
+            "test_mode" = 1;
+        }
+        V {
+            "reset" = 0;
+        }
+    }
+}
+
