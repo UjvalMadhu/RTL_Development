@@ -86,11 +86,86 @@ module test;
 
 		repeat(3) @ (posedge clk_i);
 		rst_ni = 1;
+		repeat(2) @(posedge clk_i);
 
-		repeat(100) @(posedge clk_i);
+		//1. Testing Single Bit Requests
+		
+		for(int i = 0; i < num_ports; i++) begin
+			req_i = ( 1 << i );
+			@(posedge clk_i);
+			@(posedge clk_i);
+			$display("Single-bit test %0d: req_i =%0b, gnt_o = %0b", i, req_i, gnt_o);
+			verify_gnt();
+		end
+		$display("----------------------");
+		$display("Single-bit test Passed");
+		$display("----------------------");
+
+
+		//2. Testing Random Requests
+
+		for(int i = 0; i < num_tests; i++) begin
+			
+			req_i = $urandom % (1 << num_ports);   // Note: Modulo operation is better than truncation for statistical distribution 
+			@(posedge clk_i);
+			@(posedge clk_i);
+			$display("Randomized Stimulus Test %0d: req_i =%0b, gnt_o = %0b", i, req_i, gnt_o);
+			verify_gnt();
+
+		end
+		$display("----------------------------");
+		$display("Random Stimulus test Passed");
+		$display("----------------------------");
+
+
+		//3. Reset Testing
+		for(int i = 0; i < 20; i++) begin
+			
+			req_i  = $urandom % (1 << num_ports);
+			rst_ni = $urandom % 2;                 // Random 0 or 1
+			@(posedge clk_i);
+			@(posedge clk_i);
+			$display("Reset Test %0d: rst_ni: %0d, req_i =%0b, gnt_o = %0b", i, rst_ni, req_i, gnt_o);
+			verify_gnt();
+		end
+		$display("-------------------");
+		$display("Reset test Passed");
+		$display("-------------------");
+
+		$finish;
 
 	end
 
+
+	// Verify Gnt_o task: Creates a model of the gnt_o signal and checks if they are the same
+	
+	task verify_gnt();
+		logic [num_ports-1:0] expected_gnt;
+
+		expected_gnt = {num_ports{1'b0}};
+
+		if(rst_ni) begin
+			for(int j = 0; j < num_ports ; j ++) begin
+				
+
+				if(req_i[j]) begin
+				
+					if(j == 0 || (req_i & ((1 << j)-1)) == 0) begin
+						expected_gnt[j] = 1;
+						break;
+					end
+				
+				end
+			
+			end
+		end
+
+		if(gnt_o != expected_gnt) begin
+			$error("Incorrect GNT_O signal detected, rst_ni: %0b req_i = %0b, gnt_o = %0b, expected_gnt = %0b, at %0t",rst_ni, req_i, gnt_o, expected_gnt, $time);
+			$fatal;
+		end 
+
+	endtask : verify_gnt
 
 
 endmodule
