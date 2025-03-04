@@ -1,0 +1,1441 @@
+Compile effort is high
+Pre-compile check_design
+ 
+****************************************
+check_design summary:
+Version:     O-2018.06-SP1
+Date:        Thu Dec 21 16:59:24 2023
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      5
+    Unconnected ports (LINT-28)                                     5
+
+Cells                                                               7
+    Cells do not drive (LINT-1)                                     7
+
+Nets                                                               80
+    Unloaded nets (LINT-2)                                         80
+--------------------------------------------------------------------------------
+
+Warning: In design 'results_conv', cell 'C2954' does not drive any nets. (LINT-1)
+Warning: In design 'results_conv', cell 'C2996' does not drive any nets. (LINT-1)
+Warning: In design 'results_conv', cell 'C2997' does not drive any nets. (LINT-1)
+Warning: In design 'results_conv', cell 'C2998' does not drive any nets. (LINT-1)
+Warning: In design 'results_conv', cell 'C3027' does not drive any nets. (LINT-1)
+Warning: In design 'results_conv', cell 'C3031' does not drive any nets. (LINT-1)
+Warning: In design 'results_conv', cell 'C3032' does not drive any nets. (LINT-1)
+Warning: In design 'results_conv', net 'cmpr[0]' driven by pin 'cmpr_reg[0]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpr[1]' driven by pin 'cmpr_reg[1]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpr[2]' driven by pin 'cmpr_reg[2]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpr[3]' driven by pin 'cmpr_reg[3]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpr[4]' driven by pin 'cmpr_reg[4]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpr[5]' driven by pin 'cmpr_reg[5]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpr[6]' driven by pin 'cmpr_reg[6]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpr[7]' driven by pin 'cmpr_reg[7]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpr[8]' driven by pin 'cmpr_reg[8]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpr[9]' driven by pin 'cmpr_reg[9]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpr[10]' driven by pin 'cmpr_reg[10]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpr[11]' driven by pin 'cmpr_reg[11]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpr[12]' driven by pin 'cmpr_reg[12]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpr[13]' driven by pin 'cmpr_reg[13]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpr[14]' driven by pin 'cmpr_reg[14]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpr[15]' driven by pin 'cmpr_reg[15]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpf[0]' driven by pin 'cmpf_reg[0]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpf[1]' driven by pin 'cmpf_reg[1]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpf[2]' driven by pin 'cmpf_reg[2]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpf[3]' driven by pin 'cmpf_reg[3]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpf[4]' driven by pin 'cmpf_reg[4]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpf[5]' driven by pin 'cmpf_reg[5]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpf[6]' driven by pin 'cmpf_reg[6]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpf[7]' driven by pin 'cmpf_reg[7]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpf[8]' driven by pin 'cmpf_reg[8]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpf[9]' driven by pin 'cmpf_reg[9]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpf[10]' driven by pin 'cmpf_reg[10]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpf[11]' driven by pin 'cmpf_reg[11]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpf[12]' driven by pin 'cmpf_reg[12]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpf[13]' driven by pin 'cmpf_reg[13]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpf[14]' driven by pin 'cmpf_reg[14]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpf[15]' driven by pin 'cmpf_reg[15]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpd[0]' driven by pin 'cmpd_reg[0]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpd[1]' driven by pin 'cmpd_reg[1]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpd[2]' driven by pin 'cmpd_reg[2]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpd[3]' driven by pin 'cmpd_reg[3]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpd[4]' driven by pin 'cmpd_reg[4]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpd[5]' driven by pin 'cmpd_reg[5]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpd[6]' driven by pin 'cmpd_reg[6]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpd[7]' driven by pin 'cmpd_reg[7]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpd[8]' driven by pin 'cmpd_reg[8]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpd[9]' driven by pin 'cmpd_reg[9]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpd[10]' driven by pin 'cmpd_reg[10]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpd[11]' driven by pin 'cmpd_reg[11]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpd[12]' driven by pin 'cmpd_reg[12]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpd[13]' driven by pin 'cmpd_reg[13]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpd[14]' driven by pin 'cmpd_reg[14]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpd[15]' driven by pin 'cmpd_reg[15]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpc[0]' driven by pin 'cmpc_reg[0]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpc[1]' driven by pin 'cmpc_reg[1]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpc[2]' driven by pin 'cmpc_reg[2]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpc[3]' driven by pin 'cmpc_reg[3]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpc[4]' driven by pin 'cmpc_reg[4]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpc[5]' driven by pin 'cmpc_reg[5]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpc[6]' driven by pin 'cmpc_reg[6]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpc[7]' driven by pin 'cmpc_reg[7]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpc[8]' driven by pin 'cmpc_reg[8]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpc[9]' driven by pin 'cmpc_reg[9]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpc[10]' driven by pin 'cmpc_reg[10]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpc[11]' driven by pin 'cmpc_reg[11]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpc[12]' driven by pin 'cmpc_reg[12]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpc[13]' driven by pin 'cmpc_reg[13]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpc[14]' driven by pin 'cmpc_reg[14]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpc[15]' driven by pin 'cmpc_reg[15]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpb[0]' driven by pin 'cmpb_reg[0]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpb[1]' driven by pin 'cmpb_reg[1]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpb[2]' driven by pin 'cmpb_reg[2]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpb[3]' driven by pin 'cmpb_reg[3]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpb[4]' driven by pin 'cmpb_reg[4]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpb[5]' driven by pin 'cmpb_reg[5]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpb[6]' driven by pin 'cmpb_reg[6]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpb[7]' driven by pin 'cmpb_reg[7]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpb[8]' driven by pin 'cmpb_reg[8]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpb[9]' driven by pin 'cmpb_reg[9]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpb[10]' driven by pin 'cmpb_reg[10]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpb[11]' driven by pin 'cmpb_reg[11]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpb[12]' driven by pin 'cmpb_reg[12]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpb[13]' driven by pin 'cmpb_reg[13]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpb[14]' driven by pin 'cmpb_reg[14]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', net 'cmpb[15]' driven by pin 'cmpb_reg[15]/Q' has no loads. (LINT-2)
+Warning: In design 'results_conv', port 'scan_in0' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv', port 'scan_in1' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv', port 'scan_en' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv', port 'scan_out0' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv', port 'scan_out1' is not connected to any nets. (LINT-28)
+1
+ 
+****************************************
+Report : FSM
+Design : results_conv
+Version: O-2018.06-SP1
+Date   : Thu Dec 21 16:59:24 2023
+****************************************
+
+
+Clock             : Unspecified
+Asynchronous Reset: Unspecified
+
+Encoding Bit Length: 3
+Encoding style     : auto
+
+State Vector: { gt_state_reg[2] gt_state_reg[1] gt_state_reg[0] }
+
+
+State Encodings and Order: 
+
+fsm_state_0 : 110
+fsm_state_1 : 101
+fsm_state_2 : 011
+fsm_state_3 : 010
+fsm_state_4 : 001
+fsm_state_5 : 000
+fsm_state_6 : 100
+
+
+1
+Post-compile check_design
+ 
+****************************************
+check_design summary:
+Version:     O-2018.06-SP1
+Date:        Thu Dec 21 16:59:30 2023
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                    129
+    Unconnected ports (LINT-28)                                   129
+
+Cells                                                              28
+    Connected to power or ground (LINT-32)                         22
+    Nets connected to multiple pins on same cell (LINT-33)          6
+--------------------------------------------------------------------------------
+
+Warning: In design 'results_conv', port 'scan_in0' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv', port 'scan_in1' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv', port 'scan_en' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv', port 'scan_out0' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv', port 'scan_out1' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_0', port 'A[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_0', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_0', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_0', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_0', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_0', port 'DIFF[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_0', port 'DIFF[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_0', port 'DIFF[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_0', port 'DIFF[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_0', port 'DIFF[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_0', port 'DIFF[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_0', port 'DIFF[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_0', port 'DIFF[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_0', port 'DIFF[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_0', port 'DIFF[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_0', port 'DIFF[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_0', port 'DIFF[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_0', port 'DIFF[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_0', port 'DIFF[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_0', port 'DIFF[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_0', port 'DIFF[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_0', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_1', port 'A[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_1', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_1', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_1', port 'B[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_1', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_1', port 'DIFF[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_1', port 'DIFF[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_1', port 'DIFF[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_1', port 'DIFF[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_1', port 'DIFF[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_1', port 'DIFF[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_1', port 'DIFF[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_1', port 'DIFF[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_1', port 'DIFF[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_1', port 'DIFF[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_1', port 'DIFF[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_1', port 'DIFF[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_1', port 'DIFF[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_1', port 'DIFF[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_1', port 'DIFF[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_1', port 'DIFF[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_1', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_2', port 'A[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_2', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_2', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_2', port 'DIFF[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_2', port 'DIFF[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_2', port 'DIFF[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_2', port 'DIFF[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_2', port 'DIFF[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_2', port 'DIFF[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_2', port 'DIFF[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_2', port 'DIFF[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_2', port 'DIFF[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_2', port 'DIFF[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_2', port 'DIFF[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_2', port 'DIFF[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_2', port 'DIFF[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_2', port 'DIFF[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_2', port 'DIFF[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_2', port 'DIFF[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_2', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_3', port 'A[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_3', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_3', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_3', port 'DIFF[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_3', port 'DIFF[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_3', port 'DIFF[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_3', port 'DIFF[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_3', port 'DIFF[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_3', port 'DIFF[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_3', port 'DIFF[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_3', port 'DIFF[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_3', port 'DIFF[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_3', port 'DIFF[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_3', port 'DIFF[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_3', port 'DIFF[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_3', port 'DIFF[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_3', port 'DIFF[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_3', port 'DIFF[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_3', port 'DIFF[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_3', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_4', port 'A[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_4', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_4', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_4', port 'DIFF[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_4', port 'DIFF[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_4', port 'DIFF[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_4', port 'DIFF[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_4', port 'DIFF[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_4', port 'DIFF[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_4', port 'DIFF[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_4', port 'DIFF[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_4', port 'DIFF[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_4', port 'DIFF[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_4', port 'DIFF[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_4', port 'DIFF[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_4', port 'DIFF[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_4', port 'DIFF[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_4', port 'DIFF[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_4', port 'DIFF[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_4', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_5', port 'A[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_5', port 'B[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_5', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_5', port 'DIFF[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_5', port 'DIFF[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_5', port 'DIFF[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_5', port 'DIFF[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_5', port 'DIFF[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_5', port 'DIFF[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_5', port 'DIFF[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_5', port 'DIFF[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_5', port 'DIFF[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_5', port 'DIFF[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_5', port 'DIFF[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_5', port 'DIFF[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_5', port 'DIFF[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_5', port 'DIFF[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_5', port 'DIFF[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_5', port 'DIFF[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv_DW01_sub_5', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'results_conv', a pin on submodule 'sub_527' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[16]' is connected to logic 0. 
+Warning: In design 'results_conv', a pin on submodule 'sub_527' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'results_conv', a pin on submodule 'sub_527' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'results_conv', a pin on submodule 'sub_527' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'results_conv', a pin on submodule 'sub_527' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'results_conv', a pin on submodule 'sub_521' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[16]' is connected to logic 0. 
+Warning: In design 'results_conv', a pin on submodule 'sub_521' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'results_conv', a pin on submodule 'sub_521' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[15]' is connected to logic 0. 
+Warning: In design 'results_conv', a pin on submodule 'sub_521' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[14]' is connected to logic 0. 
+Warning: In design 'results_conv', a pin on submodule 'sub_521' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'results_conv', a pin on submodule 'sub_461' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[16]' is connected to logic 0. 
+Warning: In design 'results_conv', a pin on submodule 'sub_461' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'results_conv', a pin on submodule 'sub_461' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'results_conv', a pin on submodule 'sub_457' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[16]' is connected to logic 0. 
+Warning: In design 'results_conv', a pin on submodule 'sub_457' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'results_conv', a pin on submodule 'sub_457' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'results_conv', a pin on submodule 'r373' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[16]' is connected to logic 0. 
+Warning: In design 'results_conv', a pin on submodule 'r373' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'results_conv', a pin on submodule 'r373' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'results_conv', a pin on submodule 'r370' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'A[16]' is connected to logic 0. 
+Warning: In design 'results_conv', a pin on submodule 'r370' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'B[16]' is connected to logic 0. 
+Warning: In design 'results_conv', a pin on submodule 'r370' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'results_conv', the same net is connected to more than one pin on submodule 'sub_527'. (LINT-33)
+   Net 'n1' is connected to pins 'A[16]', 'B[16]'', 'B[15]', 'B[14]', 'CI'.
+Warning: In design 'results_conv', the same net is connected to more than one pin on submodule 'sub_521'. (LINT-33)
+   Net 'n2' is connected to pins 'A[16]', 'B[16]'', 'B[15]', 'B[14]', 'CI'.
+Warning: In design 'results_conv', the same net is connected to more than one pin on submodule 'sub_461'. (LINT-33)
+   Net 'n3' is connected to pins 'A[16]', 'B[16]'', 'CI'.
+Warning: In design 'results_conv', the same net is connected to more than one pin on submodule 'sub_457'. (LINT-33)
+   Net 'n4' is connected to pins 'A[16]', 'B[16]'', 'CI'.
+Warning: In design 'results_conv', the same net is connected to more than one pin on submodule 'r373'. (LINT-33)
+   Net 'n7' is connected to pins 'A[16]', 'B[16]'', 'CI'.
+Warning: In design 'results_conv', the same net is connected to more than one pin on submodule 'r370'. (LINT-33)
+   Net 'n8' is connected to pins 'A[16]', 'B[16]'', 'CI'.
+1
+ 
+****************************************
+Report : resources
+Design : results_conv
+Version: O-2018.06-SP1
+Date   : Thu Dec 21 16:59:30 2023
+****************************************
+
+Resource Sharing Report for design results_conv in file
+        /home/um2072/eeee722/um2072_f2023/uvm/results_conv/src/results_conv.v
+
+===============================================================================
+|          |              |            | Contained     |                      |
+| Resource | Module       | Parameters | Resources     | Contained Operations |
+===============================================================================
+| r370     | DW01_sub     | width=17   |               | sub_453 sub_522      |
+| r373     | DW01_sub     | width=17   |               | sub_515 sub_528      |
+| r382     | DW_cmp       | width=8    |               | eq_350               |
+| r384     | DW01_sub     | width=17   |               | sub_457              |
+| r386     | DW01_sub     | width=17   |               | sub_461              |
+| r388     | DW01_sub     | width=17   |               | sub_521              |
+| r390     | DW01_sub     | width=17   |               | sub_527              |
+===============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| r370               | DW01_sub         | rpl                |                |
+| r373               | DW01_sub         | rpl                |                |
+| sub_457            | DW01_sub         | rpl                |                |
+| sub_461            | DW01_sub         | rpl                |                |
+| sub_521            | DW01_sub         | rpl                |                |
+| sub_527            | DW01_sub         | rpl                |                |
+===============================================================================
+
+1
+ 
+****************************************
+Report : area
+Design : results_conv
+Version: O-2018.06-SP1
+Date   : Thu Dec 21 16:59:30 2023
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    typical (File: /classes/ee620/maieee/lib/tsmc-0.18/synopsys/typical.db)
+
+Number of ports:                          357
+Number of nets:                          1650
+Number of cells:                         1338
+Number of combinational cells:           1040
+Number of sequential cells:               292
+Number of macros/black boxes:               0
+Number of buf/inv:                        226
+Number of references:                      46
+
+Combinational area:              16475.659326
+Buf/Inv area:                     1503.532819
+Noncombinational area:           18162.144257
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                 34637.803582
+Total area:                 undefined
+1
+ 
+****************************************
+Report : area
+Design : results_conv
+Version: O-2018.06-SP1
+Date   : Thu Dec 21 16:59:30 2023
+****************************************
+
+Library(s) Used:
+
+    typical (File: /classes/ee620/maieee/lib/tsmc-0.18/synopsys/typical.db)
+
+Number of ports:                          357
+Number of nets:                          1650
+Number of cells:                         1338
+Number of combinational cells:           1040
+Number of sequential cells:               292
+Number of macros/black boxes:               0
+Number of buf/inv:                        226
+Number of references:                      46
+
+Combinational area:              16475.659326
+Buf/Inv area:                     1503.532819
+Noncombinational area:           18162.144257
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                 34637.803582
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ------------------------------ 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-   Black-
+                                  Total       Total    national    national    boxes   Design
+--------------------------------  ----------  -------  ----------  ----------  ------  -----------------------
+results_conv                      34637.8036    100.0  13255.7041  18162.1443  0.0000  results_conv
+r370                                555.5088      1.6    555.5088      0.0000  0.0000  results_conv_DW01_sub_5
+r373                                555.5088      1.6    555.5088      0.0000  0.0000  results_conv_DW01_sub_4
+sub_457                             555.5088      1.6    555.5088      0.0000  0.0000  results_conv_DW01_sub_3
+sub_461                             555.5088      1.6    555.5088      0.0000  0.0000  results_conv_DW01_sub_2
+sub_521                             498.9600      1.4    498.9600      0.0000  0.0000  results_conv_DW01_sub_1
+sub_527                             498.9600      1.4    498.9600      0.0000  0.0000  results_conv_DW01_sub_0
+--------------------------------  ----------  -------  ----------  ----------  ------  -----------------------
+Total                                                  16475.6593  18162.1443  0.0000
+
+1
+ 
+****************************************
+Report : reference
+Design : results_conv
+Version: O-2018.06-SP1
+Date   : Thu Dec 21 16:59:30 2023
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AND2X2             typical       13.305600       6     79.833601  
+AND3X2             typical       16.632000       6     99.792000  
+AND4X2             typical       19.958401       2     39.916801  
+AOI21X1            typical       13.305600       8    106.444801  
+AOI22X1            typical       16.632000     144   2395.007996  
+AOI31X1            typical       16.632000       3     49.896000  
+AOI33X1            typical       26.611200       1     26.611200  
+AOI211X1           typical       16.632000       4     66.528000  
+AOI221X1           typical       23.284800      16    372.556793  
+AOI222X1           typical       26.611200      48   1277.337616  
+DFFNRX1            typical       76.507202       1     76.507202  n
+DFFNX1             typical       56.548801     128   7238.246582  n
+DFFRHQX1           typical       69.854401     139   9709.761688  n
+DFFSX1             typical       63.201599      16   1011.225586  n
+DFFSXL             typical       63.201599       2    126.403198  n
+INVX1              typical        6.652800     184   1224.115215  
+MX2X1              typical       26.611200       2     53.222401  
+NAND2BX1           typical       13.305600       2     26.611200  
+NAND2X1            typical        9.979200      33    329.313612  
+NAND3BX1           typical       16.632000       1     16.632000  
+NAND3X1            typical       13.305600      16    212.889603  
+NAND4BXL           typical       19.958401       2     39.916801  
+NAND4X1            typical       16.632000      22    365.903999  
+NOR2BX1            typical       13.305600       4     53.222401  
+NOR2X1             typical        9.979200      25    249.480009  
+NOR3BX1            typical       19.958401       1     19.958401  
+NOR3X1             typical       13.305600       9    119.750401  
+NOR4BX1            typical       19.958401       1     19.958401  
+NOR4X1             typical       19.958401       2     39.916801  
+OAI2BB1X1          typical       16.632000       7    116.424000  
+OAI2BB2X1          typical       23.284800      59   1373.803175  
+OAI21XL            typical       13.305600      14    186.278402  
+OAI22X1            typical       19.958401     101   2015.798473  
+OAI32X1            typical       23.284800       2     46.569599  
+OAI211X1           typical       19.958401       1     19.958401  
+OAI221XL           typical       23.284800      64   1490.227173  
+OAI222XL           typical       26.611200      16    425.779205  
+OR2X2              typical       13.305600       1     13.305600  
+OR3XL              typical       16.632000       1     16.632000  
+XOR2X1             typical       26.611200      10    266.112003  
+results_conv_DW01_sub_0         498.960006       1    498.960006  h
+results_conv_DW01_sub_1         498.960006       1    498.960006  h
+results_conv_DW01_sub_2         555.508807       1    555.508807  h
+results_conv_DW01_sub_3         555.508807       1    555.508807  h
+results_conv_DW01_sub_4         555.508807       1    555.508807  h
+results_conv_DW01_sub_5         555.508807       1    555.508807  h
+-----------------------------------------------------------------------------
+Total 46 references                                 34637.803582
+1
+ 
+****************************************
+Report : reference
+Design : results_conv
+Version: O-2018.06-SP1
+Date   : Thu Dec 21 16:59:30 2023
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AND2X2             typical       13.305600       6     79.833601  
+AND3X2             typical       16.632000       6     99.792000  
+AND4X2             typical       19.958401       2     39.916801  
+AOI21X1            typical       13.305600       8    106.444801  
+AOI22X1            typical       16.632000     144   2395.007996  
+AOI31X1            typical       16.632000       3     49.896000  
+AOI33X1            typical       26.611200       1     26.611200  
+AOI211X1           typical       16.632000       4     66.528000  
+AOI221X1           typical       23.284800      16    372.556793  
+AOI222X1           typical       26.611200      48   1277.337616  
+DFFNRX1            typical       76.507202       1     76.507202  n
+DFFNX1             typical       56.548801     128   7238.246582  n
+DFFRHQX1           typical       69.854401     139   9709.761688  n
+DFFSX1             typical       63.201599      16   1011.225586  n
+DFFSXL             typical       63.201599       2    126.403198  n
+INVX1              typical        6.652800     184   1224.115215  
+MX2X1              typical       26.611200       2     53.222401  
+NAND2BX1           typical       13.305600       2     26.611200  
+NAND2X1            typical        9.979200      33    329.313612  
+NAND3BX1           typical       16.632000       1     16.632000  
+NAND3X1            typical       13.305600      16    212.889603  
+NAND4BXL           typical       19.958401       2     39.916801  
+NAND4X1            typical       16.632000      22    365.903999  
+NOR2BX1            typical       13.305600       4     53.222401  
+NOR2X1             typical        9.979200      25    249.480009  
+NOR3BX1            typical       19.958401       1     19.958401  
+NOR3X1             typical       13.305600       9    119.750401  
+NOR4BX1            typical       19.958401       1     19.958401  
+NOR4X1             typical       19.958401       2     39.916801  
+OAI2BB1X1          typical       16.632000       7    116.424000  
+OAI2BB2X1          typical       23.284800      59   1373.803175  
+OAI21XL            typical       13.305600      14    186.278402  
+OAI22X1            typical       19.958401     101   2015.798473  
+OAI32X1            typical       23.284800       2     46.569599  
+OAI211X1           typical       19.958401       1     19.958401  
+OAI221XL           typical       23.284800      64   1490.227173  
+OAI222XL           typical       26.611200      16    425.779205  
+OR2X2              typical       13.305600       1     13.305600  
+OR3XL              typical       16.632000       1     16.632000  
+XOR2X1             typical       26.611200      10    266.112003  
+results_conv_DW01_sub_0         498.960006       1    498.960006  h
+results_conv_DW01_sub_1         498.960006       1    498.960006  h
+results_conv_DW01_sub_2         555.508807       1    555.508807  h
+results_conv_DW01_sub_3         555.508807       1    555.508807  h
+results_conv_DW01_sub_4         555.508807       1    555.508807  h
+results_conv_DW01_sub_5         555.508807       1    555.508807  h
+-----------------------------------------------------------------------------
+Total 46 references                                 34637.803582
+
+****************************************
+Design: results_conv_DW01_sub_0 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AND2X1             typical       13.305600       6     79.833601  
+AOI2BB2X1          typical       23.284800       6    139.708797  
+AOI211X1           typical       16.632000       1     16.632000  
+INVX1              typical        6.652800       7     46.569601  
+NAND2X1            typical        9.979200       1      9.979200  
+NOR2BX1            typical       13.305600       1     13.305600  
+NOR2X1             typical        9.979200       6     59.875202  
+OAI21XL            typical       13.305600       1     13.305600  
+OAI22X1            typical       19.958401       6    119.750404  
+-----------------------------------------------------------------------------
+Total 9 references                                    498.960006
+
+****************************************
+Design: results_conv_DW01_sub_1 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AND2X1             typical       13.305600       6     79.833601  
+AOI2BB2X1          typical       23.284800       6    139.708797  
+AOI211X1           typical       16.632000       1     16.632000  
+INVX1              typical        6.652800       7     46.569601  
+NAND2X1            typical        9.979200       1      9.979200  
+NOR2BX1            typical       13.305600       1     13.305600  
+NOR2X1             typical        9.979200       6     59.875202  
+OAI21XL            typical       13.305600       1     13.305600  
+OAI22X1            typical       19.958401       6    119.750404  
+-----------------------------------------------------------------------------
+Total 9 references                                    498.960006
+
+****************************************
+Design: results_conv_DW01_sub_2 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AOI2BB2X1          typical       23.284800       6    139.708797  
+INVX1              typical        6.652800       7     46.569601  
+NOR2BX1            typical       13.305600       8    106.444801  
+NOR2X1             typical        9.979200       7     69.854403  
+OAI2BB1X1          typical       16.632000       1     16.632000  
+OAI2BB2X1          typical       23.284800       1     23.284800  
+OAI21XL            typical       13.305600       1     13.305600  
+OAI22X1            typical       19.958401       7    139.708805  
+-----------------------------------------------------------------------------
+Total 8 references                                    555.508807
+
+****************************************
+Design: results_conv_DW01_sub_3 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AOI2BB2X1          typical       23.284800       6    139.708797  
+INVX1              typical        6.652800       7     46.569601  
+NOR2BX1            typical       13.305600       8    106.444801  
+NOR2X1             typical        9.979200       7     69.854403  
+OAI2BB1X1          typical       16.632000       1     16.632000  
+OAI2BB2X1          typical       23.284800       1     23.284800  
+OAI21XL            typical       13.305600       1     13.305600  
+OAI22X1            typical       19.958401       7    139.708805  
+-----------------------------------------------------------------------------
+Total 8 references                                    555.508807
+
+****************************************
+Design: results_conv_DW01_sub_4 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AOI2BB2X1          typical       23.284800       6    139.708797  
+INVX1              typical        6.652800       7     46.569601  
+NOR2BX1            typical       13.305600       8    106.444801  
+NOR2X1             typical        9.979200       7     69.854403  
+OAI2BB1X1          typical       16.632000       1     16.632000  
+OAI2BB2X1          typical       23.284800       1     23.284800  
+OAI21XL            typical       13.305600       1     13.305600  
+OAI22X1            typical       19.958401       7    139.708805  
+-----------------------------------------------------------------------------
+Total 8 references                                    555.508807
+
+****************************************
+Design: results_conv_DW01_sub_5 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AOI2BB2X1          typical       23.284800       6    139.708797  
+INVX1              typical        6.652800       7     46.569601  
+NOR2BX1            typical       13.305600       8    106.444801  
+NOR2X1             typical        9.979200       7     69.854403  
+OAI2BB1X1          typical       16.632000       1     16.632000  
+OAI2BB2X1          typical       23.284800       1     23.284800  
+OAI21XL            typical       13.305600       1     13.305600  
+OAI22X1            typical       19.958401       7    139.708805  
+-----------------------------------------------------------------------------
+Total 8 references                                    555.508807
+1
+ 
+****************************************
+Report : net fanout
+        -high_fanout
+Design : results_conv
+Version: O-2018.06-SP1
+Date   : Thu Dec 21 16:59:30 2023
+****************************************
+
+
+Operating Conditions: typical   Library: typical
+Wire Load Model Mode: segmented
+
+Design        Wire Load Model            Library
+------------------------------------------------
+results_conv           TSMC18_Conservative
+                                         typical
+results_conv_DW01_sub_0
+                       TSMC18_Conservative
+                                         typical
+results_conv_DW01_sub_1
+                       TSMC18_Conservative
+                                         typical
+results_conv_DW01_sub_2
+                       TSMC18_Conservative
+                                         typical
+results_conv_DW01_sub_3
+                       TSMC18_Conservative
+                                         typical
+results_conv_DW01_sub_4
+                       TSMC18_Conservative
+                                         typical
+results_conv_DW01_sub_5
+                       TSMC18_Conservative
+                                         typical
+
+
+Attributes:
+   dr - drc disabled
+    c - annotated capacitance
+    d - dont_touch
+    i - ideal_net
+    I - ideal_network
+    p - includes pin load
+    r - annotated resistance
+    h - high fanout
+
+Net                 Fanout   Attributes   Capacitance   Driver
+--------------------------------------------------------------------------------
+1
+ 
+****************************************
+Report : clocks
+Design : results_conv
+Version: O-2018.06-SP1
+Date   : Thu Dec 21 16:59:30 2023
+****************************************
+
+Attributes:
+    d - dont_touch_network
+    f - fix_hold
+    p - propagated_clock
+    G - generated_clock
+    g - lib_generated_clock
+
+Clock          Period   Waveform            Attrs     Sources
+--------------------------------------------------------------------------------
+clk             20.00   {0 10}                        {clk}
+--------------------------------------------------------------------------------
+1
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 10
+Design : results_conv
+Version: O-2018.06-SP1
+Date   : Thu Dec 21 16:59:30 2023
+****************************************
+
+Operating Conditions: typical   Library: typical
+Wire Load Model Mode: segmented
+
+  Startpoint: state_reg_0_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: save_state_reg_0_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  results_conv       TSMC18_Conservative   typical
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                  0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  state_reg_0_/CK (DFFRHQX1)             0.0000     0.0000 r
+  state_reg_0_/Q (DFFRHQX1)              0.2813     0.2813 r
+  U989/Y (INVX1)                         0.1071     0.3883 f
+  U959/Y (NAND2X1)                       0.1314     0.5197 r
+  U893/Y (INVX1)                         0.1175     0.6372 f
+  U888/Y (NAND2X1)                       0.1706     0.8078 r
+  U866/Y (INVX1)                         0.5475     1.3553 f
+  U863/Y (NOR2X1)                        0.3355     1.6908 r
+  U861/Y (NAND2X1)                       0.1624     1.8532 f
+  U849/Y (NOR4BX1)                       0.6149     2.4681 r
+  U848/Y (INVX1)                         0.4142     2.8823 f
+  U892/Y (AOI21X1)                       1.4910     4.3733 r
+  U868/Y (INVX1)                         0.9824     5.3557 f
+  U845/Y (INVX1)                         1.4249     6.7806 r
+  U1084/Y (AOI31X1)                     -0.0206     6.7600 f
+  U1083/Y (AOI21X1)                      0.1983     6.9583 r
+  U1082/Y (INVX1)                        0.0345     6.9928 f
+  save_state_reg_0_/D (DFFRHQX1)         0.0000     6.9928 f
+  data arrival time                                 6.9928
+
+  clock clk (rise edge)                 20.0000    20.0000
+  clock network delay (ideal)            0.0000    20.0000
+  clock uncertainty                     -0.2500    19.7500
+  save_state_reg_0_/CK (DFFRHQX1)        0.0000    19.7500 r
+  library setup time                    -0.2057    19.5443
+  data required time                               19.5443
+  -----------------------------------------------------------
+  data required time                               19.5443
+  data arrival time                                -6.9928
+  -----------------------------------------------------------
+  slack (MET)                                      12.5514
+
+
+  Startpoint: state_reg_0_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: opa_reg_8_ (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  results_conv       TSMC18_Conservative   typical
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                  0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  state_reg_0_/CK (DFFRHQX1)             0.0000     0.0000 r
+  state_reg_0_/Q (DFFRHQX1)              0.2813     0.2813 r
+  U989/Y (INVX1)                         0.1071     0.3883 f
+  U959/Y (NAND2X1)                       0.1314     0.5197 r
+  U893/Y (INVX1)                         0.1175     0.6372 f
+  U888/Y (NAND2X1)                       0.1706     0.8078 r
+  U866/Y (INVX1)                         0.5475     1.3553 f
+  U863/Y (NOR2X1)                        0.3355     1.6908 r
+  U861/Y (NAND2X1)                       0.1624     1.8532 f
+  U849/Y (NOR4BX1)                       0.6149     2.4681 r
+  U848/Y (INVX1)                         0.4142     2.8823 f
+  U892/Y (AOI21X1)                       1.4910     4.3733 r
+  U868/Y (INVX1)                         0.9824     5.3557 f
+  U845/Y (INVX1)                         1.4249     6.7806 r
+  U971/Y (AOI22X1)                       0.0122     6.7928 f
+  U970/Y (INVX1)                         0.1299     6.9227 r
+  opa_reg_8_/D (DFFRHQX1)                0.0000     6.9227 r
+  data arrival time                                 6.9227
+
+  clock clk (rise edge)                 20.0000    20.0000
+  clock network delay (ideal)            0.0000    20.0000
+  clock uncertainty                     -0.2500    19.7500
+  opa_reg_8_/CK (DFFRHQX1)               0.0000    19.7500 r
+  library setup time                    -0.1170    19.6330
+  data required time                               19.6330
+  -----------------------------------------------------------
+  data required time                               19.6330
+  data arrival time                                -6.9227
+  -----------------------------------------------------------
+  slack (MET)                                      12.7103
+
+
+  Startpoint: state_reg_0_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: opa_reg_7_ (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  results_conv       TSMC18_Conservative   typical
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                  0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  state_reg_0_/CK (DFFRHQX1)             0.0000     0.0000 r
+  state_reg_0_/Q (DFFRHQX1)              0.2813     0.2813 r
+  U989/Y (INVX1)                         0.1071     0.3883 f
+  U959/Y (NAND2X1)                       0.1314     0.5197 r
+  U893/Y (INVX1)                         0.1175     0.6372 f
+  U888/Y (NAND2X1)                       0.1706     0.8078 r
+  U866/Y (INVX1)                         0.5475     1.3553 f
+  U863/Y (NOR2X1)                        0.3355     1.6908 r
+  U861/Y (NAND2X1)                       0.1624     1.8532 f
+  U849/Y (NOR4BX1)                       0.6149     2.4681 r
+  U848/Y (INVX1)                         0.4142     2.8823 f
+  U892/Y (AOI21X1)                       1.4910     4.3733 r
+  U868/Y (INVX1)                         0.9824     5.3557 f
+  U845/Y (INVX1)                         1.4249     6.7806 r
+  U1051/Y (AOI22X1)                      0.0122     6.7928 f
+  U1050/Y (INVX1)                        0.1299     6.9227 r
+  opa_reg_7_/D (DFFRHQX1)                0.0000     6.9227 r
+  data arrival time                                 6.9227
+
+  clock clk (rise edge)                 20.0000    20.0000
+  clock network delay (ideal)            0.0000    20.0000
+  clock uncertainty                     -0.2500    19.7500
+  opa_reg_7_/CK (DFFRHQX1)               0.0000    19.7500 r
+  library setup time                    -0.1170    19.6330
+  data required time                               19.6330
+  -----------------------------------------------------------
+  data required time                               19.6330
+  data arrival time                                -6.9227
+  -----------------------------------------------------------
+  slack (MET)                                      12.7103
+
+
+  Startpoint: state_reg_0_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: opa_reg_6_ (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  results_conv       TSMC18_Conservative   typical
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                  0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  state_reg_0_/CK (DFFRHQX1)             0.0000     0.0000 r
+  state_reg_0_/Q (DFFRHQX1)              0.2813     0.2813 r
+  U989/Y (INVX1)                         0.1071     0.3883 f
+  U959/Y (NAND2X1)                       0.1314     0.5197 r
+  U893/Y (INVX1)                         0.1175     0.6372 f
+  U888/Y (NAND2X1)                       0.1706     0.8078 r
+  U866/Y (INVX1)                         0.5475     1.3553 f
+  U863/Y (NOR2X1)                        0.3355     1.6908 r
+  U861/Y (NAND2X1)                       0.1624     1.8532 f
+  U849/Y (NOR4BX1)                       0.6149     2.4681 r
+  U848/Y (INVX1)                         0.4142     2.8823 f
+  U892/Y (AOI21X1)                       1.4910     4.3733 r
+  U868/Y (INVX1)                         0.9824     5.3557 f
+  U845/Y (INVX1)                         1.4249     6.7806 r
+  U967/Y (AOI22X1)                       0.0122     6.7928 f
+  U966/Y (INVX1)                         0.1299     6.9227 r
+  opa_reg_6_/D (DFFRHQX1)                0.0000     6.9227 r
+  data arrival time                                 6.9227
+
+  clock clk (rise edge)                 20.0000    20.0000
+  clock network delay (ideal)            0.0000    20.0000
+  clock uncertainty                     -0.2500    19.7500
+  opa_reg_6_/CK (DFFRHQX1)               0.0000    19.7500 r
+  library setup time                    -0.1170    19.6330
+  data required time                               19.6330
+  -----------------------------------------------------------
+  data required time                               19.6330
+  data arrival time                                -6.9227
+  -----------------------------------------------------------
+  slack (MET)                                      12.7103
+
+
+  Startpoint: state_reg_0_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: opa_reg_4_ (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  results_conv       TSMC18_Conservative   typical
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                  0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  state_reg_0_/CK (DFFRHQX1)             0.0000     0.0000 r
+  state_reg_0_/Q (DFFRHQX1)              0.2813     0.2813 r
+  U989/Y (INVX1)                         0.1071     0.3883 f
+  U959/Y (NAND2X1)                       0.1314     0.5197 r
+  U893/Y (INVX1)                         0.1175     0.6372 f
+  U888/Y (NAND2X1)                       0.1706     0.8078 r
+  U866/Y (INVX1)                         0.5475     1.3553 f
+  U863/Y (NOR2X1)                        0.3355     1.6908 r
+  U861/Y (NAND2X1)                       0.1624     1.8532 f
+  U849/Y (NOR4BX1)                       0.6149     2.4681 r
+  U848/Y (INVX1)                         0.4142     2.8823 f
+  U892/Y (AOI21X1)                       1.4910     4.3733 r
+  U868/Y (INVX1)                         0.9824     5.3557 f
+  U845/Y (INVX1)                         1.4249     6.7806 r
+  U963/Y (AOI22X1)                       0.0122     6.7928 f
+  U962/Y (INVX1)                         0.1299     6.9227 r
+  opa_reg_4_/D (DFFRHQX1)                0.0000     6.9227 r
+  data arrival time                                 6.9227
+
+  clock clk (rise edge)                 20.0000    20.0000
+  clock network delay (ideal)            0.0000    20.0000
+  clock uncertainty                     -0.2500    19.7500
+  opa_reg_4_/CK (DFFRHQX1)               0.0000    19.7500 r
+  library setup time                    -0.1170    19.6330
+  data required time                               19.6330
+  -----------------------------------------------------------
+  data required time                               19.6330
+  data arrival time                                -6.9227
+  -----------------------------------------------------------
+  slack (MET)                                      12.7103
+
+
+  Startpoint: state_reg_0_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: opa_reg_5_ (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  results_conv       TSMC18_Conservative   typical
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                  0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  state_reg_0_/CK (DFFRHQX1)             0.0000     0.0000 r
+  state_reg_0_/Q (DFFRHQX1)              0.2813     0.2813 r
+  U989/Y (INVX1)                         0.1071     0.3883 f
+  U959/Y (NAND2X1)                       0.1314     0.5197 r
+  U893/Y (INVX1)                         0.1175     0.6372 f
+  U888/Y (NAND2X1)                       0.1706     0.8078 r
+  U866/Y (INVX1)                         0.5475     1.3553 f
+  U863/Y (NOR2X1)                        0.3355     1.6908 r
+  U861/Y (NAND2X1)                       0.1624     1.8532 f
+  U849/Y (NOR4BX1)                       0.6149     2.4681 r
+  U848/Y (INVX1)                         0.4142     2.8823 f
+  U892/Y (AOI21X1)                       1.4910     4.3733 r
+  U868/Y (INVX1)                         0.9824     5.3557 f
+  U845/Y (INVX1)                         1.4249     6.7806 r
+  U1047/Y (AOI22X1)                      0.0122     6.7928 f
+  U1046/Y (INVX1)                        0.1299     6.9227 r
+  opa_reg_5_/D (DFFRHQX1)                0.0000     6.9227 r
+  data arrival time                                 6.9227
+
+  clock clk (rise edge)                 20.0000    20.0000
+  clock network delay (ideal)            0.0000    20.0000
+  clock uncertainty                     -0.2500    19.7500
+  opa_reg_5_/CK (DFFRHQX1)               0.0000    19.7500 r
+  library setup time                    -0.1170    19.6330
+  data required time                               19.6330
+  -----------------------------------------------------------
+  data required time                               19.6330
+  data arrival time                                -6.9227
+  -----------------------------------------------------------
+  slack (MET)                                      12.7103
+
+
+  Startpoint: state_reg_0_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: opa_reg_0_ (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  results_conv       TSMC18_Conservative   typical
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                  0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  state_reg_0_/CK (DFFRHQX1)             0.0000     0.0000 r
+  state_reg_0_/Q (DFFRHQX1)              0.2813     0.2813 r
+  U989/Y (INVX1)                         0.1071     0.3883 f
+  U959/Y (NAND2X1)                       0.1314     0.5197 r
+  U893/Y (INVX1)                         0.1175     0.6372 f
+  U888/Y (NAND2X1)                       0.1706     0.8078 r
+  U866/Y (INVX1)                         0.5475     1.3553 f
+  U863/Y (NOR2X1)                        0.3355     1.6908 r
+  U861/Y (NAND2X1)                       0.1624     1.8532 f
+  U849/Y (NOR4BX1)                       0.6149     2.4681 r
+  U848/Y (INVX1)                         0.4142     2.8823 f
+  U892/Y (AOI21X1)                       1.4910     4.3733 r
+  U868/Y (INVX1)                         0.9824     5.3557 f
+  U845/Y (INVX1)                         1.4249     6.7806 r
+  U1079/Y (AOI22X1)                      0.0122     6.7928 f
+  U1078/Y (INVX1)                        0.1299     6.9227 r
+  opa_reg_0_/D (DFFRHQX1)                0.0000     6.9227 r
+  data arrival time                                 6.9227
+
+  clock clk (rise edge)                 20.0000    20.0000
+  clock network delay (ideal)            0.0000    20.0000
+  clock uncertainty                     -0.2500    19.7500
+  opa_reg_0_/CK (DFFRHQX1)               0.0000    19.7500 r
+  library setup time                    -0.1170    19.6330
+  data required time                               19.6330
+  -----------------------------------------------------------
+  data required time                               19.6330
+  data arrival time                                -6.9227
+  -----------------------------------------------------------
+  slack (MET)                                      12.7103
+
+
+  Startpoint: state_reg_0_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: opa_reg_1_ (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  results_conv       TSMC18_Conservative   typical
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                  0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  state_reg_0_/CK (DFFRHQX1)             0.0000     0.0000 r
+  state_reg_0_/Q (DFFRHQX1)              0.2813     0.2813 r
+  U989/Y (INVX1)                         0.1071     0.3883 f
+  U959/Y (NAND2X1)                       0.1314     0.5197 r
+  U893/Y (INVX1)                         0.1175     0.6372 f
+  U888/Y (NAND2X1)                       0.1706     0.8078 r
+  U866/Y (INVX1)                         0.5475     1.3553 f
+  U863/Y (NOR2X1)                        0.3355     1.6908 r
+  U861/Y (NAND2X1)                       0.1624     1.8532 f
+  U849/Y (NOR4BX1)                       0.6149     2.4681 r
+  U848/Y (INVX1)                         0.4142     2.8823 f
+  U892/Y (AOI21X1)                       1.4910     4.3733 r
+  U868/Y (INVX1)                         0.9824     5.3557 f
+  U845/Y (INVX1)                         1.4249     6.7806 r
+  U983/Y (AOI22X1)                       0.0122     6.7928 f
+  U982/Y (INVX1)                         0.1299     6.9227 r
+  opa_reg_1_/D (DFFRHQX1)                0.0000     6.9227 r
+  data arrival time                                 6.9227
+
+  clock clk (rise edge)                 20.0000    20.0000
+  clock network delay (ideal)            0.0000    20.0000
+  clock uncertainty                     -0.2500    19.7500
+  opa_reg_1_/CK (DFFRHQX1)               0.0000    19.7500 r
+  library setup time                    -0.1170    19.6330
+  data required time                               19.6330
+  -----------------------------------------------------------
+  data required time                               19.6330
+  data arrival time                                -6.9227
+  -----------------------------------------------------------
+  slack (MET)                                      12.7103
+
+
+  Startpoint: state_reg_0_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: opa_reg_2_ (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  results_conv       TSMC18_Conservative   typical
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                  0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  state_reg_0_/CK (DFFRHQX1)             0.0000     0.0000 r
+  state_reg_0_/Q (DFFRHQX1)              0.2813     0.2813 r
+  U989/Y (INVX1)                         0.1071     0.3883 f
+  U959/Y (NAND2X1)                       0.1314     0.5197 r
+  U893/Y (INVX1)                         0.1175     0.6372 f
+  U888/Y (NAND2X1)                       0.1706     0.8078 r
+  U866/Y (INVX1)                         0.5475     1.3553 f
+  U863/Y (NOR2X1)                        0.3355     1.6908 r
+  U861/Y (NAND2X1)                       0.1624     1.8532 f
+  U849/Y (NOR4BX1)                       0.6149     2.4681 r
+  U848/Y (INVX1)                         0.4142     2.8823 f
+  U892/Y (AOI21X1)                       1.4910     4.3733 r
+  U868/Y (INVX1)                         0.9824     5.3557 f
+  U845/Y (INVX1)                         1.4249     6.7806 r
+  U979/Y (AOI22X1)                       0.0122     6.7928 f
+  U978/Y (INVX1)                         0.1299     6.9227 r
+  opa_reg_2_/D (DFFRHQX1)                0.0000     6.9227 r
+  data arrival time                                 6.9227
+
+  clock clk (rise edge)                 20.0000    20.0000
+  clock network delay (ideal)            0.0000    20.0000
+  clock uncertainty                     -0.2500    19.7500
+  opa_reg_2_/CK (DFFRHQX1)               0.0000    19.7500 r
+  library setup time                    -0.1170    19.6330
+  data required time                               19.6330
+  -----------------------------------------------------------
+  data required time                               19.6330
+  data arrival time                                -6.9227
+  -----------------------------------------------------------
+  slack (MET)                                      12.7103
+
+
+  Startpoint: state_reg_0_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: opa_reg_3_ (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  results_conv       TSMC18_Conservative   typical
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                  0.0000     0.0000
+  clock network delay (ideal)            0.0000     0.0000
+  state_reg_0_/CK (DFFRHQX1)             0.0000     0.0000 r
+  state_reg_0_/Q (DFFRHQX1)              0.2813     0.2813 r
+  U989/Y (INVX1)                         0.1071     0.3883 f
+  U959/Y (NAND2X1)                       0.1314     0.5197 r
+  U893/Y (INVX1)                         0.1175     0.6372 f
+  U888/Y (NAND2X1)                       0.1706     0.8078 r
+  U866/Y (INVX1)                         0.5475     1.3553 f
+  U863/Y (NOR2X1)                        0.3355     1.6908 r
+  U861/Y (NAND2X1)                       0.1624     1.8532 f
+  U849/Y (NOR4BX1)                       0.6149     2.4681 r
+  U848/Y (INVX1)                         0.4142     2.8823 f
+  U892/Y (AOI21X1)                       1.4910     4.3733 r
+  U868/Y (INVX1)                         0.9824     5.3557 f
+  U845/Y (INVX1)                         1.4249     6.7806 r
+  U1043/Y (AOI22X1)                      0.0122     6.7928 f
+  U1042/Y (INVX1)                        0.1299     6.9227 r
+  opa_reg_3_/D (DFFRHQX1)                0.0000     6.9227 r
+  data arrival time                                 6.9227
+
+  clock clk (rise edge)                 20.0000    20.0000
+  clock network delay (ideal)            0.0000    20.0000
+  clock uncertainty                     -0.2500    19.7500
+  opa_reg_3_/CK (DFFRHQX1)               0.0000    19.7500 r
+  library setup time                    -0.1170    19.6330
+  data required time                               19.6330
+  -----------------------------------------------------------
+  data required time                               19.6330
+  data arrival time                                -6.9227
+  -----------------------------------------------------------
+  slack (MET)                                      12.7103
+
+
+1
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -analysis_effort low
+Design : results_conv
+Version: O-2018.06-SP1
+Date   : Thu Dec 21 16:59:31 2023
+****************************************
+
+
+Library(s) Used:
+
+    typical (File: /classes/ee620/maieee/lib/tsmc-0.18/synopsys/typical.db)
+
+
+Operating Conditions: typical   Library: typical
+Wire Load Model Mode: segmented
+
+Design        Wire Load Model            Library
+------------------------------------------------
+results_conv           TSMC18_Conservative
+                                         typical
+results_conv_DW01_sub_0
+                       TSMC18_Conservative
+                                         typical
+results_conv_DW01_sub_1
+                       TSMC18_Conservative
+                                         typical
+results_conv_DW01_sub_2
+                       TSMC18_Conservative
+                                         typical
+results_conv_DW01_sub_3
+                       TSMC18_Conservative
+                                         typical
+results_conv_DW01_sub_4
+                       TSMC18_Conservative
+                                         typical
+results_conv_DW01_sub_5
+                       TSMC18_Conservative
+                                         typical
+
+
+Global Operating Voltage = 1.8  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+  Cell Internal Power  = 573.5401 uW   (89%)
+  Net Switching Power  =  69.6181 uW   (11%)
+                         ---------
+Total Dynamic Power    = 643.1582 uW  (100%)
+
+Cell Leakage Power     = 130.6656 nW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network      0.0000            0.0000            0.0000            0.0000  (   0.00%)
+register           0.5075        6.5335e-03           53.7214            0.5141  (  79.92%)
+sequential     4.5168e-02        7.1884e-04           34.5910        4.5921e-02  (   7.14%)
+combinational  2.0870e-02        6.2366e-02           42.3532        8.3278e-02  (  12.95%)
+--------------------------------------------------------------------------------------------------
+Total              0.5735 mW     6.9618e-02 mW       130.6656 nW         0.6433 mW
+1
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : results_conv
+Version: O-2018.06-SP1
+Date   : Thu Dec 21 16:59:31 2023
+****************************************
+
+
+Library(s) Used:
+
+    typical (File: /classes/ee620/maieee/lib/tsmc-0.18/synopsys/typical.db)
+
+
+Operating Conditions: typical   Library: typical
+Wire Load Model Mode: segmented
+
+Design        Wire Load Model            Library
+------------------------------------------------
+results_conv           TSMC18_Conservative
+                                         typical
+results_conv_DW01_sub_0
+                       TSMC18_Conservative
+                                         typical
+results_conv_DW01_sub_1
+                       TSMC18_Conservative
+                                         typical
+results_conv_DW01_sub_2
+                       TSMC18_Conservative
+                                         typical
+results_conv_DW01_sub_3
+                       TSMC18_Conservative
+                                         typical
+results_conv_DW01_sub_4
+                       TSMC18_Conservative
+                                         typical
+results_conv_DW01_sub_5
+                       TSMC18_Conservative
+                                         typical
+
+
+Global Operating Voltage = 1.8  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000pf
+    Time Units = 1ns
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1nW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+results_conv                           6.96e-02    0.574  130.666    0.643 100.0
+  r370 (results_conv_DW01_sub_5)       6.23e-04 6.82e-04    2.134 1.31e-03   0.2
+  r373 (results_conv_DW01_sub_4)       4.83e-04 5.54e-04    2.134 1.04e-03   0.2
+  sub_457 (results_conv_DW01_sub_3)    5.94e-04 6.42e-04    2.134 1.24e-03   0.2
+  sub_461 (results_conv_DW01_sub_2)    4.01e-04 4.06e-04    2.134 8.10e-04   0.1
+  sub_521 (results_conv_DW01_sub_1)    4.83e-04 4.76e-04    1.867 9.60e-04   0.1
+  sub_527 (results_conv_DW01_sub_0)    5.74e-04 5.78e-04    1.867 1.15e-03   0.2
+1
+ 
+****************************************
+Report : net fanout
+        -high_fanout
+Design : results_conv
+Version: O-2018.06-SP1
+Date   : Thu Dec 21 16:59:44 2023
+****************************************
+
+
+Operating Conditions: typical   Library: typical
+Wire Load Model Mode: segmented
+
+Design        Wire Load Model            Library
+------------------------------------------------
+results_conv           TSMC18_Conservative
+                                         typical
+results_conv_DW01_sub_0
+                       TSMC18_Conservative
+                                         typical
+results_conv_DW01_sub_1
+                       TSMC18_Conservative
+                                         typical
+results_conv_DW01_sub_2
+                       TSMC18_Conservative
+                                         typical
+results_conv_DW01_sub_3
+                       TSMC18_Conservative
+                                         typical
+results_conv_DW01_sub_4
+                       TSMC18_Conservative
+                                         typical
+results_conv_DW01_sub_5
+                       TSMC18_Conservative
+                                         typical
+
+
+Attributes:
+   dr - drc disabled
+    c - annotated capacitance
+    d - dont_touch
+    i - ideal_net
+    I - ideal_network
+    p - includes pin load
+    r - annotated resistance
+    h - high fanout
+
+Net                 Fanout   Attributes   Capacitance   Driver
+--------------------------------------------------------------------------------
+1
