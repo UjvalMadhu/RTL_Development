@@ -1,0 +1,95 @@
+xrun(64): 23.09-s002: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	23.09-s002: Started on Mar 03, 2025 at 22:19:44 EST
+xrun
+	+xmaccess+r
+	+xmvpicompat+1364v1995
+	+nowarnTFNPC
+	+nowarnIWFA
+	+nowarnSVTL
+	+nowarnSDFNCAP
+	-clean
+	-xmlibdirname /tmp/um2072/worklib
+	+sv
+	-sysv
+	+xmsvseed+random
+	+gui
+	+xmlinedebug
+	-s
+	-f etc/results_conv.rtl.f
+		+nowarnTFNPC
+		+nowarnIWFA
+		+nowarnSVTL
+		src/timescale.v
+		src/results_conv_test.sv
+		src/results_conv.v
+		-v /classes/ee620/maieee/lib/tsmc-0.18/verilog/tsmc18.v
+		+librescan
+	-input etc/dumpsaif.tcl
+xrun: *W,BADPRF: The xmlinedebug option may have an adverse performance impact.
+xrun: *N,CLEAN: Removing existing directory /tmp/um2072/worklib.
+file: src/timescale.v
+file: src/results_conv_test.sv
+	module worklib.test:sv
+		errors: 0, warnings: 0
+file: src/results_conv.v
+	module worklib.results_conv:v
+		errors: 0, warnings: 0
+xmvlog: *W,LIBNOU: Library "/classes/ee620/maieee/lib/tsmc-0.18/verilog/tsmc18.v" given but not used.
+	Total errors/warnings found outside modules and primitives:
+		errors: 0, warnings: 1
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		test
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.test:sv <0x08753072>
+			streams:  15, words: 18170
+		worklib.results_conv:v <0x05c6cc75>
+			streams:   8, words:  2601
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:              21      21
+		Scalar wires:            7       -
+		Vectored wires:          3       -
+		Named events:            2       2
+		Always blocks:          12      12
+		Initial blocks:          6       6
+		Cont. assignments:       5       2
+		Pseudo assignments:      4       -
+		Assertions:              3       3
+		Simulation timescale:  1ns
+	Writing initial simulation snapshot: worklib.test:sv
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+SVSEED set randomly from command line: 11943641
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /tools/rhel6/cadence/xcelium/current/tools/inca/files/xmsimrc
+xcelium> 
+xcelium> #
+xcelium> # dump switching activity for power analysis
+xcelium> #
+xcelium> dumpsaif -overwrite -hierarchy -scope test.top -output ./saif/results_conv_bw.saif
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm test.NO_REQ_NO_GNT test.RESET_BEHAVIOUR test.__assert_1 test.nreq_ngnt test.reset_beh test.seed
+Created probe 1
+xcelium> run
+Simulation interrupted at 33680575 NS + 3
+xcelium> probe -create -shm test.top.clk_i test.top.gnt_nxt test.top.req_i test.top.rst_ni
+Created probe 2
+xcelium> reset
+SVSEED set randomly from command line: -383350103
+Loaded snapshot worklib.test:sv
+xcelium> run
+Simulation interrupted at 5502865 NS + 0
+xcelium> ^C
+xcelium> exit
+...Regained control from SimVision
+-------------------------------------
+TOOL:	xrun(64)	23.09-s002: Exiting on Mar 03, 2025 at 22:22:54 EST  (total: 00:03:10)

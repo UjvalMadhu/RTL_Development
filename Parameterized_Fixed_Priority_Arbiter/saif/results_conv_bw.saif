@@ -1,0 +1,74 @@
+(SAIFILE
+  (SAIFVERSION "2.0")
+  (DIRECTION "backward")
+  (DESIGN )
+  (DATE "Mar 03 2025 22:22:53 EST")
+  (VENDOR "Cadence Design Systems, Inc")
+  (PROGRAM_NAME "NC Simulation Engine")
+  (VERSION "TOOL:	xmsim(64)	23.09-s002")
+  (DIVIDER . )
+  (TIMESCALE 1 fs )
+  (DURATION  5502865000000)
+  (INSTANCE test
+  (INSTANCE "results_conv" top
+     (PORT
+        (clk_i
+           (T0 2751435000000) (T1 2751430000000) (TX 0)
+           (TZ 0) (TB 0) (TC 1100572)
+        )
+        (rst_ni
+           (T0 25000000) (T1 5502840000000) (TX 0)
+           (TZ 0) (TB 0) (TC 1)
+        )
+        (req_i\[4\]
+           (T0 5502865000000) (T1 0) (TX 0)
+           (TZ 0) (TB 0) (TC 0)
+        )
+        (req_i\[3\]
+           (T0 5502865000000) (T1 0) (TX 0)
+           (TZ 0) (TB 0) (TC 0)
+        )
+        (req_i\[2\]
+           (T0 5502865000000) (T1 0) (TX 0)
+           (TZ 0) (TB 0) (TC 0)
+        )
+        (req_i\[1\]
+           (T0 5502865000000) (T1 0) (TX 0)
+           (TZ 0) (TB 0) (TC 0)
+        )
+        (req_i\[0\]
+           (T0 5502865000000) (T1 0) (TX 0)
+           (TZ 0) (TB 0) (TC 0)
+        )
+        (gnt_o\[4\]
+           (T0 5502865000000) (T1 0) (TX 0)
+           (TZ 0) (TB 0) (TC 0)
+        )
+        (gnt_o\[3\]
+           (T0 5502865000000) (T1 0) (TX 0)
+           (TZ 0) (TB 0) (TC 0)
+        )
+        (gnt_o\[2\]
+           (T0 5502865000000) (T1 0) (TX 0)
+           (TZ 0) (TB 0) (TC 0)
+        )
+        (gnt_o\[1\]
+           (T0 5502865000000) (T1 0) (TX 0)
+           (TZ 0) (TB 0) (TC 0)
+        )
+        (gnt_o\[0\]
+           (T0 5502865000000) (T1 0) (TX 0)
+           (TZ 0) (TB 0) (TC 0)
+        )
+     )
+  (INSTANCE genblk1\[1\]
+  )
+  (INSTANCE genblk1\[2\]
+  )
+  (INSTANCE genblk1\[3\]
+  )
+  (INSTANCE genblk1\[4\]
+  )
+  )
+  )
+)
