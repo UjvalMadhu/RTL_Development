@@ -2,7 +2,7 @@
 ///             Synchronous Parameterized Fixed Priority Arbiter                ///
 ///                                                                             ///
 ///////////////////////////////////////////////////////////////////////////////////
-///   Top Module:  Asynchronous Design                                          ///
+///   Test Bench: Assertions, Coverage, Constrained Randomization               ///
 ///   Reference: Rahul Behl, quicksilicon.in                                    ///
 ///   Copyright 2025 Ujval Madhu, All rights reserved                           ///
 ///////////////////////////////////////////////////////////////////////////////////
@@ -16,7 +16,7 @@
 
 module test;
 	parameter num_ports = 5;
-	parameter num_tests = 100;
+	parameter num_tests = 1000;
 	parameter CLK_PERIOD = 10;   // 10ns clock
 
 
@@ -47,12 +47,57 @@ module test;
 		.gnt_o(gnt_o)
 		);
 
+    
+   
+    /////////////////////////
+	// Functional Coverage //
+	/////////////////////////
 
-	// Assertions Based Verification
 
+	covergroup req_gnt_cg @(posedge clk_i iff rst_ni);  // Automatically samples on clk when rst_ni high
+
+		coverpoint req_i {
+
+			bins zeros       = {5'd0};
+			bins single[5]   = {1,2,4,8,16}; 
+			bins multiple    = {[3:31]} with ($countones(item) > 1);
+			bins all_ones    = {5'b11111};
+			bins alternate1  = {5'b10101};
+			bins alternate2  = {5'b01010};
+
+			bins zeros_to_ones = (5'b00000 => 5'b11111);
+			bins ones_to_zeros = (5'b11111 => 5'b00000);
+		}
+
+		coverpoint gnt_o {
+
+			bins zeros       = {5'd0};
+			bins gnt_0       = {5'b00001};
+			bins gnt_1       = {5'b00010};
+			bins gnt_2       = {5'b00100};
+			bins gnt_3       = {5'b01000};
+			bins gnt_4       = {5'b10000};
+
+			illegal_bins gnt_x = {[3:31]} with ($countones(item) > 1);
+		}
+
+		option.per_instance = 1;
+		option.comment = "Coverage for Request and Grant";
+	endgroup : req_gnt_cg
+
+
+	// Instantiating the Covergroup
+	req_gnt_cg cg = new();
+	
+	
+	/////////////////////////////////////
+	//  Assertions Based Verification  //
+	/////////////////////////////////////
+	
+	
 	// 1. Immediate assertion for verifing atmost 1 gnt_o signal is high
 	 always @(gnt_o) begin
-	 	assert($onehot0(gnt_o))
+	 	GRANT_CHECK: assert($onehot0(gnt_o))
 	 	else $error("gnt_o Assertion error: Multiple Grants Detected, gnt_o = %0b at %0t", gnt_o, $time);
 	 end
 
@@ -71,10 +116,10 @@ module test;
 	NO_REQ_NO_GNT: assert property(nreq_ngnt) else $error("NO_REQ_NO_GNT Behavior Assertion Error Detected, req_i =%0b, gnt_o = %0b at %0t", req_i, gnt_o, $time);
 
 
-
-
-
-	// Main Test Sequence
+	
+	/////////////////////////
+	//  Main Test Sequence //
+	/////////////////////////
 
 	initial begin
 		
@@ -88,6 +133,7 @@ module test;
 		rst_ni = 1;
 		repeat(2) @(posedge clk_i);
 
+		
 		//1. Testing Single Bit Requests
 		
 		for(int i = 0; i < num_ports; i++) begin
@@ -102,6 +148,7 @@ module test;
 		$display("----------------------");
 
 
+		
 		//2. Testing Random Requests
 
 		for(int i = 0; i < num_tests; i++) begin
@@ -118,7 +165,9 @@ module test;
 		$display("----------------------------");
 
 
+		
 		//3. Reset Testing
+		
 		for(int i = 0; i < 20; i++) begin
 			
 			req_i  = $urandom % (1 << num_ports);
@@ -132,12 +181,37 @@ module test;
 		$display("Reset test Passed");
 		$display("-------------------");
 
-		$finish;
+		// Generating Coverage report
+
+		// $display("Coverage Report");
+		// $coverage("Summary");
+		// $coverage("save", "cov.db");
+
+		#(CLK_PERIOD*10) $finish;
 
 	end
 
 
-	// Verify Gnt_o task: Creates a model of the gnt_o signal and checks if they are the same
+	// Adding signals to the waveform
+	
+	initial begin
+	    
+	    // Waveform dumping
+	    $dumpfile("test.vcd");
+	    $dumpvars(0, test);
+	    
+	    
+	    // // Wave dumping and coverage collection for Xcelium 
+	    // $shm_open("sync_fp_arb_tb.shm");
+	    // $shm_probe("AC"); // Dump all signals in the design
+	    
+	    // Enable coverage collection
+	    // $coverage("on");
+	    // $coverate_save("coverage.txt");
+	
+	end
+
+	///// Verify Gnt_o task: Creates a model of the gnt_o signal and checks if they are the same /////
 	
 	task verify_gnt();
 		logic [num_ports-1:0] expected_gnt;
@@ -166,6 +240,5 @@ module test;
 		end 
 
 	endtask : verify_gnt
-
 
 endmodule
