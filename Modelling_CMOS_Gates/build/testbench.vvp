@@ -1,0 +1,67 @@
+#! /usr/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2009.vpi";
+S_0x55e2acb0cf40 .scope package, "$unit" "$unit" 2 1;
+ .timescale 0 0;
+S_0x55e2acb0d0d0 .scope module, "testbench" "testbench" 3 17;
+ .timescale -9 -12;
+v0x55e2acb1f260_0 .var "in", 0 0;
+RS_0x7fa27613e078 .resolv tri, L_0x55e2acb1f540, L_0x55e2acb1f6a0;
+v0x55e2acb1f330_0 .net8 "out", 0 0, RS_0x7fa27613e078;  2 drivers, strength-aware
+S_0x55e2acad3490 .scope module, "inv1" "cmos_inv" 3 23, 4 17 0, S_0x55e2acb0d0d0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "in";
+    .port_info 1 /OUTPUT 1 "out";
+L_0x55e2acb1f400 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_0x55e2acb1f540 .functor NMOS 1, L_0x55e2acb1f400, v0x55e2acb1f260_0, C4<0>, C4<0>;
+L_0x55e2acb1f4a0 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_0x55e2acb1f6a0 .functor PMOS 1, L_0x55e2acb1f4a0, v0x55e2acb1f260_0, C4<0>, C4<0>;
+v0x55e2acad3670_0 .net8 "gnd", 0 0, L_0x55e2acb1f400;  1 drivers, strength-aware
+v0x55e2acb1efe0_0 .net "in", 0 0, v0x55e2acb1f260_0;  1 drivers
+v0x55e2acb1f0a0_0 .net8 "out", 0 0, RS_0x7fa27613e078;  alias, 2 drivers, strength-aware
+v0x55e2acb1f140_0 .net8 "vdd", 0 0, L_0x55e2acb1f4a0;  1 drivers, strength-aware
+    .scope S_0x55e2acb0d0d0;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x55e2acb1f260_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 10, 0, 32;
+T_0.0 %dup/vec4;
+    %pushi/vec4 0, 0, 32;
+    %cmp/s;
+    %jmp/1xz T_0.1, 5;
+    %jmp/1 T_0.1, 4;
+    %pushi/vec4 1, 0, 32;
+    %sub;
+    %vpi_func 3 32 "$random" 32 {0 0 0};
+    %pushi/vec4 2, 0, 32;
+    %mod/s;
+    %pad/s 1;
+    %store/vec4 v0x55e2acb1f260_0, 0, 1;
+    %delay 10000, 0;
+    %vpi_call/w 3 34 "$display", "Input: %b, Output: %b", v0x55e2acb1f260_0, v0x55e2acb1f330_0 {0 0 0};
+    %jmp T_0.0;
+T_0.1 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_0;
+    .scope S_0x55e2acb0d0d0;
+T_1 ;
+    %vpi_call/w 3 40 "$dumpfile", "testbench.vcd" {0 0 0};
+    %vpi_call/w 3 41 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x55e2acb0d0d0 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "-";
+    "./rtl/testbench.sv";
+    "./rtl/inverter.v";
