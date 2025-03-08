@@ -15,6 +15,10 @@ IVERILOG_FLAGS := -g2012 -Wall -I$(SRC)
 
 SRC_FILES :=$(SRC)/timescale.v \
 			$(SRC)/inverter.v \
+			$(SRC)/nand.v \
+			$(SRC)/nor.v \
+			$(SRC)/xor.v \
+			$(SRC)/xnor.v \
 			$(SRC)/testbench.sv
 			             
 			 
