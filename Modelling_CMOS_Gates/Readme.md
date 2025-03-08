@@ -1,18 +1,29 @@
-# Modelling CMOS Gates
+# Switch level Modelling of CMOS Gates and Boolean Logic
 
 The projects models standard CMOS gates and boolean logic using Verilog HDL.
+Although HDL usually works at a higher level of abstraction, like registers, dataflow and control, modelling transistor level designs have some advantages:
+-  switch-level modeling represents circuits at the transistor level, which theoretically allows for more precise control and potentially more efficient implementations.
+- Learning and Understanding of CMOS circuits
+- Build custom digital circuits in rare cases, where standard cells may not be available
+- Analyze and simulate designs at the transistor level for power and timing
+
+However, this is not widely used due many reasons:
+- With switch-level design, we're directly dealing with transistors, so Process technology variations have a more immediate impact on our circuit behavior. Gate-level abstractions, by comparison, provide standard cells that have already been characterized across these variations, making designs more robust.
+- Transistor sizing can be an issue as standard verilog doesn't support it, but verilog-A or verilog-AMS can.
+- Increased design and verification complexity
+- Tool support is limited for switch level synthesis as most commercial EDA tools are optimized for gate-level synthesis, with comprehensive libraries and optimization algorithms.
+
 
 
 ## Project Index
 
 | Sl No | Project | Description |
 |-------|---------|-------------|
-| 1.    | CMOS Inverter | Standard CMOS Inverter |
-| 2.    | Clock_Gen Project | Creates Clocks using various Techniques |
-| 3.    | Priority Encoder  | Verifies a Priority encoder using Random Stimulus |
-| 4.    | 8x1 Mux | Verifies a Standard 8x1 Mux using random Stimulus |
-| 5.    | 4-Bit Ripple Carry Adder | Designs a 4-Bit Ripple Carry Adder and verifies it using using randomized cocotb testbench |
-| 6.    | 16x8 Random Access Memory | Designs a 16x8 bit RAM and verifies it using a Self Checking, Constrained Randomized Test Bench and Functional Model |
+| 1.    | Inverter | Standard CMOS Inverter |
+| 2.    | NAND GATE | Standard 2 input CMOS Nand Gate |
+| 3.    | NOR GATE  | Standard 2 input CMOS NOR Gate |
+| 4.    | XOR GATE | Standard 2 input CMOS XOR Gate |
+| 5.    | XNOR GATE | Standard 2 input CMOS XNOR Gate |
 
 
 ## Tools Used
@@ -35,14 +46,29 @@ The projects models standard CMOS gates and boolean logic using Verilog HDL.
     - Graphical User Interface (GUI): GTKWave has a graphical user interface, allowing users to interact with waveforms visually.
 
 
+## Build Process
 
-
-
-
+```bash
+make all     # Performs the entire process (compilation, simulation, and waveform viewing)
+make compile # Compiles the design files into a simulation executable
+make sim     # Runs the simulation and generates waveform data
+make wave    # Opens the waveform viewer to visualize simulation results
+make clean   # Removes all generated files and directories
+```
 
 ## Documentation:
 
+1. The Transistor Switch Level design of an inverter is shown here, the gate, source and drain of the PMOS and NMOS are indicated:
+<p>
+    <img src = "./figures/cmos_inv.jpg" width = "480" height = "370" />
+    <figcaption>CMOS Inverter</figcaption>
+</p>
 
+2. The Transistor Switch Level designs of NAND, NOR, XOR and XNOR are shown here:
+<p>
+    <img src = "./figures/cmos_inv.jpg" width = "480" height = "370" />
+    <figcaption>NAND, NOR, XOR and XNOR (Image ref: IIT Guwahati)</figcaption>
+</p>
 
 
 
