@@ -34,17 +34,17 @@ This project is organized as follows:
 * **build/:** Contains compiled output files.
 * **figures/:** Stores generated figures or images.
 * **rtl/:** Holds the Register Transfer Level (RTL) Verilog source code files for the CMOS gates.
-    * **carry_FA.v:** Verilog module for a carry circuit, likely part of a Full Adder.
+    * **carry_FA.v:** Verilog module for a carry circuit of a Low Power Full Adder.
     * **inverter.v:** Verilog module for an inverter gate.
     * **nand.v:** Verilog module for a NAND gate.
     * **nor.v:** Verilog module for a NOR gate.
-    * **testbench.sv:** SystemVerilog testbench for verifying the functionality of the gates.
+    * **testbench.sv:** SystemVerilog testbench for verifying the functionality of the designs.
     * **timescale.v:** Verilog file defining the timescale used for simulation.
     * **xnor.v:** Verilog module for an XNOR gate.
     * **xor.v:** Verilog module for an XOR gate.
 * **waves/:** Stores waveform data files.
-* **Makefile:** A file used to automate the build and simulation process.
-* **Readme.md:** The project's documentation file.
+* **Makefile:** File used to automate the build and simulation process.
+* **Readme.md:** Documentation file.
 
 
 
