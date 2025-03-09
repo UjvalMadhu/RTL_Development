@@ -19,6 +19,7 @@ SRC_FILES :=$(SRC)/timescale.v \
 			$(SRC)/nor.v \
 			$(SRC)/xor.v \
 			$(SRC)/xnor.v \
+			$(SRC)/carry_FA.v\
 			$(SRC)/testbench.sv
 			             
 			 

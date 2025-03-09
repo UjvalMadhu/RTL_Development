@@ -24,18 +24,18 @@ module cmos_xnor(
     wire w1p, w2p, w3n,w4n;
 
     // Argument order (Drain, Source, gate)
-    // PMOS A.B + A'.B' 
-    pmos p1(w2p, vdd, in_b);
+    // PMOS A.B + A'.B' = XNOR         
+    pmos p1(w1p, vdd, in_b);
     pmos p2(out, w1p, in_a);
 
     pmos p3(w2n, vdd, ~in_b);
     pmos p4(out, w2n, ~in_a);
 
-    // NMOS A.B' + A'.B ; complement of the PMOS structure
-    nmos n1(w1n, gnd, in_a);
-    nmos n2(out, w1n, ~in_b);
+    // NMOS A.B' + A'.B  ; complement of the PMOS
+    nmos n1(w1n, gnd, in_b);
+    nmos n2(out, w1n, ~in_a);
 
-    nmos n3(w2n, gnd, ~in_a);
-    nmos n4(out, w2n, in_b);
+    nmos n3(w2n, gnd, ~in_b);
+    nmos n4(out, w2n, in_a);
 
 endmodule

@@ -1,5 +1,5 @@
 $date
-	Sat Mar  8 10:04:01 2025
+	Sun Mar  9 10:01:00 2025
 $end
 $version
 	Icarus Verilog
@@ -13,56 +13,71 @@ $var wire 1 " out_nand $end
 $var wire 1 # out_nor $end
 $var wire 1 $ out_xnor $end
 $var wire 1 % out_xor $end
-$var reg 1 & in $end
-$var reg 1 ' in_a $end
-$var reg 1 ( in_b $end
-$var integer 32 ) seed [31:0] $end
+$var wire 1 & c_out $end
+$var reg 1 ' c_in $end
+$var reg 1 ( in $end
+$var reg 1 ) in_a $end
+$var reg 1 * in_b $end
+$var integer 32 + seed [31:0] $end
+$scope module carry_m $end
+$var wire 1 & c_out $end
+$var wire 1 , gnd $end
+$var wire 1 ) in_a $end
+$var wire 1 * in_b $end
+$var wire 1 ' in_c $end
+$var wire 1 - vdd $end
+$var wire 1 . w $end
+$var wire 1 / w1n $end
+$var wire 1 0 w1p $end
+$var wire 1 1 w2n $end
+$var wire 1 2 w2p $end
+$var wire 1 3 w3n $end
+$upscope $end
 $scope module inv1 $end
-$var wire 1 * gnd $end
-$var wire 1 & in $end
+$var wire 1 4 gnd $end
+$var wire 1 ( in $end
 $var wire 1 ! out $end
-$var wire 1 + vdd $end
+$var wire 1 5 vdd $end
 $upscope $end
 $scope module nand1 $end
-$var wire 1 , gnd $end
-$var wire 1 ' in_a $end
-$var wire 1 ( in_b $end
+$var wire 1 6 gnd $end
+$var wire 1 ) in_a $end
+$var wire 1 * in_b $end
 $var wire 1 " out $end
-$var wire 1 - vdd $end
-$var wire 1 . w1 $end
+$var wire 1 7 vdd $end
+$var wire 1 8 w1 $end
+$upscope $end
+$scope module nand2 $end
+$var wire 1 9 gnd $end
+$var wire 1 ) in_a $end
+$var wire 1 * in_b $end
+$var wire 1 $ out $end
+$var wire 1 : vdd $end
+$var wire 1 ; w1n $end
+$var wire 1 < w1p $end
+$var wire 1 = w2n $end
 $upscope $end
 $scope module nor1 $end
-$var wire 1 / gnd $end
-$var wire 1 ' in_a $end
-$var wire 1 ( in_b $end
+$var wire 1 > gnd $end
+$var wire 1 ) in_a $end
+$var wire 1 * in_b $end
 $var wire 1 # out $end
-$var wire 1 0 vdd $end
-$var wire 1 1 w1 $end
-$upscope $end
-$scope module xnor1 $end
-$var wire 1 2 gnd $end
-$var wire 1 ' in_a $end
-$var wire 1 ( in_b $end
-$var wire 1 $ out $end
-$var wire 1 3 vdd $end
-$var wire 1 4 w1n $end
-$var wire 1 5 w1p $end
-$var wire 1 6 w2n $end
-$var wire 1 7 w2p $end
+$var wire 1 ? vdd $end
+$var wire 1 @ w1 $end
 $upscope $end
 $scope module xor1 $end
-$var wire 1 8 gnd $end
-$var wire 1 ' in_a $end
-$var wire 1 ( in_b $end
+$var wire 1 A gnd $end
+$var wire 1 ) in_a $end
+$var wire 1 * in_b $end
 $var wire 1 % out $end
-$var wire 1 9 vdd $end
-$var wire 1 : w1n $end
-$var wire 1 ; w1p $end
-$var wire 1 < w2n $end
-$var wire 1 = w2p $end
+$var wire 1 B vdd $end
+$var wire 1 C w1n $end
+$var wire 1 D w1p $end
+$var wire 1 E w2n $end
+$var wire 1 F w2p $end
 $upscope $end
 $scope begin $ivl_for_loop0 $end
-$var integer 32 > i [31:0] $end
+$var integer 32 G i [31:0] $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
@@ -71,129 +86,251 @@ $dumpall
 $end
 #0
 $dumpvars
-b0 >
+b0 G
+zF
+0E
+1D
+zC
+1B
+0A
+1@
+1?
+0>
 0=
-z<
-1;
-z:
-19
-08
+1<
+z;
+1:
+09
+z8
 17
 06
-z5
-z4
-13
-02
-11
+15
+04
+x3
+12
+z1
 10
-0/
-z.
+z/
+1.
 1-
 0,
-1+
+b11000011110100100110000111010101 +
 0*
-b11000011110100100110000111010101 )
+0)
 0(
-0'
+x'
 0&
 0%
-z$
+1$
 1#
 1"
 1!
 $end
 #10000
-16
 1=
-z%
-0"
-0.
-z7
-0<
-1(
-z1
-0#
-1$
-04
-z;
-1'
-0!
+zE
 1&
-b1 >
+1F
+03
+1'
+0/
+01
+z0
+z2
+0"
+08
+z<
+0;
+0C
+1*
+0.
+1$
+z@
+0#
+zD
+1)
+0!
+1(
+b1 G
 #30000
-b10 >
-#50000
-1!
-0&
-b11 >
-#70000
-b100 >
-#90000
-z6
 0$
-x=
-1"
-z.
-17
-x%
-z<
-0(
-b101 >
-#110000
-x6
-z=
-0.
-z7
-1%
-0<
-1(
-11
-0#
-x$
-z4
-1;
-0'
-0!
-1&
-b110 >
-#130000
-b111 >
-#150000
-06
-0%
 0=
-z.
-1#
-17
-z$
-z<
-0(
-1!
-0&
-b1000 >
-#170000
-x6
-1%
-z=
-0.
-0#
-z7
-x$
-0<
-1(
-0!
-1&
-b1001 >
-#190000
-1$
-16
-1=
-0"
+0E
+z/
 z1
-04
-z%
+12
+10
+1"
+z8
+1<
 z;
+1%
+zC
+0*
+b10 G
+#50000
+1=
+zE
+zF
+0/
+01
+z2
+08
+z<
+0;
+1%
+0C
+1*
+0.
+0$
+1@
+0#
+1D
+0)
+b11 G
+#70000
+0=
+0E
+1F
+z/
+z1
+12
+z8
+1<
+z;
+zC
+0*
+10
+1"
+0$
+z@
+zD
+1%
+1)
+1!
+0(
+b100 G
+#90000
+1$
+1=
+zE
+z3
+0'
+0/
+01
+z0
+z2
+0"
+08
+z<
+0;
+0%
+0C
+1*
+b101 G
+#110000
+0=
+0E
+0&
+zF
+z/
+z1
+z8
+1<
+z;
+1#
+zC
+0*
+1.
+12
+10
+1"
+1@
+1D
+0%
+0)
+0!
+1(
+b110 G
+#130000
+1&
+1=
+1%
+zE
+03
+0.
+z2
 1'
-b1010 >
+0/
+01
+08
+z<
+0$
+0;
+0#
+0C
+1*
+b111 G
+#150000
+0&
+0=
+0E
+1F
+z3
+1.
+0'
+z/
+z1
+12
+z8
+1<
+z;
+zC
+0*
+10
+1"
+0$
+z@
+zD
+1%
+1)
+b1000 G
+#170000
+1=
+zE
+zF
+0/
+01
+08
+z<
+0;
+1%
+0C
+1*
+0$
+1@
+0#
+1D
+0)
+1!
+0(
+b1001 G
+#190000
+1&
+1F
+03
+1'
+0.
+z2
+z0
+0"
+1$
+z@
+zD
+0%
+1)
+0!
+1(
+b1010 G
 #210000
-b1011 >
+b1011 G
