@@ -17,11 +17,13 @@
 module testbench;
     reg in;
     reg in_a, in_b;
+    reg c_in;
     wire out_inv;
     wire out_nand;
     wire out_nor;
     wire out_xor;
     wire out_xnor;
+    wire c_out;
     integer seed;
 
     // Instantiating Inverter
@@ -37,7 +39,10 @@ module testbench;
     cmos_xor xor1(.in_a(in_a),.in_b(in_b), .out(out_xor));
 
     // Instantiating NOR Gate
-    cmos_xnor xnor1(.in_a(in_a),.in_b(in_b), .out(out_xnor));
+    cmos_xnor nand2(.in_a(in_a),.in_b(in_b), .out(out_xnor));
+
+    // Instantiating Carry Gen Module
+    carry_gen carry_m(.in_a(in_a),.in_b(in_b), .in_c(c_in), .c_out(c_out));
 
     // Random Stimulus Generation
     initial begin
@@ -53,13 +58,17 @@ module testbench;
             in = $random % 2;
             in_a = $random % 2;
             in_b = $random % 2;
+            c_in = $random % 2;
+
             #10;
+            
             $display("-----------Test %0d---------- @ %0t", i, $time);
             $display("Inverter: Input: %b, Output: %b", in, out_inv);
             $display("NAND: Input A: %b, Input B: %b, Output: %b", in_a, in_b, out_nand);
             $display("NOR: Input A: %b, Input B: %b, Output: %b", in_a, in_b, out_nor);
             $display("XOR: Input A: %b, Input B: %b, Output: %b", in_a, in_b, out_xor);
             $display("XNOR: Input A: %b, Input B: %b, Output: %b", in_a, in_b, out_xnor);
+            $display("Carry Generator: Input A: %b, Input B: %b, Carry_In: %b, Carry_Out: %b", in_a, in_b, c_in, c_out);
             
             #10
             // Verification
