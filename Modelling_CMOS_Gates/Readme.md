@@ -83,13 +83,13 @@ make clean   # Removes all generated files and directories
 ### Standard Gates
 1. The Transistor Switch Level design of an inverter is shown here, the gate, source and drain of the PMOS and NMOS are indicated:
 <p>
-    <img src = "./figures/cmos_inv.jpg" width = "480" height = "370" />
+    <img src = "./figures/cmos_inv.jpg" width = "480" height = "450" />
     <figcaption>CMOS Inverter</figcaption>
 </p>
 
 2. The Transistor Switch Level designs of NAND, NOR, XOR and XNOR are shown here:
 <p>
-    <img src = "./figures/all_gates.png" width = "480" height = "550" />
+    <img src = "./figures/all_gates.png"/>
     <figcaption>NAND, NOR, XOR and XNOR (Image ref: IIT Guwahati)</figcaption>
 </p>
 
@@ -97,10 +97,10 @@ make clean   # Removes all generated files and directories
 A switch level implementation of the Carry logic of Full Adder is done, we know that the logic of carry in a Full Adder with Inputs A, B and Carry in Cin can be written as:
 
 $$ 
-C_out = A.B + B.C_in + A. C_in =  \overline{\overline{A.B + B.C_in + A. C_in}}
+C_o_u_t = A.B + B.C_i_n + A. C_i_n =  \overline{(\overline{(A.B + B.C_i_n + A. C_i_n)})}
 $$
 
-Now, for effective implementation with the least transistors, we can try to implement ${\overline{A.B + B.C_in + A. C_in}$ and use a single not gate complement afterwards to obtain the result.
+Now, for effective implementation with the least transistors, we can try to implement ${\overline{A.B + B.C_i_n + A. C_i_n}}$ and use a single not gate complement afterwards to obtain the result.
 
 <p>
     <img src = "./figures/carry_logic.png"/>
