@@ -96,7 +96,7 @@ make clean   # Removes all generated files and directories
 ### Carry of a Low Power Full Adder
 A switch level implementation of the Carry logic of Full Adder is done, we know that the logic of carry in a Full Adder with Inputs A, B and Carry in Cin can be written as:
 
-$$ C_{out} = A \cdot B + B \cdot C_{in} + A \cdot C_{in} = \sim(A \cdot B + B \cdot C_{in} + A \cdot C_{in}) $$
+$$ C_{out} = A \cdot B + B \cdot C_{in} + A \cdot C_{in} =\:\sim(\sim(A \cdot B + B \cdot C_{in} + A \cdot C_{in})) $$
 
 Where:
 
