@@ -3,7 +3,7 @@
 ///                                                                             ///
 ///////////////////////////////////////////////////////////////////////////////////
 ///   2x4 Decoder Module: In this design we are primarily using NAND or NOR     ///
-///                  gates for logic realization using Dataflow modeling        ///
+///                  operations for logic realization using Dataflow modeling   ///
 ///                  Although most ASIC tools optimize for this and is not      /// 
 ///                  required in FPGA design                                    ///
 ///                                                                             ///
