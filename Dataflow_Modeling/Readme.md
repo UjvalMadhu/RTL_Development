@@ -1,32 +1,19 @@
-# Switch level Modeling of CMOS Transmission Gate Circuits
+# Data Flow Modeling
 
-This projects models circuits using CMOS transmission gates.
+This projects develops a 2x1 MUX and a 2x4 Decoder using Data Flow Modeling 
+<br>
+Data flow modeling in RTL (Register-Transfer Level) design is a style of describing digital hardware using a declarative approach that focuses on how data flows through the system and the operations performed on that data, rather than explicitly describing the sequential steps or structural implementation details.
+<br>
 
-### What are Transmission Gates?
+### Key Characteristics of Data Flow Modeling:
 
-a CMOS Transmission Gate (TG) is a bidirectional switch made by connecting a PMOS and an NMOS transistor in parallel.  They share source and drain connections, and their gates are driven by complementary control signals (Control signal and its inverse).
+- Declarative: You declare relationships and data transformations using continuous assignments (assign statements in Verilog) and expressions. You are essentially saying "this signal is always equal to this expression," rather than writing procedural code that executes in steps.
 
-ON State (Control HIGH): Both NMOS and PMOS are ON, providing a low-resistance path for signals to flow in either direction. It efficiently passes both logic '0' and logic '1'.
-OFF State (Control LOW): Both NMOS and PMOS are OFF, creating a high-resistance path, effectively blocking signal flow.
-NMOS and PMOS Transistors as Switches (Simple Switches)
+- Concurrent Operations: Data flow descriptions inherently imply concurrency.  All assign statements in a module are evaluated and updated concurrently whenever any of their input signals change. This reflects the parallel nature of hardware.
 
-You can also use a single NMOS transistor or a single PMOS transistor as a switch.
+- Emphasis on Data Transformations: Data flow modeling is well-suited for describing combinational logic, where outputs are directly derived from inputs through a series of operations (like arithmetic, logical, bitwise operations). It's about describing the flow of data and how it's manipulated as it moves from inputs to outputs.
 
-NMOS Switch:
-
-Use the NMOS transistor with its drain and source as the switch terminals and the gate as the control.
-Turns ON when Gate is HIGH: Conducts when the gate voltage is high relative to the source.
-Good at Passing Logic '0': NMOS transistors are excellent at pulling a node down to ground (logic '0'). They pass logic '0' very well with low resistance.
-Poor at Passing Logic '1': NMOS transistors are not good at passing logic '1' fully. Due to the threshold voltage (Vt) drop, the output voltage will be approximately VDD - Vt when trying to pass a '1'. This voltage may not be recognized as a full logic '1' by subsequent gates, especially in cascaded stages. This is called threshold voltage drop or level degradation for logic '1'.
-Unidirectional (Primarily): While nominally bidirectional in terms of current flow when ON, the control action is gate-to-channel, and source/drain are typically defined.
-PMOS Switch:
-
-Use the PMOS transistor with its drain and source as the switch terminals and the gate as the control.
-Turns ON when Gate is LOW: Conducts when the gate voltage is low relative to the source.
-Good at Passing Logic '1': PMOS transistors are excellent at pulling a node up to VDD (logic '1'). They pass logic '1' very well with low resistance.
-Poor at Passing Logic '0': PMOS transistors are not good at passing logic '0' fully. Due to the threshold voltage drop, the output voltage will be approximately Vt (above ground) when trying to pass a '0'. This voltage may not be recognized as a full logic '0'. This is threshold voltage drop or level degradation for logic '0'.
-Unidirectional (Primarily): Similar to NMOS, control is gate-to-channel.
-
+- Abstraction from Gate-Level Structure: Data flow descriptions are generally at a higher level of abstraction than structural modeling (gate-level). You don't explicitly instantiate individual logic gates (AND, OR, NOT, etc.). Instead, you use operators and expressions that are then implicitly translated into gate-level implementations by synthesis tools.
 
 
 
@@ -34,7 +21,8 @@ Unidirectional (Primarily): Similar to NMOS, control is gate-to-channel.
 
 | Sl No | Project | Description |
 |-------|---------|-------------|
-| 1.    | 2x1 MUX | A 2x1 Multiplexer using Transmission Gates |
+| 1.    | 2x1 MUX | A 2x1 Multiplexer using Data Flow Modeling |
+| 2.    | 2x4 Decoder | A 2x4 Decoder using Data Flow Modeling |
 
 
 
@@ -45,8 +33,8 @@ This project is organized as follows:
 * **build/:** Contains compiled output files.
 * **figures/:** Stores generated figures or images.
 * **rtl/:** Holds the Register Transfer Level (RTL) Verilog source code files for the CMOS gates.
-    * **mux_2x1.v:** Verilog module for a carry circuit of a Low Power Full Adder.
-    * **inverter.v:** Verilog module for an inverter gate.
+    * **mux_2x1.v:** Verilog module for 2x1 MUX.
+    * **decoder2x4.v:** Verilog module for 2x4 Decoder.
     * **testbench.sv:** SystemVerilog testbench for verifying the functionality of the designs.
     * **timescale.v:** Verilog file defining the timescale used for simulation.
 
@@ -86,7 +74,22 @@ make wave    # Opens the waveform viewer to visualize simulation results
 make clean   # Removes all generated files and directories
 ```
 
-## Documentation:
+## Output
+
+The testbench output is shown below:
+
+<p>
+    <img src = "./figures/tb_output.png"/>
+    <figcaption>Testbench Output</figcaption>
+</p>
+
+
+The waveforms of all the design can be observed here:
+
+<p>
+    <img src = "./figures/waveforms.png"/>
+    <figcaption>Waveforms from all the designs, generated by the Testbench</figcaption>
+</p>
 
 
 ## License
