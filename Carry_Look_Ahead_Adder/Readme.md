@@ -16,11 +16,13 @@ The Carry Lookahead Adder (CLA) is a fast adder architecture designed to overcom
 The design consists of a 4 bit CLA, the parallel computation of the generate (G) and propagate (P) is shown here for better understanding:
 
 ```
-we know that the SUM bit and carry out (C_OUT) bit of a Full Adder with three input bits A, B an carry in (C_IN) can be written as:
+we know that the SUM bit and carry out (C_OUT) bit of a Full Adder with 
+three input bits A, B an carry in (C_IN) can be written as:
+
 SUM   =  A ^ B ^ C_IN
 C_OUT =  (A & B) | (C_IN & (A ^ B))
 
-Now, A&B = G and A^B = P
+Now, A & B = G and A ^ B = P
 
 so, C_OUT = G | C_IN & P 
 
