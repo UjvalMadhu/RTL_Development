@@ -1,42 +1,58 @@
 # Carry Look Ahead Adder
 
-This projects models circuits using CMOS transmission gates.
-
-### What are Transmission Gates?
-
-a CMOS Transmission Gate (TG) is a bidirectional switch made by connecting a PMOS and an NMOS transistor in parallel.  They share source and drain connections, and their gates are driven by complementary control signals (Control signal and its inverse).
-
-ON State (Control HIGH): Both NMOS and PMOS are ON, providing a low-resistance path for signals to flow in either direction. It efficiently passes both logic '0' and logic '1'.
-OFF State (Control LOW): Both NMOS and PMOS are OFF, creating a high-resistance path, effectively blocking signal flow.
-NMOS and PMOS Transistors as Switches (Simple Switches)
-
-You can also use a single NMOS transistor or a single PMOS transistor as a switch.
-
-NMOS Switch:
-
-Use the NMOS transistor with its drain and source as the switch terminals and the gate as the control.
-Turns ON when Gate is HIGH: Conducts when the gate voltage is high relative to the source.
-Good at Passing Logic '0': NMOS transistors are excellent at pulling a node down to ground (logic '0'). They pass logic '0' very well with low resistance.
-Poor at Passing Logic '1': NMOS transistors are not good at passing logic '1' fully. Due to the threshold voltage (Vt) drop, the output voltage will be approximately VDD - Vt when trying to pass a '1'. This voltage may not be recognized as a full logic '1' by subsequent gates, especially in cascaded stages. This is called threshold voltage drop or level degradation for logic '1'.
-Unidirectional (Primarily): While nominally bidirectional in terms of current flow when ON, the control action is gate-to-channel, and source/drain are typically defined.
-PMOS Switch:
-
-Use the PMOS transistor with its drain and source as the switch terminals and the gate as the control.
-Turns ON when Gate is LOW: Conducts when the gate voltage is low relative to the source.
-Good at Passing Logic '1': PMOS transistors are excellent at pulling a node up to VDD (logic '1'). They pass logic '1' very well with low resistance.
-Poor at Passing Logic '0': PMOS transistors are not good at passing logic '0' fully. Due to the threshold voltage drop, the output voltage will be approximately Vt (above ground) when trying to pass a '0'. This voltage may not be recognized as a full logic '0'. This is threshold voltage drop or level degradation for logic '0'.
-Unidirectional (Primarily): Similar to NMOS, control is gate-to-channel.
+This projects designs a 4-bit Carry Look Ahead Adder and its testbench, the testbench uses randomized stimulus generation, functional equivalence checking and immediate assertion to verify the functionality of the design.
 
 
+## Description
+
+### DUT: Carry Look Ahead Adder
+
+The Carry Lookahead Adder (CLA) is a fast adder architecture designed to overcome the carry propagation delay limitations of simpler adders like the Ripple Carry Adder (RCA). It achieves speed improvement by calculating carry bits in parallel rather than sequentially rippling through each bit position. CLAs are widely used in processors where speed is a critical factor. CLA is based on the concepts of generate (G) and propagate (P) signals for each bit position.
+
+<br>
+
+### Working 
+
+The design consists of a 4 bit CLA, the parallel computation of the generate (G) and propagate (P) is shown here for better understanding:
+
+```
+we know that the SUM bit and carry out (C_OUT) bit of a Full Adder with three input bits A, B an carry in (C_IN) can be written as:
+SUM   =  A ^ B ^ C_IN
+C_OUT =  (A & B) | (C_IN & (A ^ B))
+
+Now, A&B = G and A^B = P
+
+so, C_OUT = G | C_IN & P 
+
+```
+
+Now, using this substitution all values of the carry ins to all the bits are calculated in parallel before the actual addition takes place:
+
+C<sub>1</sub> = G<sub>0</sub> + P<sub>0</sub>C<sub>0</sub>
+C<sub>2</sub> = G<sub>1</sub> + P<sub>1</sub>G<sub>0</sub> + P<sub>1</sub>P<sub>0</sub>C<sub>0</sub>
+C<sub>3</sub> = G<sub>2</sub> + P<sub>2</sub>G<sub>1</sub> + P<sub>2</sub>P<sub>1</sub>G<sub>0</sub> + P<sub>2</sub>P<sub>1</sub>P<sub>0</sub>C<sub>0</sub> ... and so on.
+
+So the addition takes place in 3 steps:
+1. Calculate all Generate and Propagate Bits
+2. Calculate all Carry_in bits in parallel
+3. Calculate all the sum bits in parallel
+
+#### Advantages:
+
+    - Significantly faster than Ripple Carry Adder (RCA): Reduces carry propagation delay from linear to logarithmic with respect to bit width, especially for larger adders.
+    - Good performance for moderate bit widths: Offers a favorable balance between speed and complexity for typical processor word sizes (32-bit, 64-bit).
+    - Improved speed compared to Carry Skip Adder (CSKA) in some cases: Provides more predictable performance improvement than CSKA.
+
+#### Disadvantages:
+
+    - More complex than RCA: Requires additional logic for generating and propagating carry signals, leading to a more complex circuit.
+    - Larger area compared to RCA: Increased logic complexity translates to a larger silicon area footprint.
+    - Higher power consumption than RCA: More gates and increased switching activity can lead to higher power dissipation.
+    - Complexity increases1 with bit width: While2 more scalable than RCA, the carry lookahead logic does become more intricate as the adder width grows, although not as drastically as prefix adders.   
 
 
-## Project Index
-
-| Sl No | Project | Description |
-|-------|---------|-------------|
-| 1.    | 2x1 MUX | A 2x1 Multiplexer using Transmission Gates |
-
-
+### Testbench
+The testbench used for verifying is a standard SV testbench with randomized stimulus generation, functional equivalence checking and immediate assertion.
 
 ## Project Organization
 
@@ -45,8 +61,7 @@ This project is organized as follows:
 * **build/:** Contains compiled output files.
 * **figures/:** Stores generated figures or images.
 * **rtl/:** Holds the Register Transfer Level (RTL) Verilog source code files for the CMOS gates.
-    * **mux_2x1.v:** Verilog module for a carry circuit of a Low Power Full Adder.
-    * **inverter.v:** Verilog module for an inverter gate.
+    * **cla.v:** Verilog module for a 4-bit Carry Look Ahead Adder.
     * **testbench.sv:** SystemVerilog testbench for verifying the functionality of the designs.
     * **timescale.v:** Verilog file defining the timescale used for simulation.
 
