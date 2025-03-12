@@ -1,0 +1,174 @@
+$date
+	Tue Mar 11 20:27:28 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module testbench $end
+$var wire 4 ! sum [3:0] $end
+$var wire 1 " c_out $end
+$var parameter 32 # num_bits $end
+$var reg 1 $ c0 $end
+$var reg 4 % in_a [3:0] $end
+$var reg 4 & in_b [3:0] $end
+$var integer 32 ' seed [31:0] $end
+$scope module cla_adder $end
+$var wire 4 ( a [3:0] $end
+$var wire 4 ) b [3:0] $end
+$var wire 1 $ c0 $end
+$var wire 4 * sum [3:0] $end
+$var wire 4 + p [3:0] $end
+$var wire 4 , g [3:0] $end
+$var wire 1 " c_out $end
+$var wire 4 - c [4:1] $end
+$upscope $end
+$scope begin $ivl_for_loop0 $end
+$var integer 32 . i [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b100 #
+$end
+#0
+$dumpvars
+b0 .
+b0 -
+b0 ,
+b0 +
+b0 *
+b0 )
+b0 (
+b11000011110100100110000111010101 '
+b0 &
+b0 %
+x$
+0"
+b0 !
+$end
+#10000
+b1 -
+b1000 +
+b1 ,
+b1001 !
+b1001 *
+1$
+b1001 &
+b1001 )
+b1 %
+b1 (
+b1 .
+#20000
+1"
+b1101 -
+b0 +
+b1101 ,
+b1101 !
+b1101 *
+b1101 &
+b1101 )
+b1101 %
+b1101 (
+b10 .
+#30000
+0"
+b0xx -
+b11 +
+b0 ,
+b1 !
+b1 *
+b1 &
+b1 )
+b10 %
+b10 (
+b11 .
+#40000
+1"
+b11xx -
+b1011 +
+b100 ,
+b1101 !
+b1101 *
+b1101 &
+b1101 )
+b110 %
+b110 (
+b100 .
+#50000
+b100x -
+b101 +
+b1000 ,
+b1001 !
+b1001 *
+0$
+b1001 &
+b1001 )
+b1100 %
+b1100 (
+b101 .
+#60000
+x"
+bx -
+b1111 +
+b0 ,
+b1010 !
+b1010 *
+1$
+b1010 &
+b1010 )
+b101 %
+b101 (
+b110 .
+#70000
+0"
+b11x -
+b101 +
+b10 ,
+b10 !
+b10 *
+b10 &
+b10 )
+b111 %
+b111 (
+b111 .
+#80000
+1"
+b1110 -
+b1100 +
+b1110 !
+b1110 *
+0$
+b1110 &
+b1110 )
+b10 %
+b10 (
+b1000 .
+#90000
+b110x -
+b1001 +
+b100 ,
+b1100 !
+b1100 *
+1$
+b1100 &
+b1100 )
+b101 %
+b101 (
+b1001 .
+#100000
+b1101 -
+b1000 +
+b101 ,
+b101 !
+b101 *
+b101 &
+b101 )
+b1101 %
+b1101 (
+b1010 .
+#110000
+b1011 .
