@@ -23,7 +23,9 @@ module cla_4b(
 );
 
 wire [3:0] p, g;   // Propagate and Generate Bits for each bit position
-wire [4:1] c;      // Carry out for each bit 
+wire [4:0] c;      // Carry out for each bit
+
+assign c[0] = c0;
 
 assign  p[0] = a[0] ^ b[0],
         p[1] = a[1] ^ b[1],
@@ -35,15 +37,15 @@ assign  g[0] = a[0] & b[0],
         g[2] = a[2] & b[2],
         g[3] = a[3] & b[3];
 
-assign  c[1] = g[0] | p[0] & c[0],
-        c[2] = g[1] | (p[1] & (g[0] | p[0] & c[0])),
-        c[3] = g[2] | (p[2] & (g[1] | (p[1] & (g[0] | p[0] & c[0])))),
-        c[4] = g[3] | (p[3] & (g[2] | (p[2] & (g[1] | (p[1] & (g[0] | p[0] & c[0]))))));
+assign  c[1] = g[0] | (p[0] & c[0]),
+        c[2] = g[1] | (p[1] & (g[0] | (p[0] & c[0]))),
+        c[3] = g[2] | (p[2] & (g[1] | (p[1] & (g[0] | (p[0] & c[0]))))),
+        c[4] = g[3] | (p[3] & (g[2] | (p[2] & (g[1] | (p[1] & (g[0] | (p[0] & c[0])))))));
 
-assign  sum[0] = p[0] ^ a[0],
-        sum[1] = p[1] ^ a[1],
-        sum[2] = p[2] ^ a[2],
-        sum[3] = p[3] ^ a[3];
+assign  sum[0] = p[0] ^ c[0],
+        sum[1] = p[1] ^ c[1],
+        sum[2] = p[2] ^ c[2],
+        sum[3] = p[3] ^ c[3];
 
 assign c_out = c[4];        
 
