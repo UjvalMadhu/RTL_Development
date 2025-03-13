@@ -30,8 +30,8 @@ so, C_OUT = G | C_IN & P
 
 Now, using this substitution all values of the carry ins to all the bits are calculated in parallel before the actual addition takes place:
 
-C<sub>1</sub> = G<sub>0</sub> + P<sub>0</sub>C<sub>0</sub>
-C<sub>2</sub> = G<sub>1</sub> + P<sub>1</sub>G<sub>0</sub> + P<sub>1</sub>P<sub>0</sub>C<sub>0</sub>
+C<sub>1</sub> = G<sub>0</sub> + P<sub>0</sub>C<sub>0</sub> <br>
+C<sub>2</sub> = G<sub>1</sub> + P<sub>1</sub>G<sub>0</sub> + P<sub>1</sub>P<sub>0</sub>C<sub>0</sub> <br>
 C<sub>3</sub> = G<sub>2</sub> + P<sub>2</sub>G<sub>1</sub> + P<sub>2</sub>P<sub>1</sub>G<sub>0</sub> + P<sub>2</sub>P<sub>1</sub>P<sub>0</sub>C<sub>0</sub> ... and so on.
 
 So the addition takes place in 3 steps:

@@ -45,7 +45,7 @@ This project is organized as follows:
 * **build/:** Contains compiled output files.
 * **figures/:** Stores generated figures or images.
 * **rtl/:** Holds the Register Transfer Level (RTL) Verilog source code files for the CMOS gates.
-    * **mux_2x1.v:** Verilog module for a carry circuit of a Low Power Full Adder.
+    * **mux_2x1.v:** Verilog module for a 2x1 MUX.
     * **inverter.v:** Verilog module for an inverter gate.
     * **testbench.sv:** SystemVerilog testbench for verifying the functionality of the designs.
     * **timescale.v:** Verilog file defining the timescale used for simulation.
