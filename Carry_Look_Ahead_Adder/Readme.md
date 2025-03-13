@@ -41,16 +41,16 @@ So the addition takes place in 3 steps:
 
 #### Advantages:
 
-    - Significantly faster than Ripple Carry Adder (RCA): Reduces carry propagation delay from linear to logarithmic with respect to bit width, especially for larger adders.
-    - Good performance for moderate bit widths: Offers a favorable balance between speed and complexity for typical processor word sizes (32-bit, 64-bit).
-    - Improved speed compared to Carry Skip Adder (CSKA) in some cases: Provides more predictable performance improvement than CSKA.
+- Significantly faster than Ripple Carry Adder (RCA): Reduces carry propagation delay from linear to logarithmic with respect to bit width, especially for larger adders.
+- Good performance for moderate bit widths: Offers a favorable balance between speed and complexity for typical processor word sizes (32-bit, 64-bit).
+- Improved speed compared to Carry Skip Adder (CSKA) in some cases: Provides more predictable performance improvement than CSKA.
 
 #### Disadvantages:
 
-    - More complex than RCA: Requires additional logic for generating and propagating carry signals, leading to a more complex circuit.
-    - Larger area compared to RCA: Increased logic complexity translates to a larger silicon area footprint.
-    - Higher power consumption than RCA: More gates and increased switching activity can lead to higher power dissipation.
-    - Complexity increases1 with bit width: While2 more scalable than RCA, the carry lookahead logic does become more intricate as the adder width grows, although not as drastically as prefix adders.   
+- More complex than RCA: Requires additional logic for generating and propagating carry signals, leading to a more complex circuit.
+- Larger area compared to RCA: Increased logic complexity translates to a larger silicon area footprint.
+- Higher power consumption than RCA: More gates and increased switching activity can lead to higher power dissipation.
+- Complexity increases1 with bit width: While2 more scalable than RCA, the carry lookahead logic does become more intricate as the adder width grows, although not as drastically as prefix adders.   
 
 
 ### Testbench
