@@ -15,7 +15,7 @@ A Braun multiplier for multiplying an n-bit multiplicand (B) by an m-bit multipl
 ### Requirements
 
 A 16 Bit Braun Multiplier would require the following components:
-1. ` n x n ` multiplier would require `n(n-1)` full adders, => for a 16 bit output we need 8 bit operands, => `8 x (8-1) = 54` Full Adders are required.
+1. ` n x n ` multiplier would require `n(n-1)` full adders, => for a 16 bit output we need 8 bit operands, => `8 x (8-1) = 56` Full Adders are required.
 2. Partial product generation requires AND gates, and we will have `8 x 8` partial products => 64 AND gates
 
 <br>
