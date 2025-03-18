@@ -234,47 +234,9 @@ FA_CODE
     
     # Partial Sum Verilog Code Generation
     
-    my $psum = "assign ps[0] = ab_prod[0];\n";
+    my $psum .= "assign ps[0] = ab_prod[0];\n";
     
-    for my $j (1..$input_size -1){     # 1 to input_size -1 rows of FAs 
-        
-        for my $k (1..$input_size){    # Input_size columns of FA
-            
-            if($j == 1){               # 1st Row of FAs have both operands = partial products
-
-                if($k == 1){           # 1st FA of the row has C_in = 1'b0          
-                    
-                    $psum .= "assign co[" . 8*($j-1)+ $k - 1 . " ] = 1'b0;\n";
-                    $psum .= "fa fa$j$k(.a(ab_prod[". 8*($j-1)+ $k ."]), .b(ab_prod[" . 8*($j-1) + $k + ($input_size - 1) . " ]), .c_in(co[" . 8*($j-1)+ $k - 1 . " ]), .sum(ps[" . 8*($j-1)+ $k . " ]), .c_out(co[" . 8*($j-1)+ $k . " ]));\n"
-                
-                }elsif ($k == $input_size){  # last FA of the 1st row has 2nd operand = 1'b0 
-                    
-                    $psum .= "fa fa$j$k(.a(1'b0), .b(ab_prod[" . 8*($j-1) + $k + ($input_size - 1) . " ]), .c_in(co[" . 8*($j-1)+ $k - 1 . " ]), .sum(ps[" . 8*($j-1)+ $k . " ]), .c_out(" . 8*($j-1)+ $k . " ));\n"
-                
-                }
-                else{                  # All other cases of 1st row
-
-                    $psum .= "fa fa$j$k(.a(ab_prod[" . 8*($j-1)+ $k . " ]), .b(ab_prod[" . 8*($j-1) + $k + ($input_size - 1) . " ]), .c_in(co[" . 8*($j-1)+ $k - 1 . " ]), .sum(ps[" . 8*($j-1)+ $k . " ]), .c_out(co[" . 8*($j-1)+ $k . " ]));\n"
-                }
-
-            } 
-            else{                      # All other rows
-                if($k == 1){           # 1st FA of the row has C_in = 1'b0          
-                    
-                    $psum .= "fa fa$j$k(.a(ab_prod[" . 8*($j-1)+ $k . " ]), .b(ab_prod[" . 8*($j-1) + $k + ($input_size - 1) . " ]), .c_in(1'b0), .sum(ps[" . 8*($j-1)+ $k . " ]), .c_out(co[" . 8*($j-1)+ $k . " ]));\n"
-                
-                }elsif ($k == $input_size){  # last FA of the row has 2nd operand =  c_out of last FA of previous row
-                    
-                    $psum .= "fa fa$j$k(.a(1'b0), .b(ab_prod[" . 8*($j-1) + $k + ($input_size - 1) . " ]), .c_in(co[" . 8*($j-1)+ $k - $input_size . " ]), .sum(ps[" . 8*($j-1)+ $k . " ]), .c_out(" . 8*($j-1)+ $k . " ));\n"
-                
-                }
-                else{                  # All other cases of 1st row
-
-                    $psum .= "fa fa$j$k(.a(ab_prod[" . 8*($j-1)+ $k . " ]), .b(ab_prod[" . 8*($j-1) + $k + ($input_size - 1) . " ]), .c_in(co[" . 8*($j-1)+ $k - 1 . " ]), .sum(ps[" . 8*($j-1)+ $k . " ]), .c_out(co[" . 8*($j-1)+ $k . " ]));\n"
-                }
-            }
-        }
-    }
+    my $psum .= "Input_size** =". $input_size*$input_size . "";
 
 
     open(my $bm_fh, '>', "rtl/$outfile") or die "Could not create verilog file for Braun Multiplier: $!";
@@ -323,7 +285,7 @@ wire [$fa_count - 1 : 0] co;                // For Carry_out from each FA
 $ab
 
 @{[
-    "\n\n\n"
+    "\n\n"
 ]}
 
 $psum
@@ -379,3 +341,47 @@ exit;
 
 
 main();
+
+
+
+
+
+    # for my $j (1..$input_size -1){     # 1 to input_size -1 rows of FAs 
+        
+    #     for my $k (1..$input_size){    # Input_size columns of FA
+            
+    #         if($j == 1){               # 1st Row of FAs have both operands = partial products
+
+    #             if($k == 1){           # 1st FA of the row has C_in = 1'b0          
+                    
+    #                 $psum .= "assign co[" . 8*($j-1)+ $k - 1 . " ] = 1'b0;\n";
+    #                 $psum .= "fa fa$j$k(.a(ab_prod[". 8*($j-1)+ $k ."]), .b(ab_prod[" . 8*($j-1) + $k + ($input_size - 1) . " ]), .c_in(co[" . 8*($j-1)+ $k - 1 . " ]), .sum(ps[" . 8*($j-1)+ $k . " ]), .c_out(co[" . 8*($j-1)+ $k . " ]));\n"
+                
+    #             }elsif ($k == $input_size){  # last FA of the 1st row has 2nd operand = 1'b0 
+                    
+    #                 $psum .= "fa fa$j$k(.a(1'b0), .b(ab_prod[" . 8*($j-1) + $k + ($input_size - 1) . " ]), .c_in(co[" . 8*($j-1)+ $k - 1 . " ]), .sum(ps[" . 8*($j-1)+ $k . " ]), .c_out(" . 8*($j-1)+ $k . " ));\n"
+                
+    #             }
+    #             else{                  # All other cases of 1st row
+
+    #                 $psum .= "fa fa$j$k(.a(ab_prod[" . 8*($j-1)+ $k . " ]), .b(ab_prod[" . 8*($j-1) + $k + ($input_size - 1) . " ]), .c_in(co[" . 8*($j-1)+ $k - 1 . " ]), .sum(ps[" . 8*($j-1)+ $k . " ]), .c_out(co[" . 8*($j-1)+ $k . " ]));\n"
+    #             }
+
+    #         } 
+    #         else{                      # All other rows
+    #             if($k == 1){           # 1st FA of the row has C_in = 1'b0          
+                    
+    #                 $psum .= "fa fa$j$k(.a(ab_prod[" . 8*($j-1)+ $k . " ]), .b(ab_prod[" . 8*($j-1) + $k + ($input_size - 1) . " ]), .c_in(1'b0), .sum(ps[" . 8*($j-1)+ $k . " ]), .c_out(co[" . 8*($j-1)+ $k . " ]));\n"
+                
+    #             }elsif ($k == $input_size){  # last FA of the row has 2nd operand =  c_out of last FA of previous row
+                    
+    #                 $psum .= "fa fa$j$k(.a(1'b0), .b(ab_prod[" . 8*($j-1) + $k + ($input_size - 1) . " ]), .c_in(co[" . 8*($j-1)+ $k - $input_size . " ]), .sum(ps[" . 8*($j-1)+ $k . " ]), .c_out(" . 8*($j-1)+ $k . " ));\n"
+                
+    #             }
+    #             else{                  # All other cases of 1st row
+
+    #                 $psum .= "fa fa$j$k(.a(ab_prod[" . 8*($j-1)+ $k . " ]), .b(ab_prod[" . 8*($j-1) + $k + ($input_size - 1) . " ]), .c_in(co[" . 8*($j-1)+ $k - 1 . " ]), .sum(ps[" . 8*($j-1)+ $k . " ]), .c_out(co[" . 8*($j-1)+ $k . " ]));\n"
+    #             }
+    #         }
+    #     }
+    # }
