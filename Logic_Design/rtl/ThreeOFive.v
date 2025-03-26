@@ -1,8 +1,9 @@
 ///////////////////////////////////////////////////////////////////////////////////
-///               Modeling a 2x1 Mux using Transmission Gates                   ///
+///                       Three Out of Five Output                              ///
 ///                                                                             ///
 ///////////////////////////////////////////////////////////////////////////////////
-///   XOR Module:                                                               ///
+///   threeOfive: A circuit that generates a high only when any three of its    ///
+///   five inputs are active, more than 3 is a low.                             ///
 ///                                                                             ///
 ///   Copyright 2025 Ujval Madhu, All rights reserved                           ///
 ///////////////////////////////////////////////////////////////////////////////////
@@ -14,18 +15,17 @@
 //  $Revision: 1.0 $
 //  $Author:  Ujval Madhu
 
-module mux_2x1(
+module threeOfive(
     input in_1,
     input in_2,
-    input sel,
+    input in_3,
+    input in_4,
+    input in_5,
+
     output out
 );
-    wire sel_n;
 
-    not n1(sel_n,sel);               // Not for obtaining the compliment of sel 
-
-    cmos TG_1(out, in_1, sel_n, sel);    // Transmission Gate 1
-    cmos TG_2(out, in_2, sel, sel_n);    // Transmission Gate 2
+    assign out = (in_1 + in_2 + in_3 + in_4 + in_5 == 2'b11);
 
 
 endmodule

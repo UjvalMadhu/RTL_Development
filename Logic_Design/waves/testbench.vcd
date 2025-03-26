@@ -1,5 +1,5 @@
 $date
-	Sun Mar  9 20:02:27 2025
+	Wed Mar 26 14:52:46 2025
 $end
 $version
 	Icarus Verilog
@@ -9,19 +9,22 @@ $timescale
 $end
 $scope module testbench $end
 $var wire 1 ! out $end
-$var reg 1 " in_a $end
-$var reg 1 # in_b $end
-$var reg 1 $ sel $end
-$var integer 32 % seed [31:0] $end
+$var reg 1 " in_1 $end
+$var reg 1 # in_2 $end
+$var reg 1 $ in_3 $end
+$var reg 1 % in_4 $end
+$var reg 1 & in_5 $end
+$var integer 32 ' seed [31:0] $end
 $scope module m1 $end
 $var wire 1 " in_1 $end
 $var wire 1 # in_2 $end
+$var wire 1 $ in_3 $end
+$var wire 1 % in_4 $end
+$var wire 1 & in_5 $end
 $var wire 1 ! out $end
-$var wire 1 $ sel $end
-$var wire 1 & sel_n $end
 $upscope $end
 $scope begin $ivl_for_loop0 $end
-$var integer 32 ' i [31:0] $end
+$var integer 32 ( i [31:0] $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
@@ -30,56 +33,73 @@ $dumpall
 $end
 #0
 $dumpvars
-b0 '
-x&
-b11000011110100100110000111010101 %
-x$
+b0 (
+b11000011110100100110000111010101 '
+0&
+0%
+0$
 0#
 0"
-x!
+0!
 $end
 #10000
-0&
+1&
+1%
+0!
 1$
 1#
-1!
 1"
-b1 '
+b1 (
 #20000
-b10 '
+1!
+0&
+0#
+b10 (
 #30000
-0"
-b11 '
+0$
+1!
+1#
+b11 (
 #40000
-b100 '
+1$
+1!
+0#
+b100 (
 #50000
 1&
+0%
 0!
 0$
-b101 '
+b101 (
 #60000
-0&
-1$
-0#
+1%
 0!
-1"
-b110 '
-#70000
-b111 '
-#80000
-1&
-0$
-0"
-b1000 '
-#90000
-0&
 1$
-0!
-1"
-b1001 '
-#100000
-1!
 1#
-b1010 '
+0"
+b110 (
+#70000
+0%
+0$
+0!
+0#
+b111 (
+#80000
+1%
+0!
+1$
+1#
+b1000 (
+#90000
+1!
+0$
+0#
+1"
+b1001 (
+#100000
+0&
+0!
+0%
+b1010 (
 #110000
-b1011 '
+b1011 (
