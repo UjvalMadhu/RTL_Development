@@ -7,6 +7,8 @@ This projects models circuits using CMOS transmission gates.
 | Sl No | Project | Description |
 |-------|---------|-------------|
 | 1.    | 2x1 MUX | A 2x1 Multiplexer using Transmission Gates |
+| 2. | XOR Gate | XOR Gate Implementation |
+| 3. | XNOR Gate | XNOR Gate Impementation |
 
 
 ## Description
@@ -68,7 +70,26 @@ Output out = in_2.
     <figcaption>2:1 MUX using Transmission Gate</figcaption>
 </p>
 
+### XOR and XNOR gates using Transmission Gates
 
+Both XNOR and XOR gates can be efficiently implemented using transmission gates. In fact, transmission gate implementations often require fewer transistors compared to implementations using standard static CMOS logic gates (like NAND, NOR, etc.).
+
+### Advantages and Disadvantages of Transmission Gate Designs:
+
+#### Advantages:
+
+- Lower Transistor Count for Certain Functions: For specific logic functions like XOR, XNOR, and multiplexers, transmission gate implementations often require fewer transistors compared to their counterparts using standard static CMOS logic gates (NAND, NOR, etc.). This can lead to smaller chip area and potentially lower manufacturing costs.
+- Good Signal Swing: Transmission gates can pass both strong logic '0' (close to ground) and strong logic '1' (close to VDD) signals with minimal voltage drop across the switch when they are ON. This is because the NMOS transistor efficiently passes '0's, and the PMOS transistor efficiently passes '1's, and they work in parallel.
+- Bidirectional Capability: Transmission gates are inherently bidirectional, meaning they can pass signals in either direction between their input and output terminals. This is particularly useful in multiplexers, switches, and memory architectures.
+- Potential for Faster Operation: In some cases, circuits designed with transmission gates can achieve higher speeds due to fewer stacked transistors in the signal path compared to complex static CMOS gates. This can reduce delays.
+- Layout Efficiency: For certain circuit structures, using transmission gates can lead to more compact and efficient layouts, reducing the overall area of the integrated circuit.
+
+#### Disadvantages:
+
+- Static Power Consumption (Potential): If the input voltage to a transmission gate is at an intermediate level (between VDD and GND) while the gate is ON, it can create a direct path between VDD and GND through both the NMOS and PMOS transistors for a brief period, leading to static power dissipation. This is more of a concern in complex networks or if input signals have slow rise/fall times.
+- Control Signal Requirements: Transmission gates require both the true and complementary forms of the control signal to operate effectively (one for the NMOS gate and the other for the PMOS gate). Generating the complementary signal often requires an additional inverter, which adds to the transistor count and power consumption of the overall system, although the local advantage might still hold.
+- Noise Margins: The noise margins in transmission gate-based logic might be smaller compared to fully restored CMOS logic, making them potentially more susceptible to noise.
+- Output Driving Capability: The output driving capability of a transmission gate might be weaker compared to a CMOS inverter or other active drivers, especially when driving large capacitive loads. Buffers might be needed at the output to improve the driving strength.
 
 ## Project Organization
 
@@ -118,8 +139,19 @@ make wave    # Opens the waveform viewer to visualize simulation results
 make clean   # Removes all generated files and directories
 ```
 
-## Documentation:
+## Output:
 
+The Output from the simulation is shown here:
+<p>
+    <img src = "./figures/tb_output.png"/>
+    <figcaption>Test Bench output</figcaption>
+</p>
+
+The Waveforms from the simulation is shown here:
+<p>
+    <img src = "./figures/waveforms.png"/>
+    <figcaption>Simulation Waveforms</figcaption>
+</p>
 
 ## License
 

@@ -23,7 +23,7 @@ module mux_2x1(
     wire sel_n;
 
     not n1(sel_n,sel);               // Not for obtaining the compliment of sel 
-
+    // Argument order: (out, in, n_ctrl, p_ctrl)
     cmos TG_1(out, in_1, sel_n, sel);    // Transmission Gate 1
     cmos TG_2(out, in_2, sel, sel_n);    // Transmission Gate 2
 
