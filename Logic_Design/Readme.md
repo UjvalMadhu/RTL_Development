@@ -1,40 +1,12 @@
-# Switch level Modeling of CMOS Transmission Gate Circuits
+# Some Interesting Logic Design Problems
 
-This projects models circuits using CMOS transmission gates.
-
-### What are Transmission Gates?
-
-a CMOS Transmission Gate (TG) is a bidirectional switch made by connecting a PMOS and an NMOS transistor in parallel.  They share source and drain connections, and their gates are driven by complementary control signals (Control signal and its inverse).
-
-ON State (Control HIGH): Both NMOS and PMOS are ON, providing a low-resistance path for signals to flow in either direction. It efficiently passes both logic '0' and logic '1'.
-OFF State (Control LOW): Both NMOS and PMOS are OFF, creating a high-resistance path, effectively blocking signal flow.
-NMOS and PMOS Transistors as Switches (Simple Switches)
-
-You can also use a single NMOS transistor or a single PMOS transistor as a switch.
-
-NMOS Switch:
-
-Use the NMOS transistor with its drain and source as the switch terminals and the gate as the control.
-Turns ON when Gate is HIGH: Conducts when the gate voltage is high relative to the source.
-Good at Passing Logic '0': NMOS transistors are excellent at pulling a node down to ground (logic '0'). They pass logic '0' very well with low resistance.
-Poor at Passing Logic '1': NMOS transistors are not good at passing logic '1' fully. Due to the threshold voltage (Vt) drop, the output voltage will be approximately VDD - Vt when trying to pass a '1'. This voltage may not be recognized as a full logic '1' by subsequent gates, especially in cascaded stages. This is called threshold voltage drop or level degradation for logic '1'.
-Unidirectional (Primarily): While nominally bidirectional in terms of current flow when ON, the control action is gate-to-channel, and source/drain are typically defined.
-PMOS Switch:
-
-Use the PMOS transistor with its drain and source as the switch terminals and the gate as the control.
-Turns ON when Gate is LOW: Conducts when the gate voltage is low relative to the source.
-Good at Passing Logic '1': PMOS transistors are excellent at pulling a node up to VDD (logic '1'). They pass logic '1' very well with low resistance.
-Poor at Passing Logic '0': PMOS transistors are not good at passing logic '0' fully. Due to the threshold voltage drop, the output voltage will be approximately Vt (above ground) when trying to pass a '0'. This voltage may not be recognized as a full logic '0'. This is threshold voltage drop or level degradation for logic '0'.
-Unidirectional (Primarily): Similar to NMOS, control is gate-to-channel.
-
-
-
+This project is about the implementation of various interesting RTL designs
 
 ## Project Index
 
 | Sl No | Project | Description |
 |-------|---------|-------------|
-| 1.    | 2x1 MUX | A 2x1 Multiplexer using Transmission Gates |
+| 1.    | ThreeOFive | A design that ensures that three out of five outputs are high |
 
 
 
@@ -97,7 +69,3 @@ This project is licensed under the GNU General Public License, Version 3 - see t
 
 - Author: Ujval Madhu
 - Email: ujvalmadhu003@gmail.com
-
-## Acknowledgments
-
-- Prof. Shaik Rafi Ahamed, IIT Guwahati

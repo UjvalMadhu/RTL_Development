@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////////
-///       Switch Level Modeling of a CMOS Gates and Boolean Logic               ///
+///                      Logic Designs Testbench                                ///
 ///                                                                             ///
 ///////////////////////////////////////////////////////////////////////////////////
 ///   Testbench Module                                                          ///
@@ -15,31 +15,36 @@
 //  $Author:  Ujval Madhu
 
 module testbench;
-    reg in_a, in_b;
-    reg sel;
+    reg in_1, in_2, in_3, in_4, in_5;
     wire out;
     integer seed;
 
     // Instantiating 2x1 Transmission Gate MUX
-    mux_2x1 m1(.in_1(in_a), .in_2(in_b), .sel(sel), .out(out));
+    threeOfive m1(.in_1(in_1), .in_2(in_2), .in_3(in_3), .in_4(in_4), .in_5(in_5), .out(out));
 
     // Random Stimulus Generation
     initial begin
         seed = $random;
         $random(seed);              // Icarus doesn't support $srandom yet
 
-        in_b = 1'b0;
-        in_a = 1'b0;
+        in_1 = 1'b0;
+        in_2 = 1'b0;
+        in_3 = 1'b0;
+        in_4 = 1'b0;
+        in_5 = 1'b0;
+
         #10;
         
         for(int i = 1; i <= 10; i++) begin
-            in_a = $random % 2;
-            in_b = $random % 2;
-            sel  = $random % 2;
+            in_1 = $random % 2;
+            in_2 = $random % 2;
+            in_3 = $random % 2;
+            in_4 = $random % 2;
+            in_5 = $random % 2;
 
             #10;
             
-            $display("2x1 MUX Output: Input A: %b, Input B: %b, Sel: %b, Out: %b", in_a, in_b, sel, out);
+            $display("ThreeOFive Output: Input 1: %b, Input 2: %b, Input 3: %b, Input 4: %b, Input 5: %b, Out: %b", in_1, in_2, in_3, in_4, in_5, out);
             
             //#10
             // Verification
