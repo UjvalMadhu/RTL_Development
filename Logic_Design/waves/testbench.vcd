@@ -1,0 +1,85 @@
+$date
+	Sun Mar  9 20:02:27 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module testbench $end
+$var wire 1 ! out $end
+$var reg 1 " in_a $end
+$var reg 1 # in_b $end
+$var reg 1 $ sel $end
+$var integer 32 % seed [31:0] $end
+$scope module m1 $end
+$var wire 1 " in_1 $end
+$var wire 1 # in_2 $end
+$var wire 1 ! out $end
+$var wire 1 $ sel $end
+$var wire 1 & sel_n $end
+$upscope $end
+$scope begin $ivl_for_loop0 $end
+$var integer 32 ' i [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 '
+x&
+b11000011110100100110000111010101 %
+x$
+0#
+0"
+x!
+$end
+#10000
+0&
+1$
+1#
+1!
+1"
+b1 '
+#20000
+b10 '
+#30000
+0"
+b11 '
+#40000
+b100 '
+#50000
+1&
+0!
+0$
+b101 '
+#60000
+0&
+1$
+0#
+0!
+1"
+b110 '
+#70000
+b111 '
+#80000
+1&
+0$
+0"
+b1000 '
+#90000
+0&
+1$
+0!
+1"
+b1001 '
+#100000
+1!
+1#
+b1010 '
+#110000
+b1011 '
