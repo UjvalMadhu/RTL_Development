@@ -236,7 +236,7 @@ FA_CODE
     
     my $psum .= "assign ps[0] = ab_prod[0];\n";
     
-    my $psum .= "Input_size** =". $input_size*$input_size . "";
+    for my i ()
 
 
     open(my $bm_fh, '>', "rtl/$outfile") or die "Could not create verilog file for Braun Multiplier: $!";

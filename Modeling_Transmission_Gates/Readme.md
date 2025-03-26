@@ -2,15 +2,31 @@
 
 This projects models circuits using CMOS transmission gates.
 
+## Project Index
+
+| Sl No | Project | Description |
+|-------|---------|-------------|
+| 1.    | 2x1 MUX | A 2x1 Multiplexer using Transmission Gates |
+
+
+## Description
+
 ### What are Transmission Gates?
 
 a CMOS Transmission Gate (TG) is a bidirectional switch made by connecting a PMOS and an NMOS transistor in parallel.  They share source and drain connections, and their gates are driven by complementary control signals (Control signal and its inverse).
 
 ON State (Control HIGH): Both NMOS and PMOS are ON, providing a low-resistance path for signals to flow in either direction. It efficiently passes both logic '0' and logic '1'.
 OFF State (Control LOW): Both NMOS and PMOS are OFF, creating a high-resistance path, effectively blocking signal flow.
-NMOS and PMOS Transistors as Switches (Simple Switches)
 
-You can also use a single NMOS transistor or a single PMOS transistor as a switch.
+CMOS Transmission gate Circuit is shown here:
+<p>
+    <img src = "./figures/transmission_gate.png" width = "480" height = "450" />
+    <figcaption>CMOS Transmission Gate</figcaption>
+</p>
+
+#### NMOS and PMOS Transistors as Switches (Simple Switches)
+
+You can also use a single NMOS transistor or a single PMOS transistor as a switch, but they introduce some inefficiencies.
 
 NMOS Switch:
 
@@ -27,14 +43,30 @@ Good at Passing Logic '1': PMOS transistors are excellent at pulling a node up t
 Poor at Passing Logic '0': PMOS transistors are not good at passing logic '0' fully. Due to the threshold voltage drop, the output voltage will be approximately Vt (above ground) when trying to pass a '0'. This voltage may not be recognized as a full logic '0'. This is threshold voltage drop or level degradation for logic '0'.
 Unidirectional (Primarily): Similar to NMOS, control is gate-to-channel.
 
+### 2:1 MUX Design using Transmission Gates
 
+A 2:1 multiplexer selects one of two input signals based on a select signal. It can be implemented using two transmission gates and an inverter.
 
+Transmission Gate 1: Input in_1, Output out, Control signal SEL (and /SEL for the PMOS).
+Transmission Gate 2: Input in_2, Output out, Control signal /SEL (and SEL for the PMOS).
 
-## Project Index
+Circuit Description:
 
-| Sl No | Project | Description |
-|-------|---------|-------------|
-| 1.    | 2x1 MUX | A 2x1 Multiplexer using Transmission Gates |
+- When the select signal SEL is LOW:
+Transmission Gate 1 is ON (passes in_1 to out).
+Transmission Gate 2 is OFF.
+Output out = in_1.
+
+- When the select signal SEL is HIGH:
+Transmission Gate 1 is OFF.
+Transmission Gate 2 is ON (passes in_2 to out).
+Output out = in_2.
+
+2:1 MUX using Transmission Gates is shown here:
+<p>
+    <img src = "./figures/2_1_MUX.png" />
+    <figcaption>2:1 MUX using Transmission Gate</figcaption>
+</p>
 
 
 
