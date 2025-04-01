@@ -1,4 +1,4 @@
-# 16-Bit Braun Multiplier
+# 16-Bit Braun Multiplier (In Progress)
 
 This projects designs and verifies a 16-Bit Braun Multiplier, it is used for unsigned multiplication and consists of a simple parallel multiplier structure. Due to its straightforward design it is widely used in hardware designs.
 
