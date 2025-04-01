@@ -2,7 +2,7 @@
 #////////////////////////////////////////////////////////////////////////////////////
 #///                                                                              ///
 #///          Perl Script to Generate a Parametrized Braun Multiplier             ///
-#///                                                                              ///
+#///                                (In Progress)                                              ///
 #////////////////////////////////////////////////////////////////////////////////////
 #///                                                                              ///
 #///   This Perl script generates Verilog code for a n bit Braun Multiplier       ///
