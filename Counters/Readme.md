@@ -19,76 +19,33 @@ Asynchronous counters are where the clock is not applied to all the flip flops, 
 
 Where Speed is preferred we use synchronous counters and where area or power is important we can use asynchronous counters
 
-CMOS Transmission gate Circuit is shown here:
+Synchronous and Asynchronous Resets:
+
+The fundamental problem with synchronous reset in cascaded designs is timing:
+
+With synchronous reset, flip-flops only reset on a clock edge
+In a cascaded design, later stages are clocked by the outputs of earlier stages
+During initial power-up (or simulation start), if those earlier stages are in an X state, they can't provide a valid clock to later stages
+
+This creates a chicken-and-egg problem:
+
+Later stages need valid clocks from earlier stages to respond to the reset
+But earlier stages need to be reset first to provide valid clocks
+
+Asynchronous reset solves this by breaking the dependency chain:
+
+All flip-flops immediately reset regardless of clock state
+This ensures all stages have known values before any clocking begins
+
+This is why for counters and other cascaded sequential designs, asynchronous reset is generally preferred. It guarantees all flip-flops reach a known state, preventing X propagation through the design.
+
+
+
 <p>
     <img src = "./figures/transmission_gate.png" width = "480" height = "450" />
     <figcaption>CMOS Transmission Gate</figcaption>
 </p>
 
-#### NMOS and PMOS Transistors as Switches (Simple Switches)
-
-You can also use a single NMOS transistor or a single PMOS transistor as a switch, but they introduce some inefficiencies.
-
-NMOS Switch:
-
-Use the NMOS transistor with its drain and source as the switch terminals and the gate as the control.
-Turns ON when Gate is HIGH: Conducts when the gate voltage is high relative to the source.
-Good at Passing Logic '0': NMOS transistors are excellent at pulling a node down to ground (logic '0'). They pass logic '0' very well with low resistance.
-Poor at Passing Logic '1': NMOS transistors are not good at passing logic '1' fully. Due to the threshold voltage (Vt) drop, the output voltage will be approximately VDD - Vt when trying to pass a '1'. This voltage may not be recognized as a full logic '1' by subsequent gates, especially in cascaded stages. This is called threshold voltage drop or level degradation for logic '1'.
-Unidirectional (Primarily): While nominally bidirectional in terms of current flow when ON, the control action is gate-to-channel, and source/drain are typically defined.
-PMOS Switch:
-
-Use the PMOS transistor with its drain and source as the switch terminals and the gate as the control.
-Turns ON when Gate is LOW: Conducts when the gate voltage is low relative to the source.
-Good at Passing Logic '1': PMOS transistors are excellent at pulling a node up to VDD (logic '1'). They pass logic '1' very well with low resistance.
-Poor at Passing Logic '0': PMOS transistors are not good at passing logic '0' fully. Due to the threshold voltage drop, the output voltage will be approximately Vt (above ground) when trying to pass a '0'. This voltage may not be recognized as a full logic '0'. This is threshold voltage drop or level degradation for logic '0'.
-Unidirectional (Primarily): Similar to NMOS, control is gate-to-channel.
-
-### 2:1 MUX Design using Transmission Gates
-
-A 2:1 multiplexer selects one of two input signals based on a select signal. It can be implemented using two transmission gates and an inverter.
-
-Transmission Gate 1: Input in_1, Output out, Control signal SEL (and /SEL for the PMOS).
-Transmission Gate 2: Input in_2, Output out, Control signal /SEL (and SEL for the PMOS).
-
-Circuit Description:
-
-- When the select signal SEL is LOW:
-Transmission Gate 1 is ON (passes in_1 to out).
-Transmission Gate 2 is OFF.
-Output out = in_1.
-
-- When the select signal SEL is HIGH:
-Transmission Gate 1 is OFF.
-Transmission Gate 2 is ON (passes in_2 to out).
-Output out = in_2.
-
-2:1 MUX using Transmission Gates is shown here:
-<p>
-    <img src = "./figures/2_1_MUX.png" />
-    <figcaption>2:1 MUX using Transmission Gate</figcaption>
-</p>
-
-### XOR and XNOR gates using Transmission Gates
-
-Both XNOR and XOR gates can be efficiently implemented using transmission gates. In fact, transmission gate implementations often require fewer transistors compared to implementations using standard static CMOS logic gates (like NAND, NOR, etc.).
-
-### Advantages and Disadvantages of Transmission Gate Designs:
-
-#### Advantages:
-
-- Lower Transistor Count for Certain Functions: For specific logic functions like XOR, XNOR, and multiplexers, transmission gate implementations often require fewer transistors compared to their counterparts using standard static CMOS logic gates (NAND, NOR, etc.). This can lead to smaller chip area and potentially lower manufacturing costs.
-- Good Signal Swing: Transmission gates can pass both strong logic '0' (close to ground) and strong logic '1' (close to VDD) signals with minimal voltage drop across the switch when they are ON. This is because the NMOS transistor efficiently passes '0's, and the PMOS transistor efficiently passes '1's, and they work in parallel.
-- Bidirectional Capability: Transmission gates are inherently bidirectional, meaning they can pass signals in either direction between their input and output terminals. This is particularly useful in multiplexers, switches, and memory architectures.
-- Potential for Faster Operation: In some cases, circuits designed with transmission gates can achieve higher speeds due to fewer stacked transistors in the signal path compared to complex static CMOS gates. This can reduce delays.
-- Layout Efficiency: For certain circuit structures, using transmission gates can lead to more compact and efficient layouts, reducing the overall area of the integrated circuit.
-
-#### Disadvantages:
-
-- Static Power Consumption (Potential): If the input voltage to a transmission gate is at an intermediate level (between VDD and GND) while the gate is ON, it can create a direct path between VDD and GND through both the NMOS and PMOS transistors for a brief period, leading to static power dissipation. This is more of a concern in complex networks or if input signals have slow rise/fall times.
-- Control Signal Requirements: Transmission gates require both the true and complementary forms of the control signal to operate effectively (one for the NMOS gate and the other for the PMOS gate). Generating the complementary signal often requires an additional inverter, which adds to the transistor count and power consumption of the overall system, although the local advantage might still hold.
-- Noise Margins: The noise margins in transmission gate-based logic might be smaller compared to fully restored CMOS logic, making them potentially more susceptible to noise.
-- Output Driving Capability: The output driving capability of a transmission gate might be weaker compared to a CMOS inverter or other active drivers, especially when driving large capacitive loads. Buffers might be needed at the output to improve the driving strength.
 
 ## Project Organization
 
@@ -97,8 +54,11 @@ This project is organized as follows:
 * **build/:** Contains compiled output files.
 * **figures/:** Stores generated figures or images.
 * **rtl/:** Holds the Register Transfer Level (RTL) Verilog source code files for the CMOS gates.
-    * **mux_2x1.v:** Verilog module for a 2x1 MUX.
-    * **inverter.v:** Verilog module for an inverter gate.
+    * **dff.v:** Verilog module for a D Flip Flop.
+    * **xor.v:** Verilog module for an XOR gate.
+    * **tff.v:** Verilog module for a T Flip Flop.
+    * **jkff.v:** Verilog module for a JK Flip Flop.
+    * **mod16_T.v:** Verilog module for a mod 16 Asynchronous counter.
     * **testbench.sv:** SystemVerilog testbench for verifying the functionality of the designs.
     * **timescale.v:** Verilog file defining the timescale used for simulation.
 
@@ -140,15 +100,10 @@ make clean   # Removes all generated files and directories
 
 ## Output:
 
-The Output from the simulation is shown here:
-<p>
-    <img src = "./figures/tb_output.png"/>
-    <figcaption>Test Bench output</figcaption>
-</p>
 
 The Waveforms from the simulation is shown here:
 <p>
-    <img src = "./figures/waveforms.png"/>
+    <img src = "./figures/waveform.png"/>
     <figcaption>Simulation Waveforms</figcaption>
 </p>
 
