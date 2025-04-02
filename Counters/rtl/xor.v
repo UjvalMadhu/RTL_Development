@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////////
-///               Modeling an XOR gate using Transmission Gates                   ///
+///             Switch Level Modeling of a CMOS XOR Gate                       ///
 ///                                                                             ///
 ///////////////////////////////////////////////////////////////////////////////////
-///   xor_gate Module:                                                               ///
+///   XOR Module:                                                              ///
 ///                                                                             ///
 ///   Copyright 2025 Ujval Madhu, All rights reserved                           ///
 ///////////////////////////////////////////////////////////////////////////////////
@@ -10,27 +10,32 @@
 //
 //  Id: xor.v, v 1.0
 //
-//  $Date: 2024-26-03
+//  $Date: 2024-07-03
 //  $Revision: 1.0 $
 //  $Author:  Ujval Madhu
 
-module xor_gate(
-    input in_1,
-    input in_2,
+module cmos_xor(
+    input in_a,
+    input in_b,
     output out
 );
-    wire in_1_n;
-    wire in_2_n;
-
     supply1 vdd;
     supply0 gnd;
-    not n1(in_1_n, in_1);               // Not for obtaining the compliment of in_1 
-    not n2(in_2_n, in_2);               // Not for obtaining the compliment of in_2 
+    wire w1p, w2p, w3n, w4n;
 
-    // Argument order: (out, in, n_ctrl, p_ctrl)
-    //cmos test(out, in_1, vdd, gnd);
-    cmos TG_1(out, in_1, in_2_n, in_2);      // Transmission Gate 1
-    cmos TG_2(out, in_1_n, in_2, in_2_n);    // Transmission Gate 2
+    // Argument order (Drain, Source, gate)
+    // PMOS A.B' + A'.B = XOR      
+    pmos p1(w1p, vdd, in_a);
+    pmos p2(out, w1p, ~in_b);
 
+    pmos p3(w2p, vdd, ~in_a);
+    pmos p4(out, w2p, in_b);
+
+    // NMOS A.B + A'.B'   ; complement of the PMOS
+    nmos n1(w1n, gnd, in_b);
+    nmos n2(out, w1n, in_a);
+
+    nmos n3(w2n, gnd, ~in_b);
+    nmos n4(out, w2n, ~in_a);
 
 endmodule

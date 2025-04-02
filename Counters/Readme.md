@@ -15,10 +15,9 @@ This projects models various types of counters using sequential logic.
 
 ### What are Transmission Gates?
 
-a CMOS Transmission Gate (TG) is a bidirectional switch made by connecting a PMOS and an NMOS transistor in parallel.  They share source and drain connections, and their gates are driven by complementary control signals (Control signal and its inverse).
+Asynchronous counters are where the clock is not applied to all the flip flops, Synchronous designs involve more complex circuitry and the clock is applied to all flip flops in the counter.
 
-ON State (Control HIGH): Both NMOS and PMOS are ON, providing a low-resistance path for signals to flow in either direction. It efficiently passes both logic '0' and logic '1'.
-OFF State (Control LOW): Both NMOS and PMOS are OFF, creating a high-resistance path, effectively blocking signal flow.
+Where Speed is preferred we use synchronous counters and where area or power is important we can use asynchronous counters
 
 CMOS Transmission gate Circuit is shown here:
 <p>
