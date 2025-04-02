@@ -13,13 +13,13 @@ This projects models various types of counters using sequential logic.
 
 ## Description
 
-### What are Transmission Gates?
+### Synchronous and Asynchronous Counters
 
 Asynchronous counters are where the clock is not applied to all the flip flops, Synchronous designs involve more complex circuitry and the clock is applied to all flip flops in the counter.
 
 Where Speed is preferred we use synchronous counters and where area or power is important we can use asynchronous counters
 
-Synchronous and Asynchronous Resets:
+#### Synchronous and Asynchronous Resets:
 
 The fundamental problem with synchronous reset in cascaded designs is timing:
 
@@ -42,8 +42,8 @@ This is why for counters and other cascaded sequential designs, asynchronous res
 
 
 <p>
-    <img src = "./figures/transmission_gate.png" width = "480" height = "450" />
-    <figcaption>CMOS Transmission Gate</figcaption>
+    <img src = "./figures/4_bit_ripple_T.png" width = "480" height = "450" />
+    <figcaption>Mod 16 Counter using T Flip FLops</figcaption>
 </p>
 
 
