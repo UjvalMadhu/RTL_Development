@@ -1,28 +1,33 @@
 ///////////////////////////////////////////////////////////////////////////////////
-///             Switch Level Modeling of a CMOS Inverter                        ///
+///       4-Bit Ripple Counter or Mod 16 Counter using T flip Flops             ///
 ///                                                                             ///
 ///////////////////////////////////////////////////////////////////////////////////
-///   Inverter Module:                                                          ///
+///   This is a design for a 4 bit asynchronous Ripple counter using T FFs      ///
 ///                                                                             ///
 ///   Copyright 2025 Ujval Madhu, All rights reserved                           ///
 ///////////////////////////////////////////////////////////////////////////////////
 //  CVS Log
 //
-//  Id: inverter.v, v 1.0
+//  Id: mod16_T.v, v 1.0
 //
 //  $Date: 2024-07-03
 //  $Revision: 1.0 $
 //  $Author:  Ujval Madhu
 
-module cmos_inv(
-    input in,
-    output out
+module mod16_T(
+    input clk,
+    input rst_n,
+    input [3:0] t,
+    output [3:0] q 
 );
-supply1 vdd;
-supply0 gnd;
 
-// Argument order (Drain, Source, gate)
-nmos n1(out, gnd, in);
-pmos p1(out, vdd, in);
+    // create 4 instances of TFF connected in cascade
+    tff tff0(.clk(clk), .rst_n(rst_n), .t(1'b1), .q(q[0]));
+    genvar i;
+    generate
+        for (i = 1; i<4; i++) begin
+            tff tffx(.clk(q[i-1]), .rst_n(rst_n), .t(1'b1), .q(q[i]));
+        end
+    endgenerate
 
 endmodule

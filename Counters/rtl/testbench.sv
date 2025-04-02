@@ -15,54 +15,61 @@
 //  $Author:  Ujval Madhu
 
 module testbench;
-    reg in_a, in_b;
-    reg sel;
-    wire out_mux;
-    wire out_xor;
-    wire out_xnor;
+    reg in, in_b;
+    reg rst_n, clk;
+    wire out_dff;
+    wire out_tff;
+    wire out_jkff;
+    wire [3:0] q16_t;
     integer seed;
 
-    // Instantiating 2x1 Transmission Gate MUX
-    mux_2x1 m1(.in_1(in_a), .in_2(in_b), .sel(sel), .out(out_mux));
+    //Clock Generation
+    initial begin
+        clk = 1'b0;
+        repeat(500) #5 clk = ~clk;
+    end
 
-    // Instantiating Transmission Gate XOR 
-    xor_gate xor1(.in_1(in_a), .in_2(in_b), .out(out_xor));
+    // Reset Generation
+    initial begin
+        rst_n = 1'b1;
+        repeat(10) @(posedge clk)
+        rst_n = 1'b0;
+        repeat(10) @(posedge clk)
+        rst_n = 1'b1;
+    end
 
-    // Instantiating Transmission Gate XNOR
-    xnor_gate xnor1(.in_1(in_a), .in_2(in_b), .out(out_xnor));
+    // Instantiating DFF
+    dff dff1(.clk(clk), .rst_n(rst_n), .d(in), .q(out_dff));
+
+    // Instantiating TFF 
+    tff tff1(.clk(clk),.rst_n(rst_n), .t(in), .q(out_tff));
+
+    // Instantiating JK FF 
+    jkff jkff1(.clk(clk),.rst_n(rst_n), .j(in), .k(in_b), .q(out_jkff));
+
+    // Instantiating Mod16 Ripple Counter built with T flip Flops
+    mod16_T m16T(.clk(clk), .rst_n(rst_n), .t(4'b1111), .q(q16_t));
 
     // Random Stimulus Generation
     initial begin
         seed = $random;
         $random(seed);              // Icarus doesn't support $srandom yet
 
+        in = 1'b0;
         in_b = 1'b0;
-        in_a = 1'b0;
         #10;
         
-        for(int i = 1; i <= 20; i++) begin
-            in_a = $random % 2;
+        for(int i = 1; i <= 100; i++) begin
+            in = $random % 2;
             in_b = $random % 2;
-            sel  = $random % 2;
 
-            #10;
-            
-            $display("2x1 MUX Output: Input A: %b, Input B: %b, Sel: %b, Out: %b", in_a, in_b, sel, out_mux);
-            $display("XOR Output: Input A: %b, Input B: %b, Out: %b", in_a, in_b, out_xor);
-            $display("XNOR Output: Input A: %b, Input B: %b, Out: %b\n\n", in_a, in_b, out_xnor);
-            //#10
-            // Verification
-            // // Inverter
-            // if (sel == ) begin
-            //     $display("Error Detected on inverter at %t, output = %b input = %b",$time, out_inv, in); 
-            //     $fatal;
-            // end
+            @(posedge clk)
+            #1
+            $display("DFF Input: %b Output:%b", in, out_dff);
+            $display("TFF Input: %b Output:%b", in, out_tff);
+            $display("JKFF Input J: %b Input K: %b Output:%b\n", in, in_b, out_jkff);
 
-            // // NAND
-            // if (out_nand != ~(in_a & in_b) ) begin
-            //     $display("Error Detected on NAND at %t, Output = %b , Input A= %b, Input B = %b",$time, out_nand, in_a, in_b); 
-            //     $fatal;
-            // end
+
         end
     end
 
