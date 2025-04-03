@@ -6,9 +6,12 @@ This projects models various types of counters using sequential logic.
 
 | Sl No | Project | Description |
 |-------|---------|-------------|
-| 1.    | 4-bit Ripple Counter |  Sequential Modeling of a 4-bit ripple/ mod-16 asynchronous counter |
-| 2. |  |  |
-| 3. |  | |
+| 1. | dff | A standard D Flip Flop |
+| 2. | tff | A T Flip Flop designed using a DFF |
+| 3. | jkff | A Standard JK Slip Flop |
+| 4. | mod16_T |  Sequential Modeling of a 4-bit ripple/ mod-16 asynchronous counter using T Flip Flops |
+| 5. | mod16_JK |  Sequential Modeling of a 4-bit ripple/ mod-16 asynchronous counter using JK Flip Flops |
+
 
 
 ## Description
