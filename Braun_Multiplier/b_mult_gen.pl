@@ -37,7 +37,7 @@
 
 =encoding UTF-8
 
-=head1 braun_multiplier_generator.pl
+=head1 b_mult_gen.pl
 
 Parameterized Braun Multiplier HDL Generator
 
@@ -134,7 +134,7 @@ sub main{
     if(defined($num_bits)){
         if($num_bits % 2 == 0){
         print("Creating a $num_bits-bit Braun Multiplier \n");
-        } else { die("Use a even number of bits");}
+        } else { die("Use an even number of bits");}
     } else {
         print("Creating a 16-bit Braun Multiplier \n");
         $num_bits = 16;
@@ -236,7 +236,7 @@ FA_CODE
     
     my $psum .= "assign ps[0] = ab_prod[0];\n";
     
-    for my i ()
+    # for my i ()
 
 
     open(my $bm_fh, '>', "rtl/$outfile") or die "Could not create verilog file for Braun Multiplier: $!";
@@ -272,10 +272,11 @@ FA_CODE
 //  \$Revision: 1.0 $
 ///  \$Author:  Ujval Madhu
 
-module $module_name(
+module $module_name (
+
     input  [$input_size - 1 : 0] a,
     input  [$input_size - 1 : 0] b,
-    output [$input_size * 2 : 0] prod
+    output [$input_size * 2 -1 : 0] prod
 );
 
 wire [$and_count - 1 : 0] ab_prod;          // For Partial Products
@@ -322,9 +323,9 @@ sub HELP_MESSAGE{																	# This Subroutine displays the Help Message
 	************************************************************************************************************************	
 	* This program reguires the declaration of the parameter text file or the complete list of command line arguments
 	
-	*	eg: um2072.pl -param ParameterFile.txt
+	*	eg: hdl_generator.pl -param ParameterFile.txt
 		    or
-		    um2072.pl -width 16 -stages 20 -reset 0x10 -outfile Reg1.v
+		    hdl_generator.pl -width 16 -stages 20 -reset 0x10 -outfile Reg1.v
 
 	* The width size can be specified from 1 to 64 bits
 	* The number of stages must in the range 2 to 128.
