@@ -210,7 +210,7 @@ FA_CODE
     
     # Total number of AND gates and Full Adders
     my $and_count = $input_size*$input_size;
-    my $fa_count  = $input_size*($input_size -1);
+    my $fa_count  = $input_size*($input_size -1) + 1; # adding 1 extra for psum[0] = a0*b0
 
     
     # Partial Product Verilog Code Generation:
@@ -244,8 +244,76 @@ FA_CODE
     # Partial Sum Verilog Code Generation
     
     my $psum = "";
-    
-    # for my i ()
+    # comments explained for an input size of 8
+    # Use full adders to find the sum of  partial products, 7 Rows of addition for input size 8 
+    # 1st row addition, both operands are partial products
+    # 2nd row onwards, 1 operand is a partial product, 2nd operand is the sum from the previous operation
+    my $op_b = 0;
+    my $op_a = 0;
+    my $op1_ind = 0;                
+    my $op2_ind = 0;
+    my $c_ind = 0;
+    my $psum_ind = 0;
+
+
+    for my $i (1..$input_size -1){
+        if ($i == 1){
+            # both operands are partial products
+            $op_b = $i - 1;
+            $op_a = 0;
+            $op1_ind = ($op_b*$input_size) + $op_a;                # 0 here, for a0*b0
+            $op2_ind = (($op_b + 1)*$input_size) + $op_a;
+
+
+            # Assigning psum[0] to a0b0
+            $psum .= "assign psum[$psum_ind] = ab_prod[$op1_ind];\n\n";
+            $op1_ind +=1;
+            $psum_ind +=1;
+            
+            # Assigning psum[1 to 8] in the 1st row addition
+            for my $j (1..$input_size){
+                if ($j != $input_size){
+                    $psum .= "fa fa$psum_ind (.a(ab_prod[$op1_ind]), .b(ab_prod[$op2_ind]), .c_in(carry[$c_ind]), .sum(psum[$psum_ind]), .c_out(carry[$c_ind + 1]) );\n";
+                    $psum_ind +=1;
+                    $op1_ind +=1;
+                    $op2_ind +=1;
+                    $c_ind +=1;
+                }
+                else{
+                    $psum .= "fa fa$psum_ind (.a(1'b0), .b(ab_prod[$op2_ind]), .c_in(carry[$c_ind]), .sum(psum[$psum_ind]), .c_out(carry[$c_ind + 1]) );\n";
+                    $psum_ind +=1;
+                    $op2_ind +=1;
+                    $c_ind +=1;                    
+                }
+            }
+        }
+        # Assigning psum for the remaining rows
+        else {
+            $psum .= "\n";
+            # 1 Operand is a partial product and the other is a psum from previous row addition
+            $op_b = $i;
+            $op_a = 0;
+            $op1_ind = ($op_b*$input_size) + $op_a;                # Partial Product
+            $op2_ind = $psum_ind - $input_size + 1;                # Previous psum
+            $c_ind += 1;                                           # adding 1 as previous c_ind will be used for addition in the last term of the row.
+            for my $j (1..$input_size){
+                if ($j != $input_size){
+                    $psum .= "fa fa$psum_ind(.a(ab_prod[$op1_ind]), .b(psum[$op2_ind]), .c_in(carry[$c_ind]), .sum(psum[$psum_ind]), .c_out(carry[$c_ind + 1]) );\n";
+                    $psum_ind +=1;
+                    $op1_ind +=1;
+                    $op2_ind +=1;
+                    $c_ind +=1;
+                }   
+                else {
+                    $psum .= "fa fa$psum_ind (.a(ab_prod[$op1_ind]), .b(carry[$c_ind - $input_size]), .c_in(carry[$c_ind]), .sum(psum[$psum_ind]), .c_out(carry[$c_ind + 1]) );\n";
+                    $psum_ind +=1;
+                    $op2_ind +=1;
+                    $c_ind +=1;               
+                }
+            }
+
+        }
+    }
 
 
     open(my $bm_fh, '>', "rtl/$outfile") or die "Could not create verilog file for Braun Multiplier: $!";
@@ -329,7 +397,7 @@ sub HELP_MESSAGE{																	# This Subroutine displays the Help Message
 	print <<'MSG';
 
 	************************************************************************************************************************	
-	* This program reguires the declaration of the parameter text file or the complete list of command line arguments
+	* This program requires the declaration of the parameter text file or the complete list of command line arguments
 	
 	*	eg: hdl_generator.pl -param ParameterFile.txt
 		    or
@@ -357,7 +425,7 @@ main();
 
     # for my $j (1..$input_size -1){     # 1 to input_size -1 rows of FAs 
         
-    #     for my $k (1..$input_size){    # Input_size columns of FA
+    #     for my $k (1..$input_size){    # input_size columns of FA
             
     #         if($j == 1){               # 1st Row of FAs have both operands = partial products
 
