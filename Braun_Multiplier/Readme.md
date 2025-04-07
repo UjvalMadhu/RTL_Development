@@ -1,10 +1,14 @@
-# 16-Bit Braun Multiplier (In Progress)
+# Parameterized Braun Multiplier
 
-This projects designs and verifies a 16-Bit Braun Multiplier, it is used for unsigned multiplication and consists of a simple parallel multiplier structure. Due to its straightforward design it is widely used in hardware designs.
+This projects designs a perl script that can generate a Parameterized N-Bit Braun Multiplier and its testbench with randomized stimulus generation and functional equivalence checking using immediate assertions.
+
+The Perl Script can generate any arbitrary N bit Braun Multiplier, by specifying the output product bit width which must be an even number.
+
+Braun Multipliers are used for unsigned multiplication and consists of a simple parallel multiplier structure. Due to its straightforward design it is widely used in hardware designs.
 
 ## Description
 
-### DUT: 16-Bit Braun Multiplier
+### DUT: Braun Multiplier
 
 A Braun multiplier for multiplying an n-bit multiplicand (B) by an m-bit multiplier (A) typically consists of the following components arranged in a specific pattern:
 
@@ -14,7 +18,7 @@ A Braun multiplier for multiplying an n-bit multiplicand (B) by an m-bit multipl
 
 ### Requirements
 
-A 16 Bit Braun Multiplier would require the following components:
+A 8 Bit Braun Multiplier would require the following components:
 1. ` n x n ` multiplier would require `n(n-1)` full adders, => for a 16 bit output we need 8 bit operands, => `8 x (8-1) = 56` Full Adders are required.
 2. Partial product generation requires AND gates, and we will have `8 x 8` partial products => 64 AND gates
 
@@ -34,6 +38,12 @@ P5(MSB)   P4    P3    P2    P1     P0     (6 bit Result)
 ```
 
 
+### DUT Architecture for a 8 Bit Braun Multiplier
+
+<p>
+    <img src = "./figures/bm_8_bit.png"/>
+    <figcaption>8-Bit Braun Multiplier Architecture</figcaption>
+</p>
 
 
 #### Considerations:
@@ -44,16 +54,16 @@ P5(MSB)   P4    P3    P2    P1     P0     (6 bit Result)
 
 
 ### Testbench
-The testbench used for verifying is a standard SV testbench with randomized stimulus generation, functional equivalence checking and immediate assertion.
+The testbench used for verifying is a standard SV testbench with randomized stimulus generation and functional equivalence checking using immediate assertions.
 
 ## Project Organization
 
 This project is organized as follows:
-
+* **b_mult_gen.pl:** This is the perl script that can generate the necessary verilog files and the testbench
 * **build/:** Contains compiled output files.
 * **figures/:** Stores generated figures or images.
 * **rtl/:** Holds the Register Transfer Level (RTL) Verilog source code files for the CMOS gates.
-    * **braun_mul.v:** Verilog module for a 4-bit Carry Look Ahead Adder.
+    * **braun_mult.v:** Verilog module for a 4-bit Carry Look Ahead Adder.
     * **testbench.sv:** SystemVerilog testbench for verifying the functionality of the designs.
     * **timescale.v:** Verilog file defining the timescale used for simulation.
 
@@ -84,6 +94,30 @@ This project is organized as follows:
 
 
 ## Build Process
+Generating the Verilog files and the testbench
+```bash
+perl b_mult_gen.pl -n <Output_Width>
+```
+The user can provide the following arguments using the command line:
+
+   ` -n ` : The Output Bit size of the Braun Multiplier, has to be an even number (Default = 16)
+
+   ` -o ` : Override the default name for the module, specify the name as name.v (Default = b_mult.v), short names are ideal
+
+   ` -h `  : Display Help message
+
+    To create an 4-bit Braun Multiplier with the default module name 'braun_mult.v' run the script as follows:
+```
+    b_mult_gen.pl -n 8 
+```
+    To create a 4 bit Braun Multiplier with a specific module name, say 'b_mult_4.v' run the script as follows:
+```
+    b_mult_gen.pl -n 8 -o b_mult_4.v
+```
+    ** If you choose to have a custom name, please update the Makefile, line 18 to match the name.
+
+
+Once the files are generated the makefile can be used as follows:
 
 ```bash
 make all     # Performs the entire process (compilation, simulation, and waveform viewing)
