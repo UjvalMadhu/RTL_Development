@@ -132,9 +132,9 @@ sub main{
     # Ensuring num_bits is properly set
     
     if(defined($num_bits)){
-        if($num_bits % 2 == 0){
+        if($num_bits % 2 == 0 and $num_bits > 1){
         print("Creating a $num_bits-bit Braun Multiplier \n");
-        } else { die("Use an even number of bits");}
+        } else { die("Use an even number of bits greater than 1");}
     } else {
         print("Creating a 16-bit Braun Multiplier \n");
         $num_bits = 16;
@@ -315,6 +315,26 @@ FA_CODE
         }
     }
 
+    # Output Generation from the Partial Sums
+
+    my $op_code = qq{
+assign prod[0] = psum[0];
+assign prod[1] = psum[1];\n
+};
+
+    for my $i (2..($input_size -1)){
+        $op_code .= "assign prod[$i] = psum[$input_size*($i-1) +1];\n";
+        
+        # Condition for the assignment of the last input_size bits
+        if($i == $input_size -1){
+            for my $j (2..($input_size)){
+                $op_code .= "assign prod[$i+$j-1] = psum[($input_size * ($i - 1)) +$j];\n";
+            }
+            $op_code .= "assign prod[($input_size*2)-1] = carry[(($input_size +1)*($input_size -1)) - 1 ];\n";
+        }
+    }
+
+
 
     open(my $bm_fh, '>', "rtl/$outfile") or die "Could not create verilog file for Braun Multiplier: $!";
 
@@ -353,7 +373,7 @@ module $module_name (
 
     input  [$input_size - 1 : 0] a,
     input  [$input_size - 1 : 0] b,
-    output [$input_size * 2 -1 : 0] prod
+    output [($input_size * 2) -1 : 0] prod
 );
 
 wire [$and_count - 1 : 0] ab_prod;          // For Partial Products
@@ -366,6 +386,8 @@ $ab
 ]}
 
 $psum
+
+$op_code
 
 endmodule
 BM_CODE
