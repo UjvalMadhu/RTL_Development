@@ -17,20 +17,20 @@
 
 module testbench;
 
-    parameter num_bits = 4;
-    parameter num_tests = 1000;
+    parameter num_bits = 8;
+    parameter num_tests = 100;
 
     reg [num_bits -1:0] in_a;
     reg [num_bits -1:0] in_b;
     reg c0;
-    reg [num_bits -1:0]sum;
+    reg [(2*num_bits) -1:0]prod;
     reg [num_bits:0] expected_sum;
     reg [num_bits:0] obtained_sum;
     reg c_out;
     integer seed;
 
-    // Instantiating the Carry Look Ahead Adder module
-    cla_4b cla_adder(.a(in_a), .b(in_b), .c0(c0), .sum(sum), .c_out(c_out));
+    // Instantiating the Braun Multiplier
+    braun_mult bmx(.a(in_a), .b(in_b), .prod(prod));
     
     ////////////////////////////////
     //    Random Stimulus Test    //
@@ -40,42 +40,39 @@ module testbench;
         seed = $random;
         $random(seed);              // Icarus doesn't support $srandom yet
 
-        in_b = 4'b0;
-        in_a = 4'b0;
-        c0   = 1'b0;
+        in_b = 8'b0;
+        in_a = 8'b0;
         #10;
         
         for(int i = 1; i <= num_tests; i++) begin
-            in_a = $random % (2);
-            in_b = $random % (2);
-            c0   = $random % (2);
+            in_a = $random % (8);
+            in_b = $random % (8);
 
             #10;
 
             $display("\n Random Test %0d", i);
-            $display("CLA Result: Input A: %4b, Input B: %4b, C0: %0b, Sum: %4b, C_out: %0b", in_a, in_b, c0, sum, c_out);
-            $display("CLA Result: Input A: %0d, Input B: %0d, C0: %0d, Sum: %0d, C_out: %0d", in_a, in_b, c0, sum, c_out);
+            $display("Braun Multiplier Result: Input A: %d, Input B: %d, Product: %d", in_a, in_b, prod);
 
-           //////////////////////// 
-           // Functional Testing //
-           ////////////////////////
+        //    //////////////////////// 
+        //    // Functional Testing //
+        //    ////////////////////////
 
-            expected_sum =  in_a + in_b + c0;
+        //     expected_sum =  in_a + in_b + c0;
 
-            if(c_out) begin 
-                obtained_sum = (1 << num_bits) + sum;
-            end
-            else begin
-                obtained_sum = sum;
-            end
+        //     if(c_out) begin 
+        //         obtained_sum = (1 << num_bits) + sum;
+        //     end
+        //     else begin
+        //         obtained_sum = sum;
+        //     end
 
-            assert(expected_sum == obtained_sum)
-            else begin
-                $error("Sum Check Assertion error: Expected Sum = %0d, but Obtained Sum = %0d at %0t", expected_sum, obtained_sum, $time);
-                $fatal;
-            end
+        //     assert(expected_sum == obtained_sum)
+        //     else begin
+        //         $error("Sum Check Assertion error: Expected Sum = %0d, but Obtained Sum = %0d at %0t", expected_sum, obtained_sum, $time);
+        //         $fatal;
+        //     end
             
-            #10;
+        //     #10;
 
         end
 

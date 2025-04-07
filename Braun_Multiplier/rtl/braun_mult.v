@@ -24,7 +24,7 @@
 //
 //  Id: braun_mult.v, v 1.0
 //
-//  $Date: 2025-4-6
+//  $Date: 2025-4-7
 //  $Revision: 1.0 
 //  $Author:  Ujval Madhu
 
@@ -32,7 +32,7 @@ module braun_mult (
 
     input  [8 - 1 : 0] a,
     input  [8 - 1 : 0] b,
-    output [8 * 2 -1 : 0] prod
+    output [(8 * 2) -1 : 0] prod
 );
 
 wire [64 - 1 : 0] ab_prod;          // For Partial Products
@@ -191,6 +191,26 @@ fa fa53(.a(ab_prod[60]), .b(psum[46]), .c_in(carry[58]), .sum(psum[53]), .c_out(
 fa fa54(.a(ab_prod[61]), .b(psum[47]), .c_in(carry[59]), .sum(psum[54]), .c_out(carry[59 + 1]) );
 fa fa55(.a(ab_prod[62]), .b(psum[48]), .c_in(carry[60]), .sum(psum[55]), .c_out(carry[60 + 1]) );
 fa fa56 (.a(ab_prod[63]), .b(carry[61 - 8]), .c_in(carry[61]), .sum(psum[56]), .c_out(carry[61 + 1]) );
+
+
+
+assign prod[0] = psum[0];
+assign prod[1] = psum[1];
+
+assign prod[2] = psum[8*(2-1) +1];
+assign prod[3] = psum[8*(3-1) +1];
+assign prod[4] = psum[8*(4-1) +1];
+assign prod[5] = psum[8*(5-1) +1];
+assign prod[6] = psum[8*(6-1) +1];
+assign prod[7] = psum[8*(7-1) +1];
+assign prod[7+2-1] = psum[(8 * (7 - 1)) +2];
+assign prod[7+3-1] = psum[(8 * (7 - 1)) +3];
+assign prod[7+4-1] = psum[(8 * (7 - 1)) +4];
+assign prod[7+5-1] = psum[(8 * (7 - 1)) +5];
+assign prod[7+6-1] = psum[(8 * (7 - 1)) +6];
+assign prod[7+7-1] = psum[(8 * (7 - 1)) +7];
+assign prod[7+8-1] = psum[(8 * (7 - 1)) +8];
+assign prod[(8*2)-1] = carry[((8 +1)*(8 -1)) - 1 ];
 
 
 endmodule
