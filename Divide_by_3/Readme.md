@@ -88,11 +88,11 @@ make clean   # Removes all generated files and directories
 
 ## Output:
 
-<!-- The Output from the simulation is shown here:
+The Output from the simulation is shown here:
 <p>
     <img src = "./figures/tb_output.png"/>
     <figcaption>Test Bench output</figcaption>
-</p>-->
+</p>
 
 The Waveforms from the simulation is shown here:
 <p>

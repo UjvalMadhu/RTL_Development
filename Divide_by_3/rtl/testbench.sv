@@ -97,7 +97,9 @@ module testbench;
 
             end
         end
-        // $finish;
+
+        $display("All Test Cases Passed!!\n");
+        $finish;
     end
 
     // Generating Waveform Files
