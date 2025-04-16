@@ -33,7 +33,7 @@ if next bit is 0, next reminder 1
 Based on this logic a state machine can be created as follows:
 
 <p>
-    <img src = "./figures/Divide_by_3_State_Machine.png" width = "480" height = "450" />
+    <img src = "./figures/Divide_by_3_State_Machine.png" />
     <figcaption>CMOS Transmission Gate</figcaption>
 </p>
 
@@ -89,7 +89,7 @@ make clean   # Removes all generated files and directories
 
 ## Output:
 
-The Output from the simulation is shown here:
+<!-- The Output from the simulation is shown here:
 <p>
     <img src = "./figures/tb_output.png"/>
     <figcaption>Test Bench output</figcaption>
@@ -99,7 +99,7 @@ The Waveforms from the simulation is shown here:
 <p>
     <img src = "./figures/waveforms.png"/>
     <figcaption>Simulation Waveforms</figcaption>
-</p>
+</p> -->
 
 ## License
 
