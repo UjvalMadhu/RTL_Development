@@ -19,11 +19,19 @@ module testbench;
     logic clk;
     logic rst;
     int seed;
+
     logic [1:0] out;
+    logic [1:0] out_buf1;
+    logic [1:0] out_buf2;
+
+    logic in_buf1;
+    logic in_buf2;
+    logic in_buf3;
+
 
     initial begin
         clk = 1'b0;
-        forever begin
+        repeat(100) begin
             #5 clk = ~clk;     
         end
     end
@@ -32,6 +40,13 @@ module testbench;
     // Instantiating DUT
     div_by_3 dut(.clk(clk), .rst(rst), .in(in_a), .out_r(out));
 
+    always @(posedge clk) begin
+        out_buf1 <= out;
+        out_buf2 <= out_buf1;
+        in_buf1 <= in_a;
+        in_buf2 <= in_buf1;
+        in_buf3 <= in_buf2;
+    end
 
     // Random Stimulus Generation
     initial begin
@@ -48,21 +63,41 @@ module testbench;
 
             #10;
             
-            $display("DUT Output: Input bit: %b, Reminder: %b, ", in_a, out);
-            //#10
-            // Verification
-            // // Inverter
-            // if (sel == ) begin
-            //     $display("Error Detected on inverter at %t, output = %b input = %b",$time, out_inv, in); 
-            //     $fatal;
-            // end
+            $display("DUT Signals: Reset: %d, Input bit: %b, Reminder: %d, ", rst, in_buf2, out);
 
-            // // NAND
-            // if (out_nand != ~(in_a & in_b) ) begin
-            //     $display("Error Detected on NAND at %t, Output = %b , Input A= %b, Input B = %b",$time, out_nand, in_a, in_b); 
-            //     $fatal;
-            // end
+            //Verification
+            
+            if(!rst) begin
+                if (out_buf1 == 0 && in_buf2 == 0 && out != 0) begin
+                    $display("Error Detected on DUT at %t, Previous Reminder: %0d, Input bit: %b, Reminder: %d",$time, out_buf1, in_buf2, out); 
+                    $fatal;
+                end
+                if (out_buf1 == 0 && in_buf2 == 1 && out != 1) begin
+                    $display("Error Detected on DUT at %t, Previous Reminder: %0d, Input bit: %b, Reminder: %d",$time, out_buf1, in_buf2, out); 
+                    $fatal;
+                end
+
+                if (out_buf1 == 1 && in_buf2 == 0 && out != 2) begin
+                    $display("Error Detected on DUT at %t, Previous Reminder: %0d, Input bit: %b, Reminder: %d",$time, out_buf1, in_buf2, out); 
+                    $fatal;
+                end
+                if (out_buf1 == 1 && in_buf2 == 1 && out != 0) begin
+                    $display("Error Detected on DUT at %t, Previous Reminder: %0d, Input bit: %b, Reminder: %d",$time, out_buf1, in_buf2, out); 
+                    $fatal;
+                end  
+
+                if (out_buf1 == 2 && in_buf2 == 0 && out != 1) begin
+                    $display("Error Detected on DUT at %t, Previous Reminder: %0d, Input bit: %b, Reminder: %d",$time, out_buf1, in_buf2, out); 
+                    $fatal;
+                end
+                if (out_buf1 == 2 && in_buf2 == 1 && out != 2) begin
+                    $display("Error Detected on DUT at %t, Previous Reminder: %0d, Input bit: %b, Reminder: %d",$time, out_buf1, in_buf2, out); 
+                    $fatal;
+                end                                              
+
+            end
         end
+        // $finish;
     end
 
     // Generating Waveform Files
