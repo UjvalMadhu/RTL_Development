@@ -31,18 +31,16 @@ module atm_counter(
 );
 
 reg [63:0] count_reg;
-reg [63:0] count;
+reg [31:0] count_MSB;
 
 always @(posedge clk or posedge rst) begin  
     if(rst)  begin count_reg <= 64'b0; end
+    else if(trig_i) begin
+        count_reg[63:0] <= count_reg[63:0] + 1'b1;
+    end    
     else begin
-        count_reg[63:0] <= count[63:0];
+        count_reg[63:0] <= count_reg[63:0];
     end
-end
-
-// Logic for count update
-always @(posedge trig_i) begin
-    count = count_reg + 1'b1;
 end
 
 // Logic for ack_o
@@ -58,17 +56,31 @@ always @(posedge clk or posedge rst) begin
     end
 end
 
+
+// Output MSB so that we dont get an incremented MSB for a non incremented LSB
+always @(posedge clk or negedge rst) begin
+    if(rst) begin
+        count_MSB <= 32'd0;
+    end
+    else begin
+        count_MSB <= count_reg[63:32];
+    end
+end
+
+
 // Output logic
 always @(posedge clk or negedge rst) begin
     if(rst) begin
-        count_o[31:0] <= 32'b0;
+        count_o[31:0] <= 32'd0;
     end
-
     if(req_i && atomic_i) begin
         count_o[31:0] <=  count_reg[31:0];
     end
     else if(req_i) begin
-        count_o[31:0] <= count_reg[63:32];
+        count_o[31:0] <= count_MSB[31:0];
+    end
+    else begin
+        count_o[31:0] <= 32'd0;
     end
 end
 

@@ -1,24 +1,64 @@
-# Switch level Modeling of CMOS Transmission Gate Circuits
+# Atomic Counter and Bus Read
 
-This projects models circuits using CMOS transmission gates.
+This projects is part of the wonderful course, [Hands-in RTL](https://quicksilicon.in/course/rtl-design) created by Rahul Behl. Highly recommended if you are an aspiring RTL Designer or Verification Engineer. The website offers hands on practice, visualization, in depth video explanation and the most efficient solutions in Verilog, VHDL and SystemVerilog. The solution implemented here is my first try on the problem and is not the most efficient, I've implemented a better solution based on the reference from the course but cannot share that due to copyright concerns from the course.
 
-## Project Index
+## Problem:
+
+Design a 64-bit event counter module and its 32-bit bus interface for a micro-controller. The counter increments on a trigger input. Implement a mechanism to ensure 64-bit reads, which require two 32-bit bus cycles, are single-copy atomic. Use positive edge-triggered flops with asynchronous resets if needed.
+
+### Atomic Operation:
+
+An atomic operation is an operation that is guaranteed to complete in its entirety without being interrupted by other operations. From the perspective of other processes or threads, an atomic operation either happens completely or doesn't happen at all; there's no in-between state where only part of the operation has occurred. Think of it like a single, indivisible action.
+
+Common examples of operations that need to be atomic in multi-threaded or multi-processor systems include:
+
+- Read-Modify-Write cycles: Reading a value, performing an operation on it, and writing it back (e.g., incrementing a counter). If not atomic, another process could read the old value after the first process reads it but before it writes the new value, leading to a lost update.   
+- Swapping values: Exchanging the contents of two memory locations.   
+- Test-and-set: Reading a value and setting it to a new value based on the original value.
+
+
+### Interface Definition
+
+```
+trig_i    : Trigger input to increment the counter (High level on clock edge is an indication for incrementing)
+req_i     : A read request to the counter
+atomic_i  : Marks whether the current request is the first part of the two 32-bit accesses to read
+            the 64-bit counter. Use this input to save the current value of the upper 32-bit of
+            the counter in-order to ensure single-copy atomic operation
+ack_o     : Acknowledge output from the counter
+count_o   : 32-bit counter value given as output to the controller
+
+```
+
+**Interface Requirements**
+
+The counter value is read by a 32-bit wide bus but the output should be single-copy atomic. The interface is a simple request and acknowledge interface with the following strict requirements:
+
+Request can be a pulse or can get back to back multiple requests
+The acknowledge output must be given one cycle after the request is asserted
+The count_o signal must be 0 when the ack_o signal is not asserted
+The controller will always send two requests in order to read the full 64-bit counter
+The first request will always have the atomic_i input asserted
+The second request will not have the atomic_i input asserted
+
+The Counter should have an output response as shown here:
+
+<p>
+    <img src = "./figures/Sample_waveform.png" />
+    <figcaption>                Sample Waveform                </figcaption>
+</p>
+
+
+## Project RTL Directory
 
 | Sl No | Project | Description |
 |-------|---------|-------------|
-| 1.    | 2x1 MUX | A 2x1 Multiplexer using Transmission Gates |
-| 2. | XOR Gate | XOR Gate Implementation |
-| 3. | XNOR Gate | XNOR Gate Impementation |
+| 1.    | atm_counter.v | Implementation of the Atomic Counter in Verilog |
+| 2. | atm_counter.vhd | Implementation of teh atomic counter in VHDL |
+| 3. | testbench.sv | System Verilog testbench for the module |
 
 
-## Description
 
-### What are Transmission Gates?
-
-a CMOS Transmission Gate (TG) is a bidirectional switch made by connecting a PMOS and an NMOS transistor in parallel.  They share source and drain connections, and their gates are driven by complementary control signals (Control signal and its inverse).
-
-ON State (Control HIGH): Both NMOS and PMOS are ON, providing a low-resistance path for signals to flow in either direction. It efficiently passes both logic '0' and logic '1'.
-OFF State (Control LOW): Both NMOS and PMOS are OFF, creating a high-resistance path, effectively blocking signal flow.
 
 CMOS Transmission gate Circuit is shown here:
 <p>
