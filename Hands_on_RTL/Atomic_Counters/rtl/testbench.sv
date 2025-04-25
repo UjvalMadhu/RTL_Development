@@ -15,41 +15,50 @@
 //  $Author:  Ujval Madhu
 
 module testbench;
-    reg in_a, in_b;
-    reg sel;
-    wire out_mux;
-    wire out_xor;
-    wire out_xnor;
-    integer seed;
+    reg atomic_i, req_i, trig_i;
+    reg clk, rst;
+    wire ack_o;
+    wire [31:0] count_o;
 
-    // Instantiating 2x1 Transmission Gate MUX
-    mux_2x1 m1(.in_1(in_a), .in_2(in_b), .sel(sel), .out(out_mux));
+    // Instantiating atmoic_counter
+    atmoic_counter a1(.clk(clk), .reset(rst), .trig_i(trig_i), .req_i(req_i), .atomic_i(atomic_i), .ack_o(ack_o), .count_o(count_o));
 
-    // Instantiating Transmission Gate XOR 
-    xor_gate xor1(.in_1(in_a), .in_2(in_b), .out(out_xor));
+    // Clock Gen
+    initial begin
+        clk = 1'b0;
+        repeat(500) #5 clk = ~clk;
+    end
 
-    // Instantiating Transmission Gate XNOR
-    xnor_gate xnor1(.in_1(in_a), .in_2(in_b), .out(out_xnor));
+    // Reset Gen
+    initial begin
+        rst = 1'b0;
+        repeat(5) @(posedge clk);
+        rst = 1'b1;
+        repeat(10) @(posedge clk);
+        rst = 1'b0;
+    end
 
     // Random Stimulus Generation
     initial begin
         seed = $random;
         $random(seed);              // Icarus doesn't support $srandom yet
 
-        in_b = 1'b0;
-        in_a = 1'b0;
+        trig_i      = 1'b0;
+        atomic_i    = 1'b0;
+        req_i       = 1'b0;
         #10;
         
         for(int i = 1; i <= 20; i++) begin
-            in_a = $random % 2;
-            in_b = $random % 2;
-            sel  = $random % 2;
 
-            #10;
+            @(posedge clk)
+            trig_i      = $urandom_range(0,1);
+            atomic_i    = $urandom_range(0,1);
+            req_i       = $urandom_range(0,1);
+
+            #1;
             
-            $display("2x1 MUX Output: Input A: %b, Input B: %b, Sel: %b, Out: %b", in_a, in_b, sel, out_mux);
-            $display("XOR Output: Input A: %b, Input B: %b, Out: %b", in_a, in_b, out_xor);
-            $display("XNOR Output: Input A: %b, Input B: %b, Out: %b\n\n", in_a, in_b, out_xnor);
+            $display("Atmoic Counter Output: Trig_i: %b, Atomic_i: %b, req_i: %b, Count_o: %b, ack_o: %b", trig_i, atomic_i, req_i, count_o, ack_o);
+
             //#10
             // Verification
             // // Inverter

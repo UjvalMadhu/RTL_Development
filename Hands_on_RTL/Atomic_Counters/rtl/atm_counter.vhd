@@ -27,7 +27,7 @@ use ieee.numeric_std.all;
 entity atm_counter is
     port(
         clk     : in std_logic;
-        rst     : in std_logic;
+        reset   : in std_logic;
         trig_i  : in std_logic;
         atomic_i: in std_logic;
         req_i   : in std_logic;
@@ -46,43 +46,56 @@ architecture logic of atm_counter is
     signal ack_reg      : std_logic;
 
     begin
-
+    
     -- Count Logic
-
-        process(clk, rst)
+        process(clk, reset)
         begin
-            if reset = '1' begin
-                count_MSB <= (others =>'0');
+            if reset = '1' then
                 count_reg <= (others => '0');
-                ack_reg   <= '0';
-            elsif rising_edge(clk) begin
-                if(trig_i = '1') begin
+            elsif rising_edge(clk) then
+                if(trig_i = '1') then
                     count_reg <= count_reg + 1;
+                else
+                    count_reg <= count_reg;
                 end if;
             end if;
         end process;
 
     -- MSB Logic
-        process(clk, rst)
+        process(clk, reset)
         begin
-            if reset = '1' begin
+            if reset = '1' then
                 count_MSB <= (others =>'0');
-            elsif rising_edge(clk) begin
+            elsif rising_edge(clk) then
                 count_MSB <= count_reg(63 downto 0);
             end if;
         end process;
 
     -- ACK Logic
-        process(clk, rst)
+        process(clk, reset)
         begin
-            if reset = '1' begin
+            if reset = '1' then
                 ack_o <= '0';
-            elsif rising_edge(clk) begin
-                if(req_i = '1') begin
+            elsif rising_edge(clk) then
+                if(req_i = '1') then
                     ack_o <= '1';
                 end if;
             end if;
         end process;
 
     -- Output Logic
-    
+        process(clk, rst) begin
+            if(reset) then
+                count_o <= (others => '0');
+            elsif(req_i) then
+                if(atomic_i) then
+                    count_o <= count_reg(31 downto 0);
+                else 
+                    count_o <= count_MSB;
+                end if;
+            else 
+                count_o <= (others => '0');
+            end if;
+        end process;
+
+end architecture;
