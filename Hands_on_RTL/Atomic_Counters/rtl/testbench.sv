@@ -19,9 +19,10 @@ module testbench;
     reg clk, rst;
     wire ack_o;
     wire [31:0] count_o;
+    int seed;
 
     // Instantiating atmoic_counter
-    atmoic_counter a1(.clk(clk), .reset(rst), .trig_i(trig_i), .req_i(req_i), .atomic_i(atomic_i), .ack_o(ack_o), .count_o(count_o));
+    atm_counter a1(.clk(clk), .rst(rst), .trig_i(trig_i), .req_i(req_i), .atomic_i(atomic_i), .ack_o(ack_o), .count_o(count_o));
 
     // Clock Gen
     initial begin
@@ -32,9 +33,9 @@ module testbench;
     // Reset Gen
     initial begin
         rst = 1'b0;
-        repeat(5) @(posedge clk);
+        repeat(2) @(posedge clk);
         rst = 1'b1;
-        repeat(10) @(posedge clk);
+        repeat(2) @(posedge clk);
         rst = 1'b0;
     end
 
@@ -48,7 +49,7 @@ module testbench;
         req_i       = 1'b0;
         #10;
         
-        for(int i = 1; i <= 20; i++) begin
+        for(int i = 1; i <= 50; i++) begin
 
             @(posedge clk)
             trig_i      = $urandom_range(0,1);
@@ -57,7 +58,7 @@ module testbench;
 
             #1;
             
-            $display("Atmoic Counter Output: Trig_i: %b, Atomic_i: %b, req_i: %b, Count_o: %b, ack_o: %b", trig_i, atomic_i, req_i, count_o, ack_o);
+            $display("Atmoic Counter, Reset: %0b, Output: Trig_i: %b, Atomic_i: %b, req_i: %b, Count_o: %d, ack_o: %b", rst, trig_i, atomic_i, req_i, count_o, ack_o);
 
             //#10
             // Verification

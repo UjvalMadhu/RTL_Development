@@ -1,6 +1,6 @@
 # Atomic Counter and Bus Read
 
-This projects is part of the wonderful course, [Hands-in RTL](https://quicksilicon.in/course/rtl-design) created by Rahul Behl. Highly recommended if you are an aspiring RTL Designer or Verification Engineer. The website offers hands on practice, visualization, in depth video explanation and the most efficient solutions in Verilog, VHDL and SystemVerilog. The solution implemented here is my first try on the problem and is not the most efficient, I've implemented a better solution based on the reference from the course but cannot share that due to copyright concerns from the course.
+This projects is part of the wonderful course, [Hands on RTL](https://quicksilicon.in/course/rtl-design) created by Rahul Behl. Highly recommended if you are an aspiring RTL Designer or Verification Engineer. The website offers hands on practice, visualization, in depth video explanation and the most efficient solutions in Verilog, VHDL and SystemVerilog. The solution implemented here is my first try on the problem and is not the most efficient, I've implemented a better solution based on the reference from the course but cannot share that due to copyright concerns from the course.
 
 ## Problem:
 
@@ -131,4 +131,4 @@ This project is licensed under the GNU General Public License, Version 3 - see t
 
 ## Acknowledgments
 
-- Rahul Behl, [Hands-in RTL](https://quicksilicon.in/course/rtl-design)
+- Rahul Behl, [Hands on RTL](https://quicksilicon.in/course/rtl-design)
