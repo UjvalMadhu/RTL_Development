@@ -1,6 +1,8 @@
-# RTL design of an FSM that outputs the reminder of an MSB first input stream when divided by 3.
+# RTL design for checking the divisibility of an input stream by 3.
 
-This project designs an FSM in Verilog that will essentially generate the reminder for an MSB first input stream when divided by 3.
+This project has two designs:
+1. An FSM in SystemVerilog that will essentially generate the reminder for an MSB first input stream when divided by 3.
+2. A more simpler Verilog implementation using 5 muxes that can effectively do the same function.
 
 
 ## Modeling the Design
@@ -38,6 +40,11 @@ Based on this logic a state machine can be created as follows:
 </p>
 
 
+The above logic can also be implemented more using muxes without the need for an FSM. This is shown in the ```div_by_3.v``` verilog file. The implementation can be understood using the above explanation, but I thought about the problem using a different approach: It can be noticed that the reminder when dividing by 3 can only be 0, 1 or 2. And if we add a new bit to the LSB it can have the two possible effects on the reminder: 
+1. If 0 is added to the LSB the original number becomes its double
+2. If 1 is added then the original number transforms into its double + 1.
+
+We only check the conditions were the reminder becomes 1 or 2 and know that all other cases the reminder will be 0.
 
 ## Project Organization
 
@@ -47,6 +54,7 @@ This project is organized as follows:
 * **figures/:** Stores generated figures or images.
 * **rtl/:** Holds the Register Transfer Level (RTL) Verilog source code files for the CMOS gates.
     * **div_by_3.sv:** System Verilog module for of the FSM.
+    * **div_by_3.v:**  A more simpler implementation without a state machine and using only 5 muxes.
     * **testbench.sv:** SystemVerilog testbench for verifying the functionality of the designs.
     * **timescale.v:** Verilog file defining the timescale used for simulation.
 
