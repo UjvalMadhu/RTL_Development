@@ -1,45 +1,24 @@
-# Atomic Counter and Bus Read
-
-This projects is part of the wonderful course, [Hands on RTL](https://quicksilicon.in/course/rtl-design) created by Rahul Behl. Highly recommended if you are an aspiring RTL Designer or Verification Engineer. The website offers hands on practice, visualization, in depth video explanation and the most efficient solutions in Verilog, VHDL and SystemVerilog. The solution implemented here is my first try on the problem and is not the most efficient, I've implemented a better solution based on the reference from the course but cannot share that due to copyright concerns from the course.
+# 3bit Palindrome Detector
+This projects is part of the course, [Hands on RTL](https://quicksilicon.in/course/rtl-design) created by Rahul Behl. Highly recommended if you are an aspiring RTL Designer or Verification Engineer. The website offers hands on practice, visualization, in depth video explanation and the efficient solutions in Verilog, VHDL and SystemVerilog. The solution implemented here is my first try on the problem and may not be the most efficient, I've implemented a better solution based on the reference from the course but cannot share that due to copyright concerns from the course.
 
 ## Problem:
 
-Design a 64-bit event counter module and its 32-bit bus interface for a micro-controller. The counter increments on a trigger input. Implement a mechanism to ensure 64-bit reads, which require two 32-bit bus cycles, are single-copy atomic. Use positive edge-triggered flops with asynchronous resets if needed.
-
-### Atomic Operation:
-
-An atomic operation is an operation that is guaranteed to complete in its entirety without being interrupted by other operations. From the perspective of other processes or threads, an atomic operation either happens completely or doesn't happen at all; there's no in-between state where only part of the operation has occurred. Think of it like a single, indivisible action.
-
-Common examples of operations that need to be atomic in multi-threaded or multi-processor systems include:
-
-- Read-Modify-Write cycles: Reading a value, performing an operation on it, and writing it back (e.g., incrementing a counter). If not atomic, another process could read the old value after the first process reads it but before it writes the new value, leading to a lost update.   
-- Swapping values: Exchanging the contents of two memory locations.   
-- Test-and-set: Reading a value and setting it to a new value based on the original value.
-
+Design a 3 Bit Palindrome sequence detector which accepts a serial input stream and can detect overlapping sequences.
 
 ### Interface Definition
 
 ```
-trig_i    : Trigger input to increment the counter (High level on clock edge is an indication for incrementing)
-req_i     : A read request to the counter
-atomic_i  : Marks whether the current request is the first part of the two 32-bit accesses to read
-            the 64-bit counter. Use this input to save the current value of the upper 32-bit of
-            the counter in-order to ensure single-copy atomic operation
-ack_o     : Acknowledge output from the counter
-count_o   : 32-bit counter value given as output to the controller
+x_i          : Input stream of bits to the circuit
+
+palindrome_o : Output to signal that the current bit and the last two bits together form a
+               palindrome
 
 ```
 
 **Interface Requirements**
 
-The counter value is read by a 32-bit wide bus but the output should be single-copy atomic. The interface is a simple request and acknowledge interface with the following strict requirements:
-
-Request can be a pulse or can get back to back multiple requests
-The acknowledge output must be given one cycle after the request is asserted
-The count_o signal must be 0 when the ack_o signal is not asserted
-The controller will always send two requests in order to read the full 64-bit counter
-The first request will always have the atomic_i input asserted
-The second request will not have the atomic_i input asserted
+Output must be given every cycle
+Input will be a stream of bits presented to the circuit on every cycle
 
 The Counter should have an output response as shown here:
 
@@ -53,8 +32,8 @@ The Counter should have an output response as shown here:
 
 | Sl No | Project | Description |
 |-------|---------|-------------|
-| 1.    | atm_counter.v | Implementation of the Atomic Counter in Verilog |
-| 2. | atm_counter.vhd | Implementation of teh atomic counter in VHDL |
+| 1.    | 3bit_palindrome.v | Implementation of the 3 Bit Palindrome checker in Verilog |
+| 2. | 3bit_palindrome.vhd |  Implementation of the 3 Bit Palindrome checkerin VHDL |
 | 3. | testbench.sv | System Verilog testbench for the module |
 
 
@@ -65,8 +44,8 @@ This project is organized as follows:
 * **build/:** Contains compiled output files.
 * **figures/:** Stores generated figures or images.
 * **rtl/:** Holds the Register Transfer Level (RTL) source code files for the design.
-    * **atm_counter.v:** Implementation of the Atomic Counter in Verilog.
-    * **atm_counter.vhd:** Implementation of teh atomic counter in VHDL.
+    * **3bit_palindrome.v:** Implementation of the Atomic Counter in Verilog.
+    * **3bit_palindrome.vhd:** Implementation of teh atomic counter in VHDL.
     * **testbench.sv:** SystemVerilog testbench for verifying the functionality of the designs.
     * **timescale.v:** Verilog file defining the timescale used for simulation.
 
