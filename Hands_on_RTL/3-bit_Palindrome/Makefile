@@ -14,7 +14,7 @@ GTKWAVE  := gtkwave
 IVERILOG_FLAGS := -g2012 -Wall -I$(SRC)
 
 SRC_FILES :=$(SRC)/timescale.v \
-			$(SRC)/atm_counter.v \
+			$(SRC)/palindrome_3bit.v \
 			$(SRC)/testbench.sv
 			             
 			 

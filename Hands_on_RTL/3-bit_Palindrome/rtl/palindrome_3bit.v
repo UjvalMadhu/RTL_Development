@@ -24,7 +24,7 @@ module palindrome3b (
   output  logic        palindrome_o
 );
 
-  reg x1, x2, r1, r2;
+  reg x1, x2, r1, r2;            // x1 and x2 are for signal Propagation and r1 and r2 are for reset propagation 
   
   always @(posedge clk or posedge reset) begin
     if(reset) begin

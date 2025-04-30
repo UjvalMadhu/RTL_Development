@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////////
-///       Switch Level Modeling of a CMOS Gates and Boolean Logic               ///
+///                  3-Bit Palindrome Checker Testbench                         ///
 ///                                                                             ///
 ///////////////////////////////////////////////////////////////////////////////////
 ///   Testbench Module                                                          ///
@@ -10,7 +10,7 @@
 //
 //  Id: testbench.sv, v 1.0
 //
-//  $Date: 2024-07-03
+//  $Date: 2024-29-04
 //  $Revision: 1.0 $
 //  $Author:  Ujval Madhu
 
@@ -21,8 +21,8 @@ module testbench;
     wire [31:0] count_o;
     int seed;
 
-    // Instantiating atmoic_counter
-    atm_counter a1(.clk(clk), .rst(rst), .trig_i(trig_i), .req_i(req_i), .atomic_i(atomic_i), .ack_o(ack_o), .count_o(count_o));
+    // Instantiating the module
+    palindrome_3bit dut(.clk(clk), .rst(rst), .trig_i(trig_i), .req_i(req_i), .atomic_i(atomic_i), .ack_o(ack_o), .count_o(count_o));
 
     // Clock Gen
     initial begin
@@ -58,7 +58,7 @@ module testbench;
 
             #1;
             
-            $display("Atmoic Counter, Reset: %0b, Output: Trig_i: %b, Atomic_i: %b, req_i: %b, Count_o: %d, ack_o: %b", rst, trig_i, atomic_i, req_i, count_o, ack_o);
+            $display("Palindrome Check, Reset: %0b, Output: Trig_i: %b, Atomic_i: %b, req_i: %b, Count_o: %d, ack_o: %b", rst, trig_i, atomic_i, req_i, count_o, ack_o);
 
             //#10
             // Verification

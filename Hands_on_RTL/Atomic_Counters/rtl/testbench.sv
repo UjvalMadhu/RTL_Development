@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////////
-///       Switch Level Modeling of a CMOS Gates and Boolean Logic               ///
+///            64-Bit Atomic Counter with 32-Bit Bus Testbench                  ///
 ///                                                                             ///
 ///////////////////////////////////////////////////////////////////////////////////
 ///   Testbench Module                                                          ///

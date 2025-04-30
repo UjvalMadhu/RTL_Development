@@ -20,78 +20,41 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity atm_counter is
-    port(
-        clk     : in std_logic;
-        reset   : in std_logic;
-        trig_i  : in std_logic;
-        atomic_i: in std_logic;
-        req_i   : in std_logic;
-
-        ack_o   : out std_logic;
-        count_o : out std_logic_vector(31 downto 0);
-    );
-end atm_counter
+entity palindrome_3bit is
+port (
+    clk             :  in std_logic;
+    reset           :  in std_logic;
+    x_i             :  in std_logic;
+    palindrome_o    :  out std_logic;
+);
+end entity;
 
 
--- Internal Logic
+architecture logic of palindrome_3bit is
+    signal x1   : std_logic;                  -- x1 and x2 are for signal Propagation and r1 and r2 are for reset propagation 
+    signal x2   : std_logic;
+    signal r1   : std_logic;
+    signal r2   : std_logic;
 
-architecture logic of atm_counter is
-    signal count_reg    : std_logic_vector(63 downto 0);
-    signal count_MSB    : std_logic_vector(31 downto 0);
-    signal ack_reg      : std_logic;
+begin
 
+    process(clk, reset) is
     begin
-    
-    -- Count Logic
-        process(clk, reset)
-        begin
-            if reset = '1' then
-                count_reg <= (others => '0');
-            elsif rising_edge(clk) then
-                if(trig_i = '1') then
-                    count_reg <= count_reg + 1;
-                else
-                    count_reg <= count_reg;
-                end if;
-            end if;
-        end process;
+        if reset = '1' then
+            x1 <= '0';
+            x2 <= '0';
+            r1 <= '1';
+            r2 <= '0';
+        elsif rising_edge(clk) then
+            x1 <= x_i;
+            x2 <= x1;
+            r1 <= 1'b0;
+            r2 <= r1;
+        end if;
+    end process
 
-    -- MSB Logic
-        process(clk, reset)
-        begin
-            if reset = '1' then
-                count_MSB <= (others =>'0');
-            elsif rising_edge(clk) then
-                count_MSB <= count_reg(63 downto 0);
-            end if;
-        end process;
-
-    -- ACK Logic
-        process(clk, reset)
-        begin
-            if reset = '1' then
-                ack_o <= '0';
-            elsif rising_edge(clk) then
-                if(req_i = '1') then
-                    ack_o <= '1';
-                end if;
-            end if;
-        end process;
-
-    -- Output Logic
-        process(clk, rst) begin
-            if(reset) then
-                count_o <= (others => '0');
-            elsif(req_i) then
-                if(atomic_i) then
-                    count_o <= count_reg(31 downto 0);
-                else 
-                    count_o <= count_MSB;
-                end if;
-            else 
-                count_o <= (others => '0');
-            end if;
-        end process;
+    --palindrome_o = (r1 || r2) ? 1'b0 : {x_i,x1,x2} == {x2,x1,x_i};
+    palindrome_o <= '0' when (r1 = r2) else ((x_i & x1 & x2) = (x2 & x1 & x_i));
 
 end architecture;
+
