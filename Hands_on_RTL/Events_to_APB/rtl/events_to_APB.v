@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////
 ///                                                                             /// 
-///                         3-Bit Palindrome Detector                           ///
+///                      Events to APB Transaction Module                       ///
 ///                                                                             ///
 ///////////////////////////////////////////////////////////////////////////////////
 ///  This design detects a 3 bit overlapping serial palindrome sequence         ///
@@ -9,9 +9,9 @@
 ///////////////////////////////////////////////////////////////////////////////////
 //  CVS Log
 //
-//  Id: palindrome_3bit.v, v 1.0
+//  Id: events_to_APB.v, v 1.0
 //
-//  $Date: 2024-29-04
+//  $Date: 2024-02-05
 //  $Revision: 1.0 $
 //  $Author:  Ujval Madhu
 
@@ -24,23 +24,6 @@ module palindrome3b (
   output  logic        palindrome_o
 );
 
-  reg x1, x2, r1, r2;            // x1 and x2 are for signal Propagation and r1 and r2 are for reset propagation 
-  
-  always @(posedge clk or posedge reset) begin
-    if(reset) begin
-    	x1 <= 1'b0;
-      x2 <= 1'b0;
-      r1 <= 1'b1;
-      r2 <= 1'b0;
-    end
-    else begin
-    	x1 <= x_i;
-      x2 <= x1;
-      r1 <= 1'b0;
-      r2 <= r1;
-    end
-  end
-  
-  assign palindrome_o = (r1 || r2) ? 1'b0 : {x_i,x1,x2} == {x2,x1,x_i};
+
     
 endmodule
