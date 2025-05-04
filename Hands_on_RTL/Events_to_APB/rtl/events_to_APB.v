@@ -15,14 +15,12 @@
 //  $Revision: 1.0 $
 //  $Author:  Ujval Madhu
 
-module palindrome3b (
+module events_to_APB(
   input   logic        clk,
-  input   logic        reset,
+  input   logic        reset
 
-  input   logic        x_i,
-
-  output  logic        palindrome_o
 );
+
 
 
     

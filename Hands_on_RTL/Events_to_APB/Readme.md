@@ -15,19 +15,26 @@ event_c_i
 The output APB transaction uses the following signals:
 
 ```
-apb_psel_o
-apb_penable_o
-apb_paddr_o[31:0]
-apb_pwrite_o
-apb_pwdata_o[31:0]
-apb_pready_i
+apb_psel_o : It indicates that the Peripheral device is selected and that a data transfer is required. 
+apb_penable_o :  Enable. This signal indicates the second and subsequent cycles of an APB transfer.
+apb_paddr_o[31:0] :  This is the APB address bus.
+apb_pwrite_o  : This signal indicates an APB write access when HIGH and an APB read access when LOW
+apb_pwdata_o[31:0] : Write data. This bus is driven during write cycles when PWRITE is HIGH.
+apb_pready_i:  Ready. The peripheral uses this signal to extend an APB transfer.
 
 ```
 
 **Interface Requirements**
 
-Output must be given every cycle
-Input will be a stream of bits presented to the circuit on every cycle
+- The APB transaction must comply with the AMBA APB protocol specifications
+- The three event inputs are mutually exclusive i.e. there can be atmost one event asserted on a cycle
+- The APB transaction generated due to Event A should be sent to address 0xABBA0000
+- The APB transaction generated due to Event B should be sent to address 0xBAFF0000
+- The APB transaction generated due to Event C should be sent to address 0xCAFE0000
+- The write data should give the count of the number of events seen since the last write for that particular event
+- The APB interface guarantees that the pready signal would be asserted within 10 cycles for a particular transaction without any pslverr. Hence the interface doesn't contain the pslverr input
+- Back to back APB transactions aren't supported by interface hence there should a cycle gap before the next APB transaction is generated
+- The event input interface guarantees fairness amongst the three events such that there cannot be more than 10 pending events for any input event
 
 The Counter should have an output response as shown here:
 
@@ -41,8 +48,8 @@ The Counter should have an output response as shown here:
 
 | Sl No | Project | Description |
 |-------|---------|-------------|
-| 1.    | 3bit_palindrome.v | Implementation of the 3 Bit Palindrome checker in Verilog |
-| 2. | 3bit_palindrome.vhd |  Implementation of the 3 Bit Palindrome checkerin VHDL |
+| 1.    | events_to_apb.v | Implementation of the events to apb module in Verilog |
+| 2. | events_to_apb.vhd |  Implementation of the the events to apb module in VHDL |
 | 3. | testbench.sv | System Verilog testbench for the module |
 
 
